@@ -96,5 +96,7 @@ Each chapter must pass 6 quality gates:
 - Chapter writing: 2000-4000 words per chapter, opening hook, closing cliffhanger
 - Shuang point distribution: mini-satisfaction every 3-5 chapters, major satisfaction per volume
 - Golden Three Chapters principle: Chapter 1 hook, Chapter 2 character, Chapter 3 mini-climax
+- Advanced writing techniques: Internal monologue, emotional rhythm, Show-not-Tell, worldbuilding integration, pacing control
+- Reference: `knowledge-writing-craft-enhanced.md`
 
 Repository: https://github.com/nosoultool/novel-writer-system

@@ -97,3 +97,10 @@ The system includes 8 specialized agents working in collaboration:
 | 7 | `/novel:anti-ai` | De-AI polish |
 | 8 | `/novel:archive` | Update knowledge base |
 |   | ↻ | Repeat 5-8 |
+
+## 📚 Writing Knowledge
+
+| Reference | Description |
+|:--|:--|
+| `knowledge-writing-craft.md` | General writing craft techniques |
+| `knowledge-writing-craft-enhanced.md` | Advanced techniques from professional web novels — internal monologue, emotional rhythm, worldbuilding integration, pacing control |

@@ -82,3 +82,8 @@
 7. /novel:anti-ai    → 去AI化
 8. /novel:archive    → 更新知识库
      ↻ 重复 5-8
+
+## 知识参考
+- `skills/` — 模块化写作技能
+- `knowledge-writing-craft.md` — 写作技法
+- `knowledge-writing-craft-enhanced.md` — 高级写作技法（内面独白/情感暗示/节奏控制/世界观融入）
