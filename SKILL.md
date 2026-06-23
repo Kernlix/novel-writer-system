@@ -1,108 +1,97 @@
-# 🎭 LingJing — Novel Creation Multi-Agent System
+# 🎭 灵境 · 小说创作智能体系统
 
-> Entry file — Load this file to launch the LingJing creation system.
+> 入口文件 — 加载此文件即启动灵境创作系统。
 
-## 📋 System Loading
+## 📋 当前项目
 
-### Quick Start
-Enter any of the following commands in Claude Code to start a workflow:
+**转生深渊领主，我靠种田苟成邪神**
+- 章节：`转生深渊领主，我靠种田苟成邪神/章节/`（已写 55 章）
+- 角色：`转生深渊领主，我靠种田苟成邪神/人物/`
+- 大纲：`转生深渊领主，我靠种田苟成邪神/大纲/`
+- 设定：`转生深渊领主，我靠种田苟成邪神/设定集/`、`转生深渊领主，我靠种田苟成邪神/系统设定框架.md`
+- 设计文档：`转生深渊领主，我靠种田苟成邪神/novel_design_document.md`
 
-| Command | Function |
-|:--|:--|
-| `/novel:start` | 🚀 Launch creation wizard (new project or resume) |
-| `/novel:help` | 📖 Show full command list |
+### 快速启动
+在 Claude Code 中输入以下任一命令进入工作流：
 
-## 🧠 Agent System
+| 命令 | 功能 |
+|------|------|
+| `/novel:start` | 🚀 **启动创作向导** — 新建项目或继续已有作品 |
+| `/novel:help` | 📖 显示完整命令列表 |
 
-The system includes 8 specialized agents working in collaboration:
+## 🧠 智能体系统
 
-| Agent | Responsibility | Invocation |
-|:--|:--|:--|
-| **Commander** | Task distribution, workflow orchestration, quality control | Auto |
-| **World Architect** | Worldbuilding, geography, power systems | `/novel:world` |
-| **Character Designer** | Character creation, relationships, growth arcs | `/novel:characters` |
-| **Plot Architect** | Outline planning, volume structure, plot design | `/novel:outline` |
-| **Writer** | Body text writing, scene description, dialogue | `/novel:write` |
-| **Reviewer** | Consistency check, quality assessment, logic validation | `/novel:review` |
-| **Era Reviewer** | Tech/knowledge/institution era consistency check | `/novel:era` |
-| **Polisher** | De-AI polish, style unification, language optimization | `/novel:anti-ai` |
+系统包含 8 个专业智能体，分工协作：
 
-## 📂 Skills Index
+| 智能体 | 职责 | 调用方式 |
+|--------|------|----------|
+| **总指挥** | 任务分发、流程编排、质量把关 | 自动激活 |
+| **短故事专项** | 中短篇/超短篇快速创作→投稿全流程 | `/novel:short` |
+| **世界观架构师** | 世界观设定、地理/势力/力量体系设计 | `/novel:world` |
+| **角色设计师** | 角色创建、关系网、成长弧光 | `/novel:characters` |
+| **剧情架构师** | 大纲规划、分卷、情节设计 | `/novel:outline` |
+| **写手** | 正文写作、场景描写、对话 | `/novel:write` |
+| **审查官** | 一致性检查、质量评估、逻辑校验 | `/novel:review` |
+| **润色师** | 去AI化、文风统一、语言优化 | `/novel:anti-ai` |
 
-### 00 — Full Creative Workflow
-| File | Description |
-|:--|:--|
-| `skills/00-创作全流程/novel-setup.md` | Project initialization |
-| `skills/00-创作全流程/novel-discuss.md` | Creative discussion |
-| `skills/00-创作全流程/worldbuilding.md` | Worldbuilding |
-| `skills/00-创作全流程/character-design.md` | Character design |
-| `skills/00-创作全流程/plot-outline.md` | Plot outline |
-| `skills/00-创作全流程/chapter-writing.md` | Chapter writing |
-| `skills/00-创作全流程/chapter-review.md` | Chapter review |
-| `skills/00-创作全流程/anti-ai-polish.md` | De-AI polish |
-| `skills/00-创作全流程/archive.md` | Archive & knowledge update |
+## 📂 Skills 索引
 
-### 01 — Creative Techniques
-| File | Description |
-|:--|:--|
-| `skills/01-创作技巧/booming-plot.md` | Plot acceleration |
-| `skills/01-创作技巧/snowflake-method.md` | Snowflake method |
-| `skills/01-创作技巧/save-the-cat.md` | Save the Cat beat sheet |
-| `skills/01-创作技巧/decoupled-writing.md` | Decoupled writing |
-| `skills/01-创作技巧/style-learning.md` | Style learning |
+### 创作全流程
+- skills/00-创作全流程/novel-setup.md — 项目初始化
+- skills/00-创作全流程/novel-discuss.md — 创作讨论
+- skills/00-创作全流程/short-story-quick.md — 🔥 短故事快速创作（参赛专用）
+- skills/00-创作全流程/worldbuilding.md — 世界观搭建
+- skills/00-创作全流程/character-design.md — 角色设计
+- skills/00-创作全流程/plot-outline.md — 大纲规划
+- skills/00-创作全流程/chapter-writing.md — 章节写作
+- skills/00-创作全流程/chapter-review.md — 章节审查
+- skills/00-创作全流程/anti-ai-polish.md — 去AI化润色
+- skills/00-创作全流程/archive.md — 存档与知识更新
 
-### 02 — Web Novel Specialties
-| File | Description |
-|:--|:--|
-| `skills/02-网文专项/webnovel-hook.md` | Golden three chapters / hooks |
-| `skills/02-网文专项/webnovel-shuang.md` | Satisfaction point design |
-| `skills/02-网文专项/webnovel-trend.md` | Trend analysis / scouting |
-| `skills/02-网文专项/webnovel-goldfinger.md` | Golden finger design |
-| `skills/02-网文专项/webnovel-submit.md` | Submission / platform adaptation |
+### 创作技巧
+- skills/01-创作技巧/booming-plot.md — 剧情引爆
+- skills/01-创作技巧/snowflake-method.md — 雪花法大纲
+- skills/01-创作技巧/save-the-cat.md — Save the Cat 节拍表
+- skills/01-创作技巧/decoupled-writing.md — 解耦写作法
+- skills/01-创作技巧/style-learning.md — 风格学习
 
-### 03 — Quality Review
-| File | Description |
-|:--|:--|
-| `skills/03-质量审查/era-consistency.md` | Era consistency review |
-| `skills/03-质量审查/consistency-check.md` | Consistency check |
-| `skills/03-质量审查/quality-gates.md` | Quality gates |
-| `skills/03-质量审查/deslop-check.md` | De-AI review |
-| `skills/03-质量审查/banned-words.md` | Banned words check |
-| `skills/03-质量审查/plot-hole-check.md` | Plot hole detection |
+### 网文专项
+- skills/02-网文专项/webnovel-hook.md — 黄金三章/钩子
+- skills/02-网文专项/webnovel-shuang.md — 爽点设计
+- skills/02-网文专项/webnovel-suspense.md — 🔥 悬疑惊悚写作指南
+- skills/02-网文专项/webnovel-trend.md — 扫榜/趋势分析
+- skills/02-网文专项/webnovel-goldfinger.md — 金手指设计
+- skills/02-网文专项/webnovel-submit.md — 投稿/平台适配
 
-### 04 — Tool Integration
-| File | Description |
-|:--|:--|
-| `rag/engine.py` | ChromaDB + Ollama RAG engine |
-| `skills/04-工具集成/rag-search.md` | Semantic search via RAG |
-| `skills/04-工具集成/knowledge-graph.md` | Knowledge graph management |
-| `skills/04-工具集成/memory-system.md` | Memory system |
-| `skills/04-工具集成/progress-track.md` | Progress tracking |
-| `skills/04-工具集成/obsidian-sync.md` | Obsidian sync |
+### 质量审查
+- skills/03-质量审查/consistency-check.md — 一致性检查
+- skills/03-质量审查/quality-gates.md — 质量门禁
+- skills/03-质量审查/deslop-check.md — 去AI化审查
+- skills/03-质量审查/banned-words.md — 违禁词检查
+- skills/03-质量审查/plot-hole-check.md — 漏洞检测
 
-## 🪝 Hooks
+### 工具集成
+- skills/04-工具集成/knowledge-graph.md — 知识图谱管理
+- skills/04-工具集成/memory-system.md — 记忆系统
+- skills/04-工具集成/progress-track.md — 进度追踪
+- skills/04-工具集成/obsidian-sync.md — Obsidian 同步
+- skills/04-工具集成/docx-publish.md — 🔥 DOCX生成与投稿准备
 
-| File | Description |
-|:--|:--|
-| `hooks/pre-review.md` | Era consistency pre-review trigger |
+## 🔄 通用工作流
 
-## 🔄 General Workflow
+### 长篇连载模式
+1. /novel:discuss    → 讨论创意、确定方向
+2. /novel:world      → 搭建世界观
+3. /novel:characters → 设计角色
+4. /novel:outline    → 规划大纲
+5. /novel:write      → 逐章写作
+6. /novel:review     → 审查修改
+7. /novel:anti-ai    → 去AI化
+8. /novel:archive    → 更新知识库
+     ↻ 重复 5-8
 
-| Step | Command | Action |
-|:--|:--|:--|
-| 1 | `/novel:discuss` | Discuss ideas, set direction |
-| 2 | `/novel:world` | Build the world |
-| 3 | `/novel:characters` | Design characters |
-| 4 | `/novel:outline` | Plan outline |
-| 5 | `/novel:write` | Write chapter by chapter |
-| 6 | `/novel:review` | Review and revise |
-| 7 | `/novel:anti-ai` | De-AI polish |
-| 8 | `/novel:archive` | Update knowledge base |
-|   | ↻ | Repeat 5-8 |
-
-## 📚 Writing Knowledge
-
-| Reference | Description |
-|:--|:--|
-| `knowledge-writing-craft.md` | General writing craft techniques |
-| `knowledge-writing-craft-enhanced.md` | Advanced techniques from professional web novels — internal monologue, emotional rhythm, worldbuilding integration, pacing control |
+### 短故事参赛模式
+1. /novel:short      → 启动短故事专项智能体
+2. 概念策划 → 大纲 → 写作（全篇）
+3. 审查润色 → DOCX打包 → 投稿发送
+     → 一次性完成，全篇完稿后再投稿
