@@ -1,0 +1,56 @@
+# 🍅 番茄小说自动发布 Skill
+
+## 命令
+`/novel:publish` — 调用 `scripts/fanqie_publish.py` 执行自动发布
+
+## 用法
+
+### 首次登录
+```bash
+python scripts/fanqie_publish.py --login
+```
+弹出浏览器 → 手动登录番茄作家后台 → 回到终端按回车 → 会话保存到 `publish_state.json`
+
+### 发布流程
+```bash
+# 发布全部
+python scripts/fanqie_publish.py --publish
+
+# 仅存草稿
+python scripts/fanqie_publish.py --publish --draft
+
+# 本地检查，不打开浏览器
+python scripts/fanqie_publish.py --publish --dry-run
+
+# 指定章节范围
+python scripts/fanqie_publish.py --publish --start 1 --end 3
+
+# 指定具体文件
+python scripts/fanqie_publish.py --chapter 第58章.md 第59章.md
+
+# 重置断点记录
+python scripts/fanqie_publish.py --reset
+```
+
+## 集成进灵境
+
+在 orchestator-agent 中注册：
+
+```yaml
+| 番茄自动发布 | fanqie_publish | auto-publish-fanqie | `/novel:publish` |
+```
+
+### 写后即发工作流
+1. 写手写章节 → 存入 `章节/`
+2. 审查官审查通过
+3. 调用 `fanqie_publish.py --publish --start N --end N` 发布
+
+## 依赖
+- `playwright` (pip install playwright)
+- 本地 Chrome 或 Edge
+
+## 技术来源
+整合自三个开源项目：
+- hchcx/fanqie_auto_publish — 弹窗斩杀器、多书管理、会话持久化
+- funnaz/fanqie-publisher-cli — 质检流水线、断点续传、草稿/发布双模式
+- Kirby980/auto-fanqie — playwright-cli Skill 结构、Go 引擎

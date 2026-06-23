@@ -1,19 +1,64 @@
-# Claude Code Configuration — LingJing Novel Creation System
+# Claude Code 配置 — 灵境小说创作系统 + 现有项目整合
 
-## Auto-Load
-When you open Claude Code in this directory, the system is ready automatically.
+## 自动加载
+当你在本目录打开 Claude Code 时，系统自动就绪。
 
-## Working Directory Convention
-- `works/` — Novel projects (each project in its own subdirectory)
-- `works/{project}/manuscript/` — Body text
-- `works/{project}/bible/` — Novel bible (worldbuilding, characters, etc.)
-- `works/{project}/memory/` — Writing memory
+## 当前项目
+**转生深渊领主，我靠种田苟成邪神** — 位于本目录下
 
-## System Structure
-- `agents/` — Agent role definitions (8 agents)
-- `skills/` — Skill playbooks (创作全流程/创作技巧/网文专项/质量审查/工具集成)
-- `hooks/` — Lifecycle hooks (pre-review era consistency check)
-- `era-knowledge/` — Era consistency knowledge base (per-project)
+### 项目结构说明
+- `转生深渊领主，我靠种田苟成邪神/章节/` — 正文（已写 55 章）
+- `转生深渊领主，我靠种田苟成邪神/人物/` — 角色档案
+- `转生深渊领主，我靠种田苟成邪神/大纲/` — 总纲、卷纲、章纲
+- `转生深渊领主，我靠种田苟成邪神/设定集/` — 世界观、力量体系等
+- `转生深渊领主，我靠种田苟成邪神/章节摘要/` — 每章摘要
+- `转生深渊领主，我靠种田苟成邪神/审查报告/` — 审查记录
+- `转生深渊领主，我靠种田苟成邪神/novel_design_document.md` — 小说设计文档
+- `转生深渊领主，我靠种田苟成邪神/系统设定框架.md` — 系统设定框架
 
-## Recommended Settings
-> It is recommended to disable thinking mode (thinking mode off)
+### 保留的原有资源（.webnovel-plugin）
+- `scripts/` — Python 脚本工具（数据管理、RAG 等）
+- `references/` — 写作知识库（CSV 技法表、题材档案等）
+- `genres/` — 题材专项写作指南
+- `dashboard/` — Web 管理面板
+- `data_modules/` — 数据层模块
+
+## 灵境创作系统
+
+### 快速启动
+| 关键词 | 功能 |
+|------|------|
+| `/novel:start` | 🚀 启动创作向导（手动对话引导） |
+| `/novel:help` | 📖 显示完整命令列表 |
+
+### 智能体系统
+| 智能体 | 职责 | 调起方式 |
+|--------|------|----------|
+| **总指挥** | 任务分发、流程编排、质量把关 | 自动激活 |
+| **世界观架构师** | 世界观设定、地理/势力/力量体系设计 | `/novel:world` |
+| **角色设计师** | 角色创建、关系网、成长弧光 | `/novel:characters` |
+| **剧情架构师** | 大纲规划、分卷、情节设计 | `/novel:outline` |
+| **写手** | 正文写作、场景描写、对话 | `/novel:write` |
+| **审查官** | 一致性检查、质量评估、逻辑校验、时代背景审查 | `/novel:review` |
+| **时代背景审查官** | 技术/知识合理性审查 | `/novel:era` |
+| **RAG检索** | 语义搜索全文，定位情节/设定 | `/novel:search` |
+| **润色师** | 去AI化、文风统一、语言优化 | `/novel:anti-ai` |
+
+### Skills 索引
+- `skills/00-创作全流程/` — 全流程（项目初始化→写作→审查→存档）
+- `skills/01-创作技巧/` — 创作技巧（剧情引爆、雪花法、Save the Cat 等）
+- `skills/02-网文专项/` — 网文专项（钩子、爽点、金手指、投稿等）
+- `skills/03-质量审查/` — 质量审查（一致性、违禁词、漏洞检测、时代合理性等）
+- `skills/04-工具集成/` — 工具集成（知识图谱、RAG检索、记忆系统、进度追踪等）
+
+### 写作知识库
+- `knowledge-writing-craft-enhanced.md` — 高级写作技法（内面独白、情感暗示、节奏控制、世界观融入等）
+
+## 推荐设置
+> 思考模式：默认开启（保证准确度）；**仅输出小说正文时关闭**。
+
+## 行为规则
+- **输出小说正文时**（如写入章节文件）：关闭思考模式，直接输出纯净的叙事文本。
+- **其他所有场景**（讨论/规划/审查/分析/回答问题等）：思考模式保持开启，保证推理准确度。
+- **章节字数**：每章正文控制在 **2000～4000 字** 之间（仅计中文字符，不含标点符号、空格、数字、英文）。
+- **时代一致性**：写作和审查时须调用时代背景审查官，对照 `.era-knowledge/` 知识库检查科技/知识要素的合理性。🔴 级违和项必须取得用户确认后方可定稿。

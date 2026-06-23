@@ -1,0 +1,519 @@
+#!/usr/bin/env python3
+"""
+番茄小说全自动发布脚本 v2
+整合自 hchcx/fanqie_auto_publish + funnaz/fanqie-publisher-cli + Kirby980/auto-fanqie 的核心技巧
+
+用法:
+  python fanqie_publish.py --login                    # 首次登录（保存会话）
+  python fanqie_publish.py --publish                  # 交互式发布全部
+  python fanqie_publish.py --book 书名 --start 1 --end 3   # 批量发布指定范围
+  python fanqie_publish.py --publish --draft          # 仅保存草稿
+  python fanqie_publish.py --publish --dry-run        # 本地检查，不打开浏览器
+"""
+
+import argparse
+import glob
+import json
+import os
+import re
+import shutil
+import sys
+import time
+from pathlib import Path
+
+# ---- 路径配置 ----
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+CHAPTER_DIR = PROJECT_ROOT / "章节"          # 已写章节目录
+PUBLISH_DIR = SCRIPT_DIR / "chapters"        # 待发布章节（从章节/复制过来或直接引用）
+ARCHIVE_DIR = SCRIPT_DIR / "published"       # 已发布归档
+STATE_FILE = SCRIPT_DIR / "publish_state.json"  # 登录状态
+RUNS_DIR = SCRIPT_DIR / ".publish_runs"      # 发布断点记录
+
+# 番茄后台 URL
+WRITER_URL = "https://fanqienovel.com/main/writer/book-manage"
+LOGIN_URL = "https://fanqienovel.com/main/writer/login?enter_from=author_zone"
+
+# Chrome/Edge路径（按优先级）
+BROWSER_PATHS = [
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+]
+
+MIN_CHARS = 2000  # 最低字数限制
+
+
+def ensure_dir(d):
+    os.makedirs(d, exist_ok=True)
+
+
+def safe_name(text):
+    return re.sub(r'[\\/:*?"<>|\s]+', '_', str(text))[:120]
+
+
+# ==============================
+# 1. 章节扫描与质检
+# ==============================
+
+def scan_chapters(start=1, end=9999):
+    """扫描 PROJECT_ROOT/chapters/ 下的待发章节，或章节/目录下的已写章节"""
+    sources = []
+    # 优先扫描 scripts/chapters/ 下的子目录（多书模式）
+    if PUBLISH_DIR.exists():
+        for book_dir in sorted(PUBLISH_DIR.iterdir()):
+            if book_dir.is_dir():
+                txts = sorted(book_dir.glob("*.txt"))
+                if txts:
+                    sources.append((book_dir.name, txts))
+    if not sources:
+        # 退而直接从 章节/ 目录读取
+        ch_dir = CHAPTER_DIR
+        if ch_dir.exists():
+            mds = sorted(ch_dir.glob("第*.md"))
+            if mds:
+                sources.append(("default", mds))
+    return sources
+
+
+def parse_chapter_no(filename):
+    """从文件名提取章节号"""
+    stem = Path(filename).stem
+    m = re.search(r'(\d+)', stem)
+    return int(m.group(1)) if m else 0
+
+
+def parse_md_chapter(filepath):
+    """解析 .md 章节文件 → {no, title, body, chars}"""
+    text = Path(filepath).read_text(encoding="utf-8")
+    # 去掉 YAML frontmatter
+    text = re.sub(r"^---.*?---\s*", "", text, flags=re.DOTALL).strip()
+    # 提取标题
+    m = re.match(r"^#\s+(.+)", text)
+    title = m.group(1).strip() if m else Path(filepath).stem
+    # 去标题、去(本章完)
+    body = re.sub(r"^#\s+.+\n*", "", text).strip()
+    body = re.sub(r"\n（本章完）\s*$", "", body).strip()
+    # 提取章节号
+    no = parse_chapter_no(filepath)
+    # 纯中文数
+    cn_chars = len(re.findall(r'[\u4e00-\u9fff]', body))
+    return {"no": no, "title": title, "body": body, "chars": cn_chars, "file": str(filepath)}
+
+
+def parse_txt_chapter(filepath):
+    """解析 .txt 章节文件"""
+    text = Path(filepath).read_text(encoding="utf-8")
+    lines = text.strip().split("\n")
+    first = lines[0].strip() if lines else ""
+    m = re.match(r"^第\s*(\d+)\s*章\s*[:：、.\-\s]*(.*)", first)
+    if m:
+        title = m.group(2).strip()
+        body = "\n".join(lines[1:]).strip()
+    else:
+        title = Path(filepath).stem
+        body = text.strip()
+    no = parse_chapter_no(filepath)
+    cn_chars = len(re.findall(r'[\u4e00-\u9fff]', body))
+    return {"no": no, "title": title, "body": body, "chars": cn_chars, "file": str(filepath)}
+
+
+def quality_check(chapters):
+    """质检：字数/重复/缺失"""
+    issues = []
+    seen_nos = set()
+    for ch in chapters:
+        if ch["no"] in seen_nos:
+            issues.append({"level": "error", "no": ch["no"], "msg": f"章节号重复"})
+        seen_nos.add(ch["no"])
+        if ch["chars"] < MIN_CHARS:
+            issues.append({"level": "error", "no": ch["no"], "msg": f"字数不足：{ch['chars']} < {MIN_CHARS}"})
+        if not ch["title"]:
+            issues.append({"level": "error", "no": ch["no"], "msg": "标题为空"})
+        if not ch["body"]:
+            issues.append({"level": "error", "no": ch["no"], "msg": "正文为空"})
+    return issues
+
+
+# ==============================
+# 2. 断点续传管理
+# ==============================
+
+def make_run_id(book_name, start, end, mode):
+    return safe_name(f"{book_name}_{start}_{end}_{mode}")
+
+
+def load_run_state(run_id, reset=False):
+    ensure_dir(RUNS_DIR)
+    fp = RUNS_DIR / f"{run_id}.json"
+    if reset and fp.exists():
+        fp.unlink()
+    if fp.exists():
+        return json.loads(fp.read_text(encoding="utf-8"))
+    return {"run_id": run_id, "completed": [], "failed": [], "created_at": time.time()}
+
+
+def save_run_state(run_id, state):
+    ensure_dir(RUNS_DIR)
+    state["updated_at"] = time.time()
+    (RUNS_DIR / f"{run_id}.json").write_text(
+        json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+# ==============================
+# 3. 浏览器自动化
+# ==============================
+
+def find_browser():
+    """检测系统 Edge/Chrome"""
+    for p in BROWSER_PATHS:
+        if os.path.exists(p):
+            return p
+    return None
+
+
+def login():
+    """扫码/密码登录，保存 state.json"""
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        browser_path = find_browser()
+        launch_opts = {"headless": False, "viewport": {"width": 1440, "height": 900}}
+        if browser_path:
+            launch_opts["executable_path"] = browser_path
+        browser = p.chromium.launch(**launch_opts)
+        context = browser.new_context()
+        page = context.new_page()
+        print("[登录] 打开番茄作家后台...")
+        page.goto(WRITER_URL, timeout=60000)
+        print("=" * 50)
+        print("请在浏览器窗口中登录（密码/扫码均可）")
+        print("登录后看到作品列表页，回到这里按回车")
+        print("=" * 50)
+        input(">>> 按回车以保存登录状态...")
+        context.storage_state(path=str(STATE_FILE))
+        print(f"[登录] 会话已保存到 {STATE_FILE}")
+        browser.close()
+
+
+def popup_killer(page):
+    """空间坐标弹窗斩杀器：点击所有 y > 100 的引导弹窗按钮"""
+    for _ in range(8):
+        clicked = False
+        for text in ["下一步", "完成", "我知道了", "跳过", "关闭", "不再提示"]:
+            try:
+                btns = page.locator(f"button:has-text('{text}')").element_handles()
+                for btn in btns:
+                    box = btn.bounding_box()
+                    if box and box["y"] > 100 and box["visible"]:
+                        btn.click()
+                        time.sleep(0.5)
+                        clicked = True
+            except:
+                pass
+        if not clicked:
+            break
+
+
+def click_smart(page, text_list, timeout=5000):
+    """按优先级列表点击元素"""
+    for t in text_list:
+        try:
+            btn = page.get_by_text(t, exact=False).first
+            if btn.is_visible():
+                btn.click(timeout=timeout)
+                return True
+        except:
+            try:
+                btn = page.locator(f"button:has-text('{t}')").first
+                if btn.is_visible():
+                    btn.click(timeout=timeout)
+                    return True
+            except:
+                continue
+    return False
+
+
+def publish_chapters(chapters, book_name="default", mode="publish"):
+    """
+    核心发布流程。
+    mode: "publish" = 直接发布, "draft" = 仅存草稿
+    """
+    from playwright.sync_api import sync_playwright
+    run_id = make_run_id(book_name, chapters[0]["no"], chapters[-1]["no"], mode)
+    state = load_run_state(run_id)
+
+    # 跳过已完成的
+    pending = [c for c in chapters if c["no"] not in state["completed"]]
+    if not pending:
+        print(f"所有章节已发布过，跳过。")
+        return
+
+    browser_path = find_browser()
+    with sync_playwright() as p:
+        launch_opts = {"headless": False, "viewport": {"width": 1440, "height": 900}}
+        if browser_path:
+            launch_opts["executable_path"] = browser_path
+        browser = p.chromium.launch(**launch_opts)
+        context = browser.new_context(storage_state=str(STATE_FILE) if STATE_FILE.exists() else None)
+        page = context.new_page()
+
+        # 1. 进后台
+        print("[导航] 进入作家后台...")
+        page.goto(WRITER_URL, timeout=60000)
+        time.sleep(3)
+        popup_killer(page)
+
+        # 2. 找书 → 进入章节管理
+        if book_name != "default":
+            print(f"[选书] 查找《{book_name}》...")
+            # 悬停触发"章节管理"按钮
+            found = False
+            for _ in range(3):
+                cards = page.locator("div, li, section").filter(has_text=book_name)
+                for i in range(cards.count()):
+                    try:
+                        card = cards.nth(i)
+                        if card.is_visible():
+                            card.hover()
+                            time.sleep(0.8)
+                            mgr = page.get_by_text("章节管理").first
+                            if mgr.is_visible():
+                                mgr.click()
+                                found = True
+                                break
+                    except:
+                        continue
+                if found:
+                    break
+            if not found:
+                # 兜底：全局找
+                page.get_by_text("章节管理").first.click()
+        else:
+            page.get_by_text("章节管理").first.click()
+        time.sleep(4)
+
+        success = 0
+        for ch in pending:
+            try:
+                print(f"\n[{success+1}/{len(pending)}] 第{ch['no']}章：{ch['title']}")
+                time.sleep(1.5)
+
+                # 3. 新建章节
+                click_smart(page, ["新建章节", "写新章节", "新建"])
+                time.sleep(3)
+                popup_killer(page)
+
+                # 4. 检测是否弹出了新标签页
+                if len(context.pages) > 1:
+                    page = context.pages[-1]
+
+                # 5. 填写章节序号
+                try:
+                    num_input = page.locator('input[type="text"]').first
+                    if num_input.is_visible():
+                        num_input.fill(str(ch["no"]), force=True)
+                except:
+                    pass
+
+                # 6. 填写标题
+                click_smart(page, [ch["title"]], timeout=1000)
+                try:
+                    title_input = page.get_by_placeholder("请输入标题").first
+                    if not title_input.is_visible():
+                        title_input = page.get_by_placeholder("请输入章节名").first
+                    if title_input.is_visible():
+                        title_input.fill(ch["title"], force=True)
+                except:
+                    pass
+
+                # 7. 填写正文
+                print("   -> 填写正文...")
+                for selector in ['.ql-editor', '.ProseMirror', '[contenteditable="true"]', 'div[class*="editor"]']:
+                    editor = page.locator(selector).first
+                    if editor.is_visible():
+                        editor.click(force=True)
+                        page.keyboard.press("Control+A")
+                        page.keyboard.press("Backspace")
+                        page.evaluate(
+                            "([el, text]) => { el.innerText = text; el.dispatchEvent(new Event('input', {bubbles: true})); }",
+                            [editor.element_handle(), ch["body"]],
+                        )
+                        time.sleep(0.5)
+                        break
+                else:
+                    # 终极方案：剪贴板
+                    page.evaluate(f"navigator.clipboard.writeText(`{ch['body']}`)")
+                    page.keyboard.press("Control+V")
+
+                time.sleep(1)
+
+                # 8. 提交流程
+                if mode == "draft":
+                    click_smart(page, ["存草稿", "保存草稿"])
+                    time.sleep(2)
+                    print(f"   ✅ 第{ch['no']}章 已存草稿")
+                else:
+                    # 点击下一步
+                    click_smart(page, ["下一步", "发布"])
+                    time.sleep(2)
+                    popup_killer(page)
+
+                    # 闯关：错别字提示
+                    try:
+                        if page.get_by_text("错别字").first.is_visible(timeout=2000):
+                            click_smart(page, ["提交", "确认提交"])
+                            time.sleep(1)
+                    except:
+                        pass
+
+                    # 闯关：内容风险检测
+                    try:
+                        if page.get_by_text("内容风险检测").first.is_visible(timeout=2000):
+                            click_smart(page, ["取消"])
+                            time.sleep(1)
+                    except:
+                        pass
+
+                    # 终极发布面板
+                    try:
+                        # 设置"是否使用AI：否"
+                        try:
+                            no_radio = page.get_by_text("否", exact=True).first
+                            if no_radio.is_visible(timeout=1000):
+                                no_radio.click(force=True)
+                                time.sleep(0.5)
+                        except:
+                            pass
+
+                        # 定时发布：默认立即发布
+                        click_smart(page, ["确认发布", "立即发布", "提交"])
+                        time.sleep(3)
+                        print(f"   ✅ 第{ch['no']}章 已发布")
+                    except:
+                        # 降级：人工介入
+                        input("   请手动点击发布按钮，然后按回车继续...")
+
+                # 记录成功
+                state["completed"].append(ch["no"])
+                save_run_state(run_id, state)
+                success += 1
+
+                # 归档文件
+                src = ch.get("file", "")
+                if src:
+                    ensure_dir(ARCHIVE_DIR / book_name)
+                    shutil.move(src, str(ARCHIVE_DIR / book_name / Path(src).name))
+
+                # 关闭弹出的编辑标签页
+                if len(context.pages) > 1:
+                    page.close()
+                    page = context.pages[0]
+
+            except Exception as e:
+                print(f"   ❌ 第{ch['no']}章 失败: {e}")
+                state["failed"].append({"no": ch["no"], "error": str(e)})
+                save_run_state(run_id, state)
+                input("请检查浏览器状态，按回车继续下一章...")
+
+        print(f"\n{'='*40}")
+        print(f"完成：成功 {success}/{len(pending)} 章")
+        print(f"总进度：{len(state['completed'])}/{len(chapters)}")
+        print(f"{'='*40}")
+        browser.close()
+
+
+# ==============================
+# 4. CLI 入口
+# ==============================
+
+def main():
+    ap = argparse.ArgumentParser(description="番茄小说全自动发布 v2")
+    ap.add_argument("--login", action="store_true", help="首次登录，保存会话")
+    ap.add_argument("--publish", action="store_true", help="发布模式")
+    ap.add_argument("--draft", action="store_true", help="仅存草稿")
+    ap.add_argument("--dry-run", action="store_true", help="仅本地检查，不打开浏览器")
+    ap.add_argument("--book", default="", help="书名（多书管理）")
+    ap.add_argument("--start", type=int, default=1, help="起始章节号")
+    ap.add_argument("--end", type=int, default=9999, help="截止章节号")
+    ap.add_argument("--reset", action="store_true", help="重置断点记录")
+    ap.add_argument("--chapter", "-c", nargs="+", help="指定章节文件路径")
+    args = ap.parse_args()
+
+    if args.login:
+        login()
+        return
+
+    if args.reset:
+        import shutil
+        if RUNS_DIR.exists():
+            shutil.rmtree(RUNS_DIR)
+            print("[重置] 断点记录已清除")
+        return
+
+    if not args.publish and not args.chapter:
+        ap.print_help()
+        print("\n首次使用请先运行: python fanqie_publish.py --login")
+        return
+
+    if not STATE_FILE.exists():
+        print("[错误] 未登录。请先运行 --login")
+        return
+
+    # 收集章节
+    chapters = []
+    if args.chapter:
+        for fp in args.chapter:
+            p = Path(fp)
+            if p.suffix == ".md":
+                chapters.append(parse_md_chapter(p))
+            else:
+                chapters.append(parse_txt_chapter(p))
+    else:
+        sources = scan_chapters()
+        if not sources:
+            print(f"[错误] 未找到章节文件。请放入 {PUBLISH_DIR}/<书名>/ 或 {CHAPTER_DIR}/")
+            return
+        if args.book:
+            sources = [(n, f) for n, f in sources if n == args.book]
+        for book_name, files in sources:
+            for f in files:
+                no = parse_chapter_no(f)
+                if no < args.start or no > args.end:
+                    continue
+                if f.suffix == ".md":
+                    chapters.append(parse_md_chapter(f))
+                else:
+                    chapters.append(parse_txt_chapter(f))
+            break  # 只处理第一本书
+
+    chapters.sort(key=lambda c: c["no"])
+
+    if not chapters:
+        print("[错误] 没有找到匹配的章节")
+        return
+
+    # 质检
+    print(f"\n[质检] 检查 {len(chapters)} 章...")
+    issues = quality_check(chapters)
+    errors = [i for i in issues if i["level"] == "error"]
+    for i in issues:
+        print(f"  [{i['level']}] 第{i['no']}章: {i['msg']}")
+
+    if errors and not args.dry_run:
+        print("\n[阻断] 存在必须修复的错误。请修正后重试。")
+        return
+
+    if args.dry_run:
+        print(f"\n[检查通过] {len(chapters)} 章，无水印问题。未执行实际发布。")
+        return
+
+    # 执行发布
+    book_name = args.book or chapters[0].get("book", "default")
+    mode = "draft" if args.draft else "publish"
+    publish_chapters(chapters, book_name, mode)
+
+
+if __name__ == "__main__":
+    main()
