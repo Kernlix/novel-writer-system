@@ -47,11 +47,10 @@
 | reviewer | **审查官** | dispatcher | 🔍 | 一致性检查、质量评估、逻辑校验 | Agent(prompt=...) |
 | character-designer | **角色设计师** | dispatcher | 👤 | 角色创建、关系网、成长弧光 | Agent(prompt=...) |
 | plot-architect | **剧情架构师** | dispatcher | 📖 | 大纲规划、分卷、情节设计 | Agent(prompt=...) |
-| worldbuilding-architect | **世界观架构师** | user | 🌍 | 世界观设定、地理/势力/力量体系设计 | `/novel:world` |
+| story-setup | **创作设定** | user | 🏗️ | 世界观+角色+剧情一体化设定 | `/novel:world /novel:characters /novel:outline` |
 | polish | **润色师** | user | 🎨 | 去AI化、文风统一、语言优化 | `/novel:anti-ai` |
 | short-story | **短故事专项** | user | ⚡ | 中短篇快速创作→投稿全流程 | `/novel:short` |
 | era-consistency | **时代审查官** | user | 🏛️ | 技术/知识合理性审查 | `/novel:era` |
-| story-setup | **创作设定** | user | 🎨 | 角色/剧情/世界观一体化设定 | `/novel:characters /novel:outline /novel:world` |
 | setting-qa | **设定质检员** | user | 🔬 | 设定逻辑质检、矛盾发现、合理性验证 | `/novel:qa` |
 
 ### 组件注册表
@@ -60,8 +59,8 @@
 
 | 组件类型 | 注册表位置 | 数量 |
 |:---------|:-----------|:----:|
-| 智能体 (Agent) | `agents/REGISTRY.md` | 11 |
-| 技能 (Skill) | `skills/REGISTRY.md` | 37 |
+| 智能体 (Agent) | `agents/REGISTRY.md` | 10 |
+| 技能 (Skill) | `skills/REGISTRY.md` | 33 |
 | 钩子 (Hook) | `hooks/REGISTRY.md` | 9 |
 
 新增组件时：创建文件 → 添加标准 frontmatter → 在对应 REGISTRY.md 注册。
@@ -90,8 +89,8 @@
 |:----|:----:|:---------|
 | 00-创作全流程 | 10 | 初始化→讨论→世界观→角色→大纲→写作→审查→润色→存档→短故事 |
 | 01-创作技巧 | 6 | 剧情引爆、解耦写作、Save the Cat、雪花法、风格学习、多智能体学习 |
-| 02-网文专项 | 6 | 金手指、钩子、爽点、投稿、趋势、悬疑写作 |
-| 03-质量审查 | 7 | 违禁词、一致性、去AI化、时代审查、漏洞检测、质量门禁、设定质检 |
+| 02-网文专项 | 4 | 金手指、投稿、趋势、悬疑写作 |
+| 03-质量审查 | 5 | 一致性、时代审查、漏洞检测、设定质检 |
 | 04-工具集成 | 7 | 知识图谱、记忆系统、Obsidian同步、进度追踪、RAG搜索、DOCX发布、番茄发布 |
 | 05-系统机制 | 1 | 技能自改进 |
 
@@ -99,10 +98,9 @@
 
 **通用知识（灵境系统内 `knowledge/`）——所有小说共享：**
 - `knowledge/punctuation-guide.md` — 标点符号用法规范
-- `knowledge/writing-craft.md` — 基础写作技巧
-- `knowledge/writing-craft-enhanced.md` — 进阶写作技巧
-- `knowledge/knowledge-architecture.md` — 知识库架构说明
-- `knowledge/knowledge-classification.md` — 知识自动分类规则
+- `knowledge/writing-craft-enhanced.md` — 写作技法大全（含基础+进阶）
+- `knowledge/genre-templates.md` — 类型小说模板
+- `knowledge/knowledge-architecture-and-classification.md` — 知识库架构与分类规则
 - `knowledge/learning/` — **灵境学习系统（持续进化）**
   - `writing-craft/` — 从优秀作品学习的写作技法
   - `humor/` — 幽默风格技巧
@@ -115,7 +113,7 @@
 - `agents/knowledge/reviewer/review-standards.md` — 审查官：审查标准、错误拦截
 - `agents/knowledge/character-designer/character-evolution.md` — 角色设计师：角色状态管理
 - `agents/knowledge/plot-architect/arc-management.md` — 剧情架构师：伏笔管理、节奏控制
-- `agents/knowledge/worldbuilding-architect/world-rules.md` — 世界观架构师：设定一致性
+- `agents/knowledge/story-setup/setup-standards.md` — 创作设定：角色/剧情/世界观协调指南（已整合原世界观架构师知识）
 - `agents/knowledge/polish/ai-detection-signals.md` — 润色师：AI痕迹检测与去AI化策略
 - `agents/knowledge/short-story/short-story-craft.md` — 短故事专项：短故事结构与平台适配
 - `agents/knowledge/era-consistency/era-check-standards.md` — 时代审查官：技术发展分级与审查标准
@@ -141,14 +139,14 @@
 | 换一本小说还能用？ | → 灵境系统 `knowledge/` |
 | 只绑定当前小说剧情/角色？ | → 当前小说项目对应目录 |
 
-详见 `knowledge/knowledge-classification.md`
+详见 `knowledge/knowledge-architecture-and-classification.md`
 
 ## 推荐设置
 > 思考模式：默认开启（保证准确度）；**仅输出小说正文时关闭**。
 
 ## 强制多 Agent 协作规则
 
-每次章节创作必须按以下流程分派任务，**总指挥（本智能体）禁止独自完成所有步骤**：
+每次章节创作必须按以下流程分派任务（详参 agents/orchestrator-agent.md）：
 
 ```
 pre-write（总指挥自己做）

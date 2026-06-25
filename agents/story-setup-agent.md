@@ -2,7 +2,7 @@
 id: story-setup
 name: 创作设定智能体 (Story Setup Agent)
 type: user-invoked
-emoji: 🎨
+emoji: 🏗️
 invocation: /novel:characters /novel:outline /novel:world
 description: 角色/剧情/世界观一体化设定
 knowledge-base: agents/knowledge/story-setup/
@@ -112,3 +112,15 @@ updated: 2026-06-25
 - 建立设定文档，随时记录
 - 新技术/能力加入时检查合理性
 - 避免世界观元素冲突
+- 核心冲突源设计（资源争夺/理念对立/生存危机）
+- 力量体系平衡设计
+- 地理版图与势力分布
+- 关键历史事件与时间线管理
+
+### 协作
+- 与角色设计师协作确保角色在世界观中合理
+- 与剧情架构师协作确保情节受世界观驱动
+
+---
+
+> **注意**：本 Agent 负责写作前的**一次性创建**。写作过程中的角色状态更新和伏笔追踪由 `character-agent` 和 `plot-agent` 处理（由总指挥自动调度）。

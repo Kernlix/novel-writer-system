@@ -8,7 +8,7 @@ updated: 2026-06-25
 
 # 智能体注册表 (Agent Registry)
 
-> 总计：11 个智能体（5 个 orchestrator-dispatched，6 个 user-invoked）
+> 总计：10 个智能体（5 个 orchestrator-dispatched，5 个 user-invoked）
 
 ## 注册表
 
@@ -19,12 +19,11 @@ updated: 2026-06-25
 | reviewer | 审查官智能体 | orchestrator-dispatched | 🔍 | Agent(prompt=...) | agents/knowledge/reviewer/ |
 | character-designer | 角色设计师智能体 | orchestrator-dispatched | 👤 | Agent(prompt=...) | agents/knowledge/character-designer/ |
 | plot-architect | 剧情架构师智能体 | orchestrator-dispatched | 📖 | Agent(prompt=...) | agents/knowledge/plot-architect/ |
-| worldbuilding-architect | 世界观架构师智能体 | user-invoked | 🌍 | /novel:world | agents/knowledge/worldbuilding-architect/ |
 | polish | 润色师智能体 | user-invoked | 🎨 | /novel:anti-ai | agents/knowledge/polish/ |
 | short-story | 短故事专项智能体 | user-invoked | ⚡ | /novel:short | agents/knowledge/short-story/ |
 | era-consistency | 时代背景审查官智能体 | user-invoked | 🏛️ | /novel:era | agents/knowledge/era-consistency/ |
 | setting-qa | 设定质检员智能体 | user-invoked | 🔬 | /novel:qa | agents/knowledge/setting-qa/ |
-| story-setup | 创作设定智能体 | user-invoked | 🎨 | /novel:characters /novel:outline /novel:world | agents/knowledge/story-setup/ |
+| story-setup | 创作设定智能体 | user-invoked | 🏗️ | /novel:world /novel:characters /novel:outline | agents/knowledge/story-setup/ |
 
 ## 类型说明
 

@@ -19,7 +19,7 @@ description: 创建新小说项目或继续已有作品
 ### 继续已有项目（本项目当前模式）
 1. 确认项目目录：`小说项目/转生深渊领主，我靠种田苟成邪神/`
 2. 加载项目记忆：检查 CLAUDE.md 中的项目状态
-3. 加载最新进度：检查 `.story-system/archive_*.md` + 章节数
+3. 加载最新进度：检查 `.story-system/chapters/` 下章节跟踪文件数
 4. 恢复写作上下文
 
 ### 新建项目
@@ -32,7 +32,7 @@ description: 创建新小说项目或继续已有作品
    - `项目名/设定集/`
    - `项目名/章节摘要/`
    - `项目名/.story-system/`
-4. 初始化 MASTER_SETTING.md（填写题材、调性、节奏约束）
+4. 初始化项目设定文档（题材、调性、节奏约束）
 5. 创建第一份存档
 
 ## 输出
@@ -42,5 +42,3 @@ description: 创建新小说项目或继续已有作品
 
 ## 参考路径（当前项目）
 - `CLAUDE.md` — 项目配置与行为规则
-- `.story-system/MASTER_SETTING.md` — 题材路由
-- `.story-system/archive_*.md` — 进度存档

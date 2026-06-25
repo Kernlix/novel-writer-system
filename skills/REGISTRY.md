@@ -8,7 +8,7 @@ updated: 2026-06-25
 
 # 技能注册表 (Skills Registry)
 
-> 总计：37 个技能
+> 总计：33 个技能
 
 ## 00-创作全流程（10个）
 
@@ -36,27 +36,22 @@ updated: 2026-06-25
 | style-learning | 风格学习 Skill | 01-创作技巧/style-learning.md |
 | multi-agent-learning | 多智能体学习 Skill | 01-创作技巧/multi-agent-learning.md |
 
-## 02-网文专项（6个）
+## 02-网文专项（4个）
 
 | id | 名称 | 文件 |
 |:---|:-----|:-----|
 | webnovel-goldfinger | 金手指设计 Skill | 02-网文专项/webnovel-goldfinger.md |
-| webnovel-hook | 黄金三章/钩子 Skill | 02-网文专项/webnovel-hook.md |
-| webnovel-shuang | 爽点设计 Skill | 02-网文专项/webnovel-shuang.md |
 | webnovel-submit | 投稿/平台适配 Skill | 02-网文专项/webnovel-submit.md |
 | webnovel-trend | 扫榜/趋势分析 Skill | 02-网文专项/webnovel-trend.md |
 | webnovel-suspense | 悬疑惊悚写作指南 Skill | 02-网文专项/webnovel-suspense.md |
 
-## 03-质量审查（7个）
+## 03-质量审查（5个）
 
 | id | 名称 | 命令 | 文件 |
 |:---|:-----|:-----|:-----|
-| banned-words | 违禁词检查 Skill | | 03-质量审查/banned-words.md |
 | consistency-check | 一致性检查 Skill | | 03-质量审查/consistency-check.md |
-| deslop-check | 去AI化审查 Skill | | 03-质量审查/deslop-check.md |
 | skill-era-consistency | 时代一致性审查 Skill | | 03-质量审查/era-consistency.md |
 | plot-hole-check | 漏洞检测 Skill | | 03-质量审查/plot-hole-check.md |
-| quality-gates | 质量门禁 Skill | | 03-质量审查/quality-gates.md |
 | skill-setting-qa | 设定质检 Skill | /novel:qa | 03-质量审查/setting-qa.md |
 
 ## 04-工具集成（7个）
