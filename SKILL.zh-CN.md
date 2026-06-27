@@ -18,7 +18,7 @@
 
 | 智能体 | 职责 | 调用方式 |
 |:--|:--|:--|
-| **总指挥** | 任务分发、流程编排、质量把关 | 自动激活 |
+| **负责人** | 任务分发、流程编排、质量把关 | 自动激活 |
 | **世界观架构师** | 世界观设定、地理/势力/力量体系设计 | `/novel:world` |
 | **角色设计师** | 角色创建、关系网、成长弧光 | `/novel:characters` |
 | **剧情架构师** | 大纲规划、分卷、情节设计 | `/novel:outline` |
@@ -31,50 +31,48 @@
 ### 创作全流程
 | 文件 | 说明 |
 |:--|:--|
-| `skills/00-创作全流程/novel-setup.md` | 项目初始化 |
-| `skills/00-创作全流程/novel-discuss.md` | 创作讨论 |
-| `skills/00-创作全流程/worldbuilding.md` | 世界观搭建 |
-| `skills/00-创作全流程/character-design.md` | 角色设计 |
-| `skills/00-创作全流程/plot-outline.md` | 大纲规划 |
-| `skills/00-创作全流程/chapter-writing.md` | 章节写作 |
-| `skills/00-创作全流程/chapter-review.md` | 章节审查 |
-| `skills/00-创作全流程/anti-ai-polish.md` | 去AI化润色 |
-| `skills/00-创作全流程/archive.md` | 存档与知识更新 |
+| `company/00-创作全流程/novel-setup.md` | 项目初始化 |
+| `company/00-创作全流程/novel-discuss.md` | 创作讨论 |
+| `company/00-创作全流程/worldbuilding.md` | 世界观搭建 |
+| `company/00-创作全流程/character-design.md` | 角色设计 |
+| `company/00-创作全流程/plot-outline.md` | 大纲规划 |
+| `company/00-创作全流程/chapter-writing.md` | 章节写作 |
+| `company/00-创作全流程/chapter-review.md` | 章节审查 |
+| `company/00-创作全流程/anti-ai-polish.md` | 去AI化润色 |
+| `company/00-创作全流程/archive.md` | 存档与知识更新 |
 
 ### 创作技巧
 | 文件 | 说明 |
 |:--|:--|
-| `skills/01-创作技巧/booming-plot.md` | 剧情引爆 |
-| `skills/01-创作技巧/snowflake-method.md` | 雪花法大纲 |
-| `skills/01-创作技巧/save-the-cat.md` | Save the Cat 节拍表 |
-| `skills/01-创作技巧/decoupled-writing.md` | 解耦写作法 |
-| `skills/01-创作技巧/style-learning.md` | 风格学习 |
+| `company/01-创作技巧/booming-plot.md` | 剧情引爆 |
+| `company/01-创作技巧/snowflake-method.md` | 雪花法大纲 |
+| `company/01-创作技巧/save-the-cat.md` | Save the Cat 节拍表 |
+| `company/01-创作技巧/decoupled-writing.md` | 解耦写作法 |
+| `company/01-创作技巧/style-learning.md` | 风格学习 |
 
 ### 网文专项
 | 文件 | 说明 |
 |:--|:--|
-| `skills/02-网文专项/webnovel-hook.md` | 黄金三章/钩子 |
-| `skills/02-网文专项/webnovel-shuang.md` | 爽点设计 |
-| `skills/02-网文专项/webnovel-trend.md` | 扫榜/趋势分析 |
-| `skills/02-网文专项/webnovel-goldfinger.md` | 金手指设计 |
-| `skills/02-网文专项/webnovel-submit.md` | 投稿/平台适配 |
+| `company/02-网文专项/webnovel-trend.md` | 扫榜/趋势分析 |
+| `company/02-网文专项/webnovel-goldfinger.md` | 金手指设计 |
+| `company/02-网文专项/webnovel-submit.md` | 投稿/平台适配 |
 
 ### 质量审查
 | 文件 | 说明 |
 |:--|:--|
-| `skills/03-质量审查/consistency-check.md` | 一致性检查 |
-| `skills/03-质量审查/quality-gates.md` | 质量门禁 |
-| `skills/03-质量审查/deslop-check.md` | 去AI化审查 |
-| `skills/03-质量审查/banned-words.md` | 违禁词检查 |
-| `skills/03-质量审查/plot-hole-check.md` | 漏洞检测 |
+| `company/03-质量审查/consistency-check.md` | 一致性检查 |
+| `company/03-质量审查/quality-gates.md` | 质量门禁 |
+| `company/03-质量审查/deslop-check.md` | 去AI化审查 |
+| `company/03-质量审查/banned-words.md` | 违禁词检查 |
+| `company/03-质量审查/plot-hole-check.md` | 漏洞检测 |
 
 ### 工具集成
 | 文件 | 说明 |
 |:--|:--|
-| `skills/04-工具集成/knowledge-graph.md` | 知识图谱管理 |
-| `skills/04-工具集成/memory-system.md` | 记忆系统 |
-| `skills/04-工具集成/progress-track.md` | 进度追踪 |
-| `skills/04-工具集成/obsidian-sync.md` | Obsidian 同步 |
+| `company/04-工具集成/knowledge-graph.md` | 知识图谱管理 |
+| `company/04-工具集成/memory-system.md` | 记忆系统 |
+| `company/04-工具集成/progress-track.md` | 进度追踪 |
+| `company/04-工具集成/obsidian-sync.md` | Obsidian 同步 |
 
 ## 🔄 通用工作流
 

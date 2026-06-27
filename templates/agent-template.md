@@ -17,7 +17,7 @@ type: orchestrator-dispatched       # orchestrator-dispatched | user-invoked
 emoji: <emoji>                      # 单个表情符号
 invocation: <调用方式>              # Agent(prompt=...) 或 /novel:xxx
 description: <一行职责说明>          # 最多20字
-knowledge-base: agents/knowledge/<agent-id>/  # 对应知识库路径（或 none）
+knowledge-base: knowledge/<agent-id>/  # 对应知识库路径（或 none）
 created: <YYYY-MM-DD>
 updated: <YYYY-MM-DD>
 ---
@@ -51,6 +51,6 @@ updated: <YYYY-MM-DD>
 
 > **扩展说明：**
 > - 新建 Agent 后，在 `agents/REGISTRY.md` 注册表中添加一行
-> - 在 `agents/knowledge/` 下创建对应的知识库目录和初始文件
+> - 在 `knowledge/` 下创建对应的知识库目录和初始文件
 > - 在 CLAUDE.md 的智能体表格中补上行
 > - 如果 agent-type 是 user-invoked，还需在 skills/ 中创建对应的 Skill 文件

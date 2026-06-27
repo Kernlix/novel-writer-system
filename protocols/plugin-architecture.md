@@ -25,7 +25,7 @@ hooks:
   - post-write          # 写作后触发
   - pre-review          # 审查前触发
 dependencies:
-  - skills/03-质量审查/consistency-check.md
+  - company/review/skills/consistency-check.md
 ```
 
 ## 内建插件清单

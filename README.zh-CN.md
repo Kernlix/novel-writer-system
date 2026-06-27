@@ -1,6 +1,6 @@
 # 📚 灵境 · 小说创作智能体系统
 
-> **LingJing** — 集多智能体协作、模块化 Skills、知识图谱于一体的 AI 小说创作系统。
+> **LingJing** — 集部门多agents协作、模块化 Skills、知识图谱于一体的 AI 小说创作系统。
 
 整合 GitHub 上最优秀的开源小说写作项目精华，为你量身打造的统一创作工具箱。
 
@@ -12,7 +12,7 @@
 
 | 特性 | 说明 |
 |------|------|
-| 🧠 **多 Agent 协作** | 7 个专业智能体分工协作 |
+| 🧠 **部门多agents协作** | 7 个专业智能体分工协作 |
 | 🧩 **模块化 Skills** | 30+ 独立 skill 覆盖创作全流程 |
 | 📖 **双模式支持** | 长篇小说流水线 + 短篇快速创作 |
 | 🎭 **去AI化引擎** | 多层检测与润色，输出自然流畅 |
@@ -95,7 +95,7 @@ claude
 
 | 项目 | 许可证 | 贡献 |
 |------|--------|------|
-| [awesome-novel-skill](https://github.com/modoojunko/awesome-novel-skill) | GPL-3.0 | 多 Agent 协作工作流与记忆系统 |
+| [awesome-novel-skill](https://github.com/modoojunko/awesome-novel-skill) | GPL-3.0 | 部门多agents协作工作流与记忆系统 |
 | [tianming-skill](https://github.com/zy-zmc/tianming-skill) | CC BY-NC-SA 4.0 | 模块化提示词工程与质量门禁 |
 | [chinese-webnovel-skills](https://github.com/tance-mang/chinese-webnovel-skills) | MIT | 33 个网文 Skills 与平台适配 |
 | [claude-novel-skills](https://github.com/fnb666888/claude-novel-skills) | MIT | 解耦写作法与风格学习 |

@@ -18,9 +18,9 @@ description: 如何新增 Agent/Skill/Hook/知识库的完整流程
 1. **复制模板**：`templates/agent-template.md` → `agents/<agent-id>.md`
 2. **填写元数据**：参考已有 Agent 的 frontmatter 格式
 3. **决定类型**：
-   - `orchestrator-dispatched`：由总指挥通过 Agent 工具调用，不直接响应
+   - `orchestrator-dispatched`：由负责人通过 Agent 工具调用，不直接响应
    - `user-invoked`：用户通过 `/novel:xxx` 命令直接调用
-4. **创建知识库**：在 `agents/knowledge/<agent-id>/` 下创建初始知识库文件（可空，后续完善）
+4. **创建知识库**：在 `knowledge/<agent-id>/` 下创建初始知识库文件（可空，后续完善）
 5. **注册**：在 `agents/REGISTRY.md` 表格中添加一行
 6. **更新 CLAUDE.md**：
    - 智能体表格中补上行
@@ -86,8 +86,8 @@ description: 如何新增 Agent/Skill/Hook/知识库的完整流程
 
 ### Agent 专用知识
 
-放入 `agents/knowledge/<agent-id>/` 目录：
-- 放在 `agents/knowledge/` 下的知识库只在该 Agent 被调用时加载
+放入 `knowledge/<agent-id>/` 目录：
+- 放在 `knowledge/` 下的知识库只在该 Agent 被调用时加载
 - 一个 Agent 可以有多个知识库文件
 
 ### 小说专项知识

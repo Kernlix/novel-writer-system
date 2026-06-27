@@ -25,7 +25,7 @@
 
 | 智能体 | 类型 | emoji | 职责 | 调用方式 |
 |:-------|:-----|:------|:-----|:---------|
-| **总指挥** | dispatcher | 🧠 | 任务分发、流程编排、质量把关 | 自动激活 |
+| **负责人** | dispatcher | 🧠 | 任务分发、流程编排、质量把关 | 自动激活 |
 | **写手** | dispatcher | ✍️ | 正文写作、场景描写、对话 | Agent(prompt=...) |
 | **审查官** | dispatcher | 🔍 | 一致性检查、质量评估、逻辑校验 | Agent(prompt=...) |
 | **角色设计师** | dispatcher | 👤 | 角色创建、关系网、成长弧光 | Agent(prompt=...) |
@@ -39,46 +39,42 @@
 ## 📂 Skills 索引
 
 ### 创作全流程
-- skills/00-创作全流程/novel-setup.md — 项目初始化
-- skills/00-创作全流程/novel-discuss.md — 创作讨论
-- skills/00-创作全流程/short-story-quick.md — 🔥 短故事快速创作（参赛专用）
-- skills/00-创作全流程/worldbuilding.md — 世界观搭建
-- skills/00-创作全流程/character-design.md — 角色设计
-- skills/00-创作全流程/plot-outline.md — 大纲规划
-- skills/00-创作全流程/chapter-writing.md — 章节写作
-- skills/00-创作全流程/chapter-review.md — 章节审查
-- skills/00-创作全流程/anti-ai-polish.md — 去AI化润色
-- skills/00-创作全流程/archive.md — 存档与知识更新
+- company/manager/skills/novel-setup.md — 项目初始化
+- company/manager/skills/novel-discuss.md — 创作讨论
+- company/writing/skills/short-story-quick.md — 🔥 短故事快速创作（参赛专用）
+- company/writing/skills/worldbuilding.md — 世界观搭建
+- company/writing/skills/character-design.md — 角色设计
+- company/writing/skills/plot-outline.md — 大纲规划
+- company/writing/skills/chapter-writing.md — 章节写作
+- company/review/skills/chapter-review.md — 章节审查
+- company/review/skills/anti-ai-polish.md — 去AI化润色
+- company/manager/skills/archive.md — 存档与知识更新
 
 ### 创作技巧
-- skills/01-创作技巧/booming-plot.md — 剧情引爆
-- skills/01-创作技巧/snowflake-method.md — 雪花法大纲
-- skills/01-创作技巧/save-the-cat.md — Save the Cat 节拍表
-- skills/01-创作技巧/decoupled-writing.md — 解耦写作法
-- skills/01-创作技巧/style-learning.md — 风格学习
+- company/writing/skills/booming-plot.md — 剧情引爆
+- company/writing/skills/snowflake-method.md — 雪花法大纲
+- company/writing/skills/save-the-cat.md — Save the Cat 节拍表
+- company/writing/skills/decoupled-writing.md — 解耦写作法
+- company/learning/skills/style-learning.md — 风格学习
 
 ### 网文专项
-- skills/02-网文专项/webnovel-hook.md — 黄金三章/钩子
-- skills/02-网文专项/webnovel-shuang.md — 爽点设计
-- skills/02-网文专项/webnovel-suspense.md — 🔥 悬疑惊悚写作指南
-- skills/02-网文专项/webnovel-trend.md — 扫榜/趋势分析
-- skills/02-网文专项/webnovel-goldfinger.md — 金手指设计
-- skills/02-网文专项/webnovel-submit.md — 投稿/平台适配
+- company/writing/skills/webnovel-suspense.md — 🔥 悬疑惊悚写作指南
+- company/writing/skills/webnovel-trend.md — 扫榜/趋势分析
+- company/writing/skills/webnovel-goldfinger.md — 金手指设计
+- company/writing/skills/webnovel-submit.md — 投稿/平台适配
 
 ### 质量审查
-- skills/03-质量审查/consistency-check.md — 一致性检查
-- skills/03-质量审查/quality-gates.md — 质量门禁
-- skills/03-质量审查/deslop-check.md — 去AI化审查
-- skills/03-质量审查/banned-words.md — 违禁词检查
-- skills/03-质量审查/plot-hole-check.md — 漏洞检测
-- skills/03-质量审查/setting-qa.md — 🔬 设定质检
+- company/review/skills/consistency-check.md — 一致性检查
+- company/review/skills/banned-words.md — 违禁词检查
+- company/review/skills/plot-hole-check.md — 漏洞检测
+- company/review/skills/setting-qa.md — 🔬 设定质检
 
 ### 工具集成
-- skills/04-工具集成/knowledge-graph.md — 知识图谱管理
-- skills/04-工具集成/memory-system.md — 记忆系统
-- skills/04-工具集成/progress-track.md — 进度追踪
-- skills/04-工具集成/obsidian-sync.md — Obsidian 同步
-- skills/04-工具集成/docx-publish.md — 🔥 DOCX生成与投稿准备
+- company/manager/skills/knowledge-graph.md — 知识图谱管理
+- company/manager/skills/memory-system.md — 记忆系统
+- company/manager/skills/progress-track.md — 进度追踪
+- company/manager/skills/obsidian-sync.md — Obsidian 同步
+- company/writing/skills/docx-publish.md — 🔥 DOCX生成与投稿准备
 
 ## 🔄 通用工作流
 

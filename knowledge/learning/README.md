@@ -23,13 +23,13 @@ updatable: true
        │    Agent专用知识库    通用知识库
        │    (自我提升)        (跨作品复用)
        ▼
-   agents/knowledge/    knowledge/learning/
+   knowledge/    knowledge/learning/
    └── <agent>/learned/ └── <category>/
 ```
 
 | 层级 | 位置 | 用途 | 更新方式 |
 |:----|:-----|:-----|:---------|
-| Agent 专用 | `agents/knowledge/<agent>/learned/` | 各Agent从作品学到的技法+自我提升方案 | 通过 `/novel:learn` |
+| Agent 专用 | `knowledge/<agent>/learned/` | 各Agent从作品学到的技法+自我提升方案 | 通过 `/novel:learn` |
 | 通用 | `knowledge/learning/<category>/` | 跨作品可复用的通用写作技法 | 通过 `/novel:learn` 提升 |
 
 ## 学习类别
@@ -55,6 +55,11 @@ tags: [技法标签]
 learned-date: 2026-06-25
 improves: chapter-craft.md                     # 改进的是哪个核心知识文件
 improvement-type: technique-add                 # technique-add|technique-refine|perspective-new
+upgrade:                                        # [必填] 系统升级目标
+  - target: agents/writer-agent.md              # 要升级的系统文件
+    type: rule-add                              # rule-add|checklist-add|technique-add|workflow-step|field-add|dimension-add
+    location: "质量控制"                         # 在目标文件中的插入位置
+    content: "新增规则/检查项的具体内容"            # 要插入的内容
 ---
 
 # 技法名称
@@ -80,7 +85,7 @@ improvement-type: technique-add                 # technique-add|technique-refine
 ## 学习方式
 
 ### 方式一：快速分享（单一片段/技法）
-用户分享一段精彩片段 → 总指挥分析 → 分类 → 存入 `knowledge/learning/<category>/`
+用户分享一段精彩片段 → 负责人分析 → 分类 → 存入 `knowledge/learning/<category>/`
 
 ### 方式二：全面学习（完整作品）
 用户分享完整作品 → `/novel:learn` → 6个Agent并行分析→提炼→自我提升 → 分别存入各自主管的知识库
