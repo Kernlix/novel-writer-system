@@ -31,48 +31,25 @@
 ### 创作全流程
 | 文件 | 说明 |
 |:--|:--|
-| `company/manager/skills/novel-setup.md` | 项目初始化 |
-| `company/manager/skills/novel-discuss.md` | 创作讨论 |
-| `company/writing/skills/worldbuilding.md` | 世界观搭建 |
-| `company/writing/skills/character-design.md` | 角色设计 |
-| `company/writing/skills/plot-outline.md` | 大纲规划 |
-| `company/writing/skills/chapter-writing.md` | 章节写作 |
-| `company/review/skills/chapter-review.md` | 章节审查 |
-| `company/review/skills/anti-ai-polish.md` | 去AI化润色 |
-| `company/manager/skills/archive.md` | 存档与知识更新 |
+| `SUMMARY.md` | 命令/流程/规则速查 |
+| `company/process/chapter-creation.md` | 章节创作流程 |
+| `company/process/chapter-modify.md` | 章节修改流程 |
+| `knowledge/theory/lcm-rag-prompt-templates.md` | 提示词模板（5模板+5功能） |
 
-### 创作技巧
+### 检查清单
 | 文件 | 说明 |
 |:--|:--|
-| `company/writing/skills/booming-plot.md` | 剧情引爆 |
-| `company/writing/skills/snowflake-method.md` | 雪花法大纲 |
-| `company/writing/skills/save-the-cat.md` | Save the Cat 节拍表 |
-| `company/writing/skills/decoupled-writing.md` | 解耦写作法 |
-| `company/learning/skills/style-learning.md` | 风格学习 |
+| `knowledge/rules/common/dialogue-quality.md` | 对话质量检查 |
+| `knowledge/rules/common/scene-immersion.md` | 场景沉浸感检查 |
+| `knowledge/rules/common/power-relationship.md` | 权力关系检查 |
+| `knowledge/rules/common/self-check-quickref.md` | 写手自查速查 |
+| `knowledge/rules/novel/system-term-secrecy.md` | 系统术语保密规则 |
 
-### 网文专项
+### 本能学习
 | 文件 | 说明 |
 |:--|:--|
-| `company/writing/skills/webnovel-trend.md` | 扫榜/趋势分析 |
-| `company/writing/skills/webnovel-goldfinger.md` | 金手指设计 |
-| `company/writing/skills/webnovel-submit.md` | 投稿/平台适配 |
-
-### 质量审查
-| 文件 | 说明 |
-|:--|:--|
-| `company/review/skills/consistency-check.md` | 一致性检查 |
-| `company/review/skills/quality-gates.md` | 质量门禁 |
-| `company/review/skills/deslop-check.md` | 去AI化审查 |
-| `company/review/skills/banned-words.md` | 违禁词检查 |
-| `company/review/skills/plot-hole-check.md` | 漏洞检测 |
-
-### 工具集成
-| 文件 | 说明 |
-|:--|:--|
-| `company/manager/skills/knowledge-graph.md` | 知识图谱管理 |
-| `company/manager/skills/memory-system.md` | 记忆系统 |
-| `company/manager/skills/progress-track.md` | 进度追踪 |
-| `company/manager/skills/obsidian-sync.md` | Obsidian 同步 |
+| `knowledge/learning/instinct-learning-system.md` | 本能学习系统设计 |
+| `knowledge/instincts/REGISTRY.md` | 本能注册总表 |
 
 ## 🔄 通用工作流
 

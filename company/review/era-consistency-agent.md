@@ -70,6 +70,6 @@ updated: 2026-06-25
 - [ ] 🟢 级标注确认了不需要修改？
 
 ## 参考路径
-- `.era-knowledge/世界技术基线.md` — 世界原生技术清单
-- `.era-knowledge/穿越者知识可用性表.md` — 主角知识分级
-- `.era-knowledge/历史类比速查.md` — 科技史对照
+- `knowledge/era/世界技术基线.md` — 世界原生技术清单
+- `knowledge/era/穿越者知识可用性表.md` — 主角知识分级
+- `knowledge/era/历史类比速查.md` — 科技史对照

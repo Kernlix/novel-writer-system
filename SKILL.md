@@ -5,11 +5,10 @@
 ## 📋 当前项目
 
 **转生深渊领主，我靠种田苟成邪神**
-- 章节：`转生深渊领主，我靠种田苟成邪神/章节/`（已写 55 章）
-- 角色：`转生深渊领主，我靠种田苟成邪神/人物/`
-- 大纲：`转生深渊领主，我靠种田苟成邪神/大纲/`
-- 设定：`转生深渊领主，我靠种田苟成邪神/设定集/`、`转生深渊领主，我靠种田苟成邪神/系统设定框架.md`
-- 设计文档：`转生深渊领主，我靠种田苟成邪神/novel_design_document.md`
+- 章节：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\章节\`（已写 82 章）
+- 角色：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\人物\`
+- 大纲：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\大纲\`
+- 设定：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\设定集\`
 
 ### 快速启动
 在 Claude Code 中输入以下任一命令进入工作流：
@@ -39,16 +38,10 @@
 ## 📂 Skills 索引
 
 ### 创作全流程
-- company/manager/skills/novel-setup.md — 项目初始化
-- company/manager/skills/novel-discuss.md — 创作讨论
-- company/writing/skills/short-story-quick.md — 🔥 短故事快速创作（参赛专用）
-- company/writing/skills/worldbuilding.md — 世界观搭建
-- company/writing/skills/character-design.md — 角色设计
-- company/writing/skills/plot-outline.md — 大纲规划
-- company/writing/skills/chapter-writing.md — 章节写作
-- company/review/skills/chapter-review.md — 章节审查
-- company/review/skills/anti-ai-polish.md — 去AI化润色
-- company/manager/skills/archive.md — 存档与知识更新
+- `company/process/chapter-creation.md` — 章节创作流程
+- `company/process/chapter-modify.md` — 章节修改流程
+- `SUMMARY.md` — 命令/流程/规则速查
+- `knowledge/theory/lcm-rag-prompt-templates.md` — 提示词模板（5模板+5功能）
 
 ### 创作技巧
 - company/writing/skills/booming-plot.md — 剧情引爆
