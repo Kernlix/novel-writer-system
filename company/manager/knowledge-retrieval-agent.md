@@ -100,7 +100,7 @@ lcm-rag "第27章·王城对峙" --caller writer
 # 方式1：直接调用 volume_mgr.py（推荐——一次调用同时查RAG+LCM）
 #   写手/角色/剧情调用（仅RAG）：
 PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题" --caller writer
-#   审查官调用（RAG+LCM摘要，默认summary模式，前200字）：
+#   审查官调用（RAG+LCM摘要，默认summary模式，前300字）：
 PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题" --caller reviewer
 #   审查官需要完整会话时（需明确指定--lcm-mode full）：
 PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题" --caller reviewer --lcm-mode full

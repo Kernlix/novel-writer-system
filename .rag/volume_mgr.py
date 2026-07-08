@@ -268,7 +268,7 @@ def lcm_rag_coquery(question: str, n_results: int = 5, caller: str = "manager", 
                 "writer" / "character-designer" / "plot-architect" → 仅返回RAG
                 "reviewer" / "manager" / (其他) → 返回RAG+LCM
         lcm_mode: LCM 返回粒度
-                "summary" (默认): LCM 结果只保留前 200 字摘要，不返回完整对话
+                "summary" (默认): LCM 结果只保留前 300 字摘要，不返回完整对话
                 "full": 保留完整 LCM 匹配内容（需明确指定才开启）
     """
     result = {
@@ -312,7 +312,7 @@ def lcm_rag_coquery(question: str, n_results: int = 5, caller: str = "manager", 
                     "kind": kind,
                     "volume": vid,
                     "source": source,
-                    "content_snippet": item.get("document", "")[:200],
+                    "content_snippet": item.get("document", "")[:300],
                     "score": item.get("distance", 0),
                 })
     except Exception as e:
@@ -322,16 +322,16 @@ def lcm_rag_coquery(question: str, n_results: int = 5, caller: str = "manager", 
     if allow_lcm:
         try:
             lcm_results = search_all_volumes(question, limit_per_vol=3)
-            # summary 模式：截断 LCM 匹配内容到 200 字摘要
+            # summary 模式：截断 LCM 匹配内容到 300 字摘要
             if lcm_mode == "summary":
                 for r in lcm_results:
                     match = r.get("match", {})
                     if isinstance(match, dict):
                         for k, v in match.items():
-                            if isinstance(v, str) and len(v) > 200:
-                                match[k] = v[:200] + "..."
-                    elif isinstance(match, str) and len(match) > 200:
-                        r["match"] = match[:200] + "..."
+                            if isinstance(v, str) and len(v) > 300:
+                                match[k] = v[:300] + "..."
+                    elif isinstance(match, str) and len(match) > 300:
+                        r["match"] = match[:300] + "..."
             result["lcm"] = lcm_results
         except Exception as e:
             result["lcm_error"] = str(e)
@@ -446,7 +446,7 @@ def cmd_coquery(question: str, caller: str = "manager", lcm_mode: str = "summary
     print("━" * 50)
     if result["lcm"]:
         for r in result["lcm"][:5]:
-            print(f"  [{r.get('volume', '?')}] {str(r.get('match', ''))[:200]}")
+            print(f"  [{r.get('volume', '?')}] {str(r.get('match', ''))[:300]}")
             print()
     else:
         print("  (无结果，首次使用本卷则正常)")
@@ -466,7 +466,7 @@ def main():
                     choices=["manager", "reviewer", "writer", "character-designer", "plot-architect"],
                     help="调用方身份（决定LCM是否可访问，默认manager可查全部）")
     ap.add_argument("--lcm-mode", default="summary", choices=["summary", "full"],
-                    help="LCM返回粒度：summary=200字摘要(默认)，full=完整内容")
+                    help="LCM返回粒度：summary=300字摘要(默认)，full=完整内容")
     args = ap.parse_args()
 
     if args.action == "status":

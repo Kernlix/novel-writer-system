@@ -11,7 +11,7 @@ updated: 2026-07-08
 
 | 文件 | 适用场景 |
 |:----|:---------|
-| `common/dialogue-quality.md` | 所有章节对话质量检查 |
+| `common/dialogue-quality.md` | 所有章节对话质量检查（6项→8项） |
 | `common/scene-immersion.md` | 室内/外场景沉浸感检查 |
 | `common/power-relationship.md` | 领主与下属的权力关系检查 |
 | `common/self-check-quickref.md` | 写手动笔前后自查速查 |
