@@ -9,6 +9,20 @@ updated: 2026-06-25
 # 📚 知识图书馆
 
 > 灵境AI公司的统一知识库。按知识领域分区，各部门Agent可共享阅读。
+> 参考 ECC knowledge-ops 的六层知识架构设计。
+
+## 知识分层架构
+
+| 层 | 名称 | 存放内容 | 说明 |
+|:-:|:----|:---------|:-----|
+| ① | **活跃态** | `大纲/伏笔追踪.md`、`章节/` | 创作中的活跃状态，当前章节、待回收伏笔 |
+| ② | **快速记忆** | `memory` 工具 | 跨会话快速上下文（用户偏好、工具配置） |
+| ③ | **语义检索** | `.rag/` ChromaDB | 向量库，全文语义搜索 |
+| ④ | **知识库** | `knowledge/` | 精选持久知识——通用写作技法、审核标准 |
+| ⑤ | **外部存储** | `.rag/lcm.db` | 会话历史持久化 |
+| ⑥ | **项目存档** | `小说项目/` | 小说原文、角色档案、设定集（非系统知识） |
+
+> ⚠️ **分层原则：** 活跃态内容不在知识库重复存档；知识库只存"换了小说还用得上"的通用知识。小说专项内容放入项目目录。
 
 ## 索引
 
@@ -75,8 +89,24 @@ updated: 2026-06-25
 | 子目录 | 说明 |
 |:-------|:------|
 | `learning/character-design/` | 从作品学习的角色设计技法 |
-| `learning/plot-design/` | 情节设计技法 |
+| `learning/README.md` | 学习系统总览（含本能模型说明） |
+| `learning/instinct-learning-system.md` | 本能学习系统完整文档 |
 | `learning/writing-craft/` | 写作技法 |
-| `learning/writing-craft/lingjing-v2-experience.md` | 灵境系统第2卷创作经验沉淀（6条核心经验，含对话/场景/标点/权力关系/流程/LCM权限） |
+| `learning/writing-craft/lingjing-v2-experience.md` | 灵境系统第2卷创作经验沉淀（6条核心经验） |
 | `learning/humor/` | 幽默风格技巧 |
 | `learning/foreshadowing/` | 伏笔设定技法 |
+
+### 🧬 本能库 (instincts/)
+| 子目录 | 说明 |
+|:-------|:------|
+| `instincts/REGISTRY.md` | 本能注册总表 |
+| `instincts/project/` | 小说专项本能 |
+| `instincts/global/` | 通用本能 |
+| `instincts/clusters/` | 本能聚类 |
+
+### 📋 规则库 (rules/)
+| 子目录 | 说明 |
+|:-------|:------|
+| `rules/REGISTRY.md` | 规则索引总表 |
+| `rules/common/` | 通用规则（对话/场景/权力关系/自查） |
+| `rules/novel/` | 小说专项规则（系统术语保密） |

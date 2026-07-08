@@ -1,13 +1,45 @@
 # 📚 学习部门 (Learning Department)
 
 ## 部门使命
-持续提升整个系统的创作能力。通过外部学习和内部分析形成知识→系统升级的闭环。
+持续提升整个系统的创作能力。通过**本能积累→聚类→进化**的三级学习管道，让每一次创作和审查都自然地沉淀为系统能力。
+
+## 核心架构
+
+```
+创作/审查中发现模式
+    │
+    ▼
+本能(Instinct)     ← 原子级，10-20行，一条规则
+    │
+    ▼ (confidence ≥ 0.7)
+聚类(Cluster)       ← 多本能归组
+    │
+    ▼ (≥3条成熟本能)
+进化(Evolve)       ← 转为正式 knowledge/ 文件
+    │
+    ▼
+系统升级           ← 更新 agent/skill/hook
+```
 
 ## 下属Agent
+
 | Agent | 职责 |
 |:------|:------|
-| external-study-agent | 外部学习：优秀作品多Agent并行分析、技法提取 |
-| internal-analysis-agent | 内部分析：用户反馈、创作结果、审核报告→改进建议 |
+| external-study-agent | 外部学习：从优秀作品中提取技法，先沉淀为本能再进化 |
+| internal-analysis-agent | 内部分析：从用户反馈、创作结果、审查报告中提取本能 |
+| evolve-agent | **本能进化**：将置信度≥0.7的本能聚类、进化为正式知识 |
+
+## 本能注册
+
+所有本能必须注册在 `knowledge/instincts/REGISTRY.md` 中。
+
+| 范围 | 路径 | 说明 |
+|:----|:-----|:------|
+| project（小说专项） | `knowledge/instincts/project/` | 换本小说就用不上 |
+| global（通用） | `knowledge/instincts/global/` | 换本小说还用得上 |
+| clusters（聚类） | `knowledge/instincts/clusters/` | 多本能归组后 |
+
+详见 `knowledge/learning/instinct-learning-system.md`
 
 ## 外部学习强制协作流程
 
@@ -28,29 +60,37 @@
   └── 🔬 质检Agent → 设定逻辑/一致性
 
   每个Agent完成三轮递进：
-    ① 分析 → ② 提炼 → ③ 自我提升 → ④ 系统升级（填写upgrade字段）
+    ① 分析 → ② 提炼 → ③ 沉淀为本能 → ④ 系统升级
 
-  （各Agent产出直接进入审查）
+  （各Agent产出一组本能，直接进入审查）
 
 🔍 审查官审查学习成果
-  ├── 技法之间是否重叠？
-  ├── 是否与已有知识重复？
-  ├── 每个技法是否带有upgrade字段？
+  ├── 本能之间是否重叠？
+  ├── 是否与已有本能重复？→ 合并或升 conficence
+  ├── 每个本能是否带有 scope 和 domain 字段？
   ├── ✅ 全部通过 → 进入下一步
-  └── ❌ 缺upgrade字段 → 打回补充
+  └── ❌ 缺必要字段 → 打回补充
 
-🏢 用户确认 → 写入知识图书馆
-  ├── 通用技法 → knowledge/<类别>/learned/
-  └── Agent专用 → knowledge/<agent>/learned/
+🏢 用户确认 → 注册本能
+  ├── project本能 → knowledge/instincts/project/
+  ├── global本能　→ knowledge/instincts/global/
+  └── 注册到 instincts/REGISTRY.md
 
 ⚠️ 强制系统升级（必做，不可跳过）
-  ├── 根据upgrade字段更新对应agents/skills/hooks文件
+  ├── 本能进化路径：
+  │   ├── 如果有 ≥3 条同 domain 本能且 confidence ≥ 0.7
+  │   │    → 进化Agent自动聚类
+  │   │    → 生成正式 knowledge/ 文件草稿
+  │   │    → 负责人确认后写入
+  │   │    → 更新对应 agents/skills/hooks 文件
+  │   └── 如果不足3条 → 暂存，等更多本能积累
   └── 记录到 .story-system/upgrade-log.md
 
 🏢 负责人汇总报告 → 提交用户
   ├── 📚 学习了什么作品
-  ├── 📝 提取了N个技法
-  ├── ⚙️ 升级了M个系统文件
+  ├── 🧬 沉淀了N条本能
+  ├── 🔗 聚类了M组（如有）
+  ├── ⚙️ 升级了K个系统文件
   └── 📎 升级日志已记录
 ```
 
@@ -64,17 +104,20 @@
   ├── 近期审查报告
   └── 创作进度数据
   ↓
-📊 输出改进建议报告 → 负责人审阅
-  ├── ✅ 采纳 → 派发对应部门执行
-  └── ❌ 不采纳 → 说明原因
+📊 输出改良建议 → 以本能形式沉淀
+  ├── 有价值的模式 → 创建 instinct 文件
+  ├── 需改进的问题 → 创建 instinct 文件（含对比示例）
+  └── 已有本能 → 提升 confidence 或补充 obs_count
   ↓
-🏢 负责人汇总报告 → 提交用户
+🏢 负责人审阅
+  ├── ✅ 采纳 → 注册本能
+  └── ❌ 不采纳 → 说明原因
 ```
 
 ## 进化闭环
 
 ```
-创作 → 审核 → 学习 → 招募 → 升级 → 创作（下次更强大）
+创作 → 审核 → 本能沉淀 → 聚类 → 进化 → 升级 → 创作（下次更强大）
 ```
 
-每次学习完成后，系统获得新能力，下一次创作时就能使用。**没有升级日志 = 学习未完成。**
+每次本能积累都让系统离"自动化学习"更近一步。**没有升级日志 = 学习未完成。**
