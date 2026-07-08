@@ -19,6 +19,8 @@ updated: 2026-06-25
 | `theory/writing-craft-enhanced.md` | 写作技法大全（基础+进阶） |
 | `theory/genre-templates.md` | 类型小说模板 |
 | `theory/architecture-and-classification.md` | 知识库架构与分类规则 |
+| `theory/lcm-rag-prompt-templates.md` | LCM+RAG写作提示词模板库（5模板+5功能，适配DeepSeek 1M） |
+| `theory/rag-novel-config.md` | 长篇小说RAG配置指南（分块规则/检索参数/场景搭配/部署推荐） |
 
 ### ✍️ 写作技法 (writing/)
 | 文件 | 说明 |
@@ -75,5 +77,6 @@ updated: 2026-06-25
 | `learning/character-design/` | 从作品学习的角色设计技法 |
 | `learning/plot-design/` | 情节设计技法 |
 | `learning/writing-craft/` | 写作技法 |
+| `learning/writing-craft/lingjing-v2-experience.md` | 灵境系统第2卷创作经验沉淀（6条核心经验，含对话/场景/标点/权力关系/流程/LCM权限） |
 | `learning/humor/` | 幽默风格技巧 |
 | `learning/foreshadowing/` | 伏笔设定技法 |

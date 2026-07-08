@@ -27,8 +27,9 @@ updated: 2026-06-25
 | id | 名称 | emoji | 职责 | 调用方式 |
 |:---|:-----|:------|:-----|:---------|
 | manager | 负责人智能体 | 🏢 | 需求理解、任务分解、部门协调、质量把关 | 自动激活 |
+| knowledge-retrieval | 知识检索智能体 | 🔎 | 统一LCM+RAG检索，写作前/审查时提供上下文 | Agent调用 |
 
-**Skills:** `novel-setup`, `novel-discuss`, `archive`, `knowledge-graph`, `memory-system`, `progress-track`, `rag-search`, `obsidian-sync`
+**Skills:** `novel-setup`, `novel-discuss`, `archive`, `knowledge-graph`, `memory-system`, `progress-track`, `rag-search`, `knowledge-retrieval`, `obsidian-sync`
 **Hooks:** `session-init`, `pre-archive`, `post-archive`, `pre-discuss`
 
 ### 写作部门 (Writing)
@@ -40,7 +41,7 @@ updated: 2026-06-25
 | story-setup | 创作设定 | 🏗️ | 世界观、角色、剧情一体化设定 | `/novel:writing:world` |
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
 
-**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`
+**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `publish-flow`
 **Hooks:** `pre-write`, `post-write`, `post-all-check`
 
 ### 审核部门 (Review)

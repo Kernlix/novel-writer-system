@@ -31,48 +31,48 @@
 ### 创作全流程
 | 文件 | 说明 |
 |:--|:--|
-| `company/00-创作全流程/novel-setup.md` | 项目初始化 |
-| `company/00-创作全流程/novel-discuss.md` | 创作讨论 |
-| `company/00-创作全流程/worldbuilding.md` | 世界观搭建 |
-| `company/00-创作全流程/character-design.md` | 角色设计 |
-| `company/00-创作全流程/plot-outline.md` | 大纲规划 |
-| `company/00-创作全流程/chapter-writing.md` | 章节写作 |
-| `company/00-创作全流程/chapter-review.md` | 章节审查 |
-| `company/00-创作全流程/anti-ai-polish.md` | 去AI化润色 |
-| `company/00-创作全流程/archive.md` | 存档与知识更新 |
+| `company/manager/skills/novel-setup.md` | 项目初始化 |
+| `company/manager/skills/novel-discuss.md` | 创作讨论 |
+| `company/writing/skills/worldbuilding.md` | 世界观搭建 |
+| `company/writing/skills/character-design.md` | 角色设计 |
+| `company/writing/skills/plot-outline.md` | 大纲规划 |
+| `company/writing/skills/chapter-writing.md` | 章节写作 |
+| `company/review/skills/chapter-review.md` | 章节审查 |
+| `company/review/skills/anti-ai-polish.md` | 去AI化润色 |
+| `company/manager/skills/archive.md` | 存档与知识更新 |
 
 ### 创作技巧
 | 文件 | 说明 |
 |:--|:--|
-| `company/01-创作技巧/booming-plot.md` | 剧情引爆 |
-| `company/01-创作技巧/snowflake-method.md` | 雪花法大纲 |
-| `company/01-创作技巧/save-the-cat.md` | Save the Cat 节拍表 |
-| `company/01-创作技巧/decoupled-writing.md` | 解耦写作法 |
-| `company/01-创作技巧/style-learning.md` | 风格学习 |
+| `company/writing/skills/booming-plot.md` | 剧情引爆 |
+| `company/writing/skills/snowflake-method.md` | 雪花法大纲 |
+| `company/writing/skills/save-the-cat.md` | Save the Cat 节拍表 |
+| `company/writing/skills/decoupled-writing.md` | 解耦写作法 |
+| `company/learning/skills/style-learning.md` | 风格学习 |
 
 ### 网文专项
 | 文件 | 说明 |
 |:--|:--|
-| `company/02-网文专项/webnovel-trend.md` | 扫榜/趋势分析 |
-| `company/02-网文专项/webnovel-goldfinger.md` | 金手指设计 |
-| `company/02-网文专项/webnovel-submit.md` | 投稿/平台适配 |
+| `company/writing/skills/webnovel-trend.md` | 扫榜/趋势分析 |
+| `company/writing/skills/webnovel-goldfinger.md` | 金手指设计 |
+| `company/writing/skills/webnovel-submit.md` | 投稿/平台适配 |
 
 ### 质量审查
 | 文件 | 说明 |
 |:--|:--|
-| `company/03-质量审查/consistency-check.md` | 一致性检查 |
-| `company/03-质量审查/quality-gates.md` | 质量门禁 |
-| `company/03-质量审查/deslop-check.md` | 去AI化审查 |
-| `company/03-质量审查/banned-words.md` | 违禁词检查 |
-| `company/03-质量审查/plot-hole-check.md` | 漏洞检测 |
+| `company/review/skills/consistency-check.md` | 一致性检查 |
+| `company/review/skills/quality-gates.md` | 质量门禁 |
+| `company/review/skills/deslop-check.md` | 去AI化审查 |
+| `company/review/skills/banned-words.md` | 违禁词检查 |
+| `company/review/skills/plot-hole-check.md` | 漏洞检测 |
 
 ### 工具集成
 | 文件 | 说明 |
 |:--|:--|
-| `company/04-工具集成/knowledge-graph.md` | 知识图谱管理 |
-| `company/04-工具集成/memory-system.md` | 记忆系统 |
-| `company/04-工具集成/progress-track.md` | 进度追踪 |
-| `company/04-工具集成/obsidian-sync.md` | Obsidian 同步 |
+| `company/manager/skills/knowledge-graph.md` | 知识图谱管理 |
+| `company/manager/skills/memory-system.md` | 记忆系统 |
+| `company/manager/skills/progress-track.md` | 进度追踪 |
+| `company/manager/skills/obsidian-sync.md` | Obsidian 同步 |
 
 ## 🔄 通用工作流
 

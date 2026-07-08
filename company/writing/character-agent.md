@@ -64,3 +64,9 @@ updated: 2026-06-25
 ### 艾琳·逐影
 - 关键事件：新增第74章「在葬礼上沉默守夜」
 ```
+
+## 扩展工具
+
+> 新增角色/写人物番外/独立支线时，使用 `knowledge/theory/lcm-rag-prompt-templates.md` 的 **模板5（独立人物/支线）** 构建提示词。
+>
+> 调用 `lcm-rag` 时使用 `--caller character-designer`，仅返回RAG（角色设计师不可见LCM会话历史）。

@@ -11,9 +11,11 @@ from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from rag.engine import NovelRAG, Reranker
+import engine as rag_engine
+NovelRAG = rag_engine.NovelRAG
+Reranker = rag_engine.Reranker
 
 
 def _fmt(result: dict) -> str:

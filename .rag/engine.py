@@ -19,6 +19,27 @@ from chromadb import Documents, EmbeddingFunction, Embeddings
 
 
 # ---------------------------------------------------------------------------
+# Volume detection (shared with volume_mgr.py)
+# ---------------------------------------------------------------------------
+
+VOLUME_DEFS = [
+    {"vid": 1, "name": "穿越之始",       "range": (1, 40)},
+    {"vid": 2, "name": "暗流初涌",       "range": (41, 81)},
+    {"vid": 3, "name": "腐化之影",       "range": (82, 121)},
+    {"vid": 4, "name": "封印之根",       "range": (122, 161)},
+    {"vid": 5, "name": "诸方集结",       "range": (162, 201)},
+]
+
+
+def detect_volume(chapter_num: int) -> int:
+    """Return volume ID (1-5) for a given chapter number."""
+    for v in VOLUME_DEFS:
+        if v["range"][0] <= chapter_num <= v["range"][1]:
+            return v["vid"]
+    return 0  # unknown / beyond defined range
+
+
+# ---------------------------------------------------------------------------
 # Custom embedding function wrapping Ollama
 # ---------------------------------------------------------------------------
 
@@ -42,8 +63,15 @@ class OllamaEmbed(EmbeddingFunction):
 # Chunking helpers
 # ---------------------------------------------------------------------------
 
-def _chunk_text(text: str, chunk_size: int = 500, overlap: int = 80) -> list[str]:
-    """Split a long document into overlapping chunks (by character count)."""
+def _chunk_text(text: str, chunk_size: int = 3000, overlap: int = 500) -> list[str]:
+    """Split a long document into overlapping chunks (by character count).
+
+    小说专用分块策略（大粒度，保持叙事完整）：
+    - 默认 3000 字符/块（≈ 2000 token），重叠 500 字符
+    - 完整人物卡（< 5000 字符）不拆分，保持角色档案完整
+    - 完整章节（< 8000 字符）不拆分，保持叙事连贯
+    - 超长章节/设定按 3000 字符切块，500 字符重叠保证伏笔不断裂
+    """
     if len(text) <= chunk_size:
         return [text]
 
@@ -199,13 +227,18 @@ class NovelRAG:
         *,
         doc_id: str | None = None,
         metadata: dict | None = None,
+        chunk_size: int | None = None,
     ) -> int:
         """Index a single markdown file into *kind* collection.
 
         Automatically recovers from HNSW index corruption by recreating
         the collection and retrying.
 
-        Returns number of chunks indexed.
+        Parameters:
+            chunk_size: override chunk size per kind.
+                - "chapters": 默认 3000（整章一般够用）
+                - "characters": 默认 5000（人物卡完整一块）
+                - "settings"/"outlines": 默认 3000
         """
         path = Path(file_path).resolve()
         text = path.read_text(encoding="utf-8")
@@ -214,7 +247,15 @@ class NovelRAG:
         if not text.strip():
             return 0
 
-        chunks = _chunk_text(text)
+        # 按文档类型选择分块大小：人物卡用大块保持完整，章节用适中块
+        effective_chunk = chunk_size or {
+            "characters": 5000,
+            "chapters": 3000,
+            "outlines": 3000,
+            "settings": 3000,
+        }.get(kind, 3000)
+
+        chunks = _chunk_text(text, chunk_size=effective_chunk)
         doc_id = doc_id or path.stem
         meta = {"source": str(path.relative_to(self.novel_root)), "file": path.name}
         if metadata:
@@ -294,16 +335,17 @@ class NovelRAG:
         return stats
 
     def index_chapters(self, chapters_dir: str | Path) -> int:
-        """Index all chapter files, enriched with chapter-number metadata."""
+        """Index all chapter files, enriched with chapter-number and volume metadata."""
         total = 0
         for fp in sorted(Path(chapters_dir).glob("*.md")):
             m = re.search(r"(\d+)", fp.stem)
             chap_num = int(m.group(1)) if m else 0
+            vol = detect_volume(chap_num)
             total += self.index_file(
                 "chapters",
                 fp,
                 doc_id=f"ch{chap_num:04d}",
-                metadata={"chapter": chap_num},
+                metadata={"chapter": chap_num, "volume": vol},
             )
         return total
 
