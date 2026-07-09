@@ -47,7 +47,10 @@
 > ⚠️ 当有新的学习Agent加入时，本流程必须同步更新，将其纳入协作。
 
 ```
-🏢 负责人把握大方向
+第0步：epub文本提取（如有epub文件）
+  └── 📦 epub提取员：提取文本 → 按章分块 → 格式化输出
+
+第1步：🏢 负责人把握大方向
   ├── 用户提供学习材料
   └── 确认学习目标 + 派发任务
 
@@ -92,6 +95,20 @@
   ├── 🔗 聚类了M组（如有）
   ├── ⚙️ 升级了K个系统文件
   └── 📎 升级日志已记录
+
+第5步：自动缺口分析（学习→招募联动）⚠️必做
+  ├── gap-analysis Agent 读取本次学习产出的所有 instincts
+  ├── ……
+  └── 招募阈值规则见 `knowledge/rules/common/recruitment-threshold.md`
+
+第6步：自动部署到写作/审核部门 ⚠️必做
+  ├── 🔁 部署Agent读取新建/更新的 Skills
+  ├── 按 Skill 的 domain 自动归类
+  │   ├── comedy → 更新 humor-writer + skill-matcher
+  │   ├── emotional/character → 更新 character-agent + skill-matcher
+  │   ├── plot/rhythm → 更新 plot-agent + skill-matcher
+  │   └── 所有 Skill → 更新 reviewer + SUMMARY + REGISTRY
+  └── 输出部署报告：哪些Agent被更新了
 ```
 
 ## 内部分析流程

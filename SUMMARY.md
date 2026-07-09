@@ -54,6 +54,19 @@ tags: [速查, 索引]
 | `knowledge/review/` | 审查标准 |
 | `knowledge/learning/` | 学习成果 |
 
+## 喜剧写手 😂
+
+| 类型 | 文件 | 来源 |
+|:-----|:------|:----:|
+| Agent | `company/writing/humor-writer-agent.md` | 写作部门第4Agent |
+| Skill | `comedy-scene-design.md` | V1 反高潮+反差笑点 |
+| Skill | `comedic-dialogue.md` | V1 漫才对话+吐槽节奏 |
+| Skill | `defect-comedy-engine.md` | V1 缺陷引爆链 |
+| Skill | `comedy-pattern-library.md` | V2 9种高级格式 |
+| Skill | `system-comedy.md` | V3 体制/法庭喜剧 |
+| Skill | `plot-rhythm.md` | V1-3 剧情跌宕/反转/悬念 |
+| Skill | `emotional-arc-design.md` | V1-3 人物情感弧线 |
+
 ## 升级日志
 
 每次系统升级后记录到 `.story-system/upgrade-log.md`

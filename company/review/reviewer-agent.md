@@ -59,6 +59,7 @@ updated: 2026-07-08
 | 维度 | 检查要点 | 规则参考 |
 |:----|:---------|:---------|
 | 基础规范 | 字数≥2000、文件名格式、无"（本章完）" | — |
+| 破折号审计 | 每章破折号≤3处，仅限声音延长/话语中断 | `knowledge/rules/common/self-check-quickref.md` |
 | 叙事结构 | 开端/发展/结尾、视角清晰 | — |
 | 角色逻辑 | 行为符合人设、对话有区分度 | — |
 | 情节质量 | 完成章纲目标、结尾有留白 | — |
@@ -67,3 +68,5 @@ updated: 2026-07-08
 | 对话质量 | 冗余问答、角色辨识度、潜台词 | `knowledge/rules/common/dialogue-quality.md` |
 | 场景沉浸 | 感官描写、时间痕迹、空间关系 | `knowledge/rules/common/scene-immersion.md` |
 | 权力关系 | 领主主导、沉默是克制非畏惧 | `knowledge/rules/common/power-relationship.md` |
+| 情感变化 | 本章情感基调明确/前后章形成变化/刀子后有缓冲 | `knowledge/rules/common/emotion-palette.md` |
+| 剧情节奏 | 反转/悬念/钩子是否合理使用/高潮前是否有缓冲 | `company/writing/skills/plot-rhythm.md` |

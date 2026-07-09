@@ -38,10 +38,12 @@ updated: 2026-06-25
 | writer | 写手智能体 | ✍️ | 正文章节写作、场景描写、对话 | Agent(prompt=...) |
 | character-designer | 角色设计师 | 👤 | 角色创建、关系网、成长弧光 | Agent(prompt=...) |
 | plot-architect | 剧情架构师 | 📖 | 大纲规划、分卷、情节设计 | Agent(prompt=...) |
+| humor-writer | 喜剧写手 | 😂 | 喜剧场景设计、吐槽节奏、缺陷引爆 | Agent(prompt=...) |
+| skill-matcher | 技法检索Agent | 🧩 | 按章节类型智能匹配技法，输出推荐表 | Agent调用 |
 | story-setup | 创作设定 | 🏗️ | 世界观、角色、剧情一体化设定 | `/novel:writing:world` |
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
 
-**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `publish-flow`
+**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`
 **Hooks:** `pre-write`, `post-write`, `post-all-check`
 
 ### 审核部门 (Review)
@@ -64,8 +66,9 @@ updated: 2026-06-25
 |:---|:-----|:------|:-----|:---------|
 | external-study | 外部学习智能体 | 📚 | 学习优秀作品、提取技法 | `/novel:learn:study` |
 | internal-analysis | 内部分析智能体 | 📊 | 分析反馈、创作结果、审核报告 | `/novel:learn:analyze` |
+| epub-extractor | epub文本提取员 | 📦 | 将epub电子书提取为纯文本，按章节分块 | Agent调用 |
 
-**Skills:** `multi-agent-learning`, `style-learning`, `skill-self-improvement`, `external-study`, `internal-analysis`
+**Skills:** `multi-agent-learning`, `style-learning`, `skill-self-improvement`, `external-study`, `internal-analysis`, `epub-to-text`
 **Hooks:** `pre-learn`, `post-learn`
 
 ### 招募部门 (Recruitment)
@@ -75,6 +78,7 @@ updated: 2026-06-25
 | job-designer | 岗位设计智能体 | 📋 | 定义新Agent/Skill/Hook需求 | `/novel:recruit:job` |
 | skill-engineer | 技能研发智能体 | 🔧 | 设计新Skill（用skill-template） | `/novel:recruit:skill` |
 | agent-integrator | 智能体集成智能体 | 🔗 | 配置权限、知识库访问、协作 | `/novel:recruit:integrate` |
+| skill-deployer | 技能部署Agent | 🔁 | 学习后自动部署新Skill到写作/审核部门 | 自动触发 |
 
 **Skills:** `recruitment-workflow`
 **Hooks:** `pre-recruit`, `post-recruit`

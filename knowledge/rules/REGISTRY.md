@@ -20,4 +20,6 @@ updated: 2026-07-08
 
 | 文件 | 适用场景 |
 |:----|:---------|
+| `common/recruitment-threshold.md` | 招募触发阈值规则（何时加Agent/何时扩Skill） |
+| `common/emotion-palette.md` | 情感调控系统（四维坐标+刀子投放+硬性规则） |
 | `novel/system-term-secrecy.md` | 系统术语不得出现在对外的对话或叙述中 |
