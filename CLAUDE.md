@@ -10,12 +10,14 @@
 
 ```
 D:\allproject\GitHub项目\novel-writer-system\     ← 灵境系统
-├── company/               ← 虚拟AI公司（5部门）
+├── company/               ← 虚拟AI公司（5部门 + process流程层）
 │   ├── manager/           ← 负责人部门
 │   ├── writing/           ← 写作部门
 │   ├── review/            ← 审核部门
 │   ├── learning/          ← 学习部门
-│   └── recruitment/       ← 招募部门
+│   ├── recruitment/       ← 招募部门
+│   ├── process/           ← 章节创作/修改流程
+│   └── REGISTRY.md
 ├── knowledge/             ← 知识图书馆
 │   ├── rules/common/      ← 通用规则清单
 │   ├── rules/novel/       ← 本小说专项规则

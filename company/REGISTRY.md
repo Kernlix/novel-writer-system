@@ -44,7 +44,6 @@ updated: 2026-06-25
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
 
 **Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`
-**Hooks:** `pre-write`, `post-write`, `post-all-check`
 
 ### 审核部门 (Review)
 | id | 名称 | emoji | 职责 | 调用方式 |
@@ -66,7 +65,8 @@ updated: 2026-06-25
 |:---|:-----|:------|:-----|:---------|
 | external-study | 外部学习智能体 | 📚 | 学习优秀作品、提取技法 | `/novel:learn:study` |
 | internal-analysis | 内部分析智能体 | 📊 | 分析反馈、创作结果、审核报告 | `/novel:learn:analyze` |
-| epub-extractor | epub文本提取员 | 📦 | 将epub电子书提取为纯文本，按章节分块 | Agent调用 |
+| epub-extractor | 电子书提取员 | 📦 | epub/mobi文本提取，按章分块 | Agent调用 |
+| evolve-agent | 本能进化Agent | 🧬 | 聚类≥3条同domain本能，进化为正式知识 | 自动触发 |
 
 **Skills:** `multi-agent-learning`, `style-learning`, `skill-self-improvement`, `external-study`, `internal-analysis`, `epub-to-text`
 **Hooks:** `pre-learn`, `post-learn`
