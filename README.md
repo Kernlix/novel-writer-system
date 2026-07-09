@@ -25,63 +25,47 @@ A unified creative toolbox built from the best open-source novel-writing project
 
 ### Windows
 ```powershell
-iex "& { $(irm https://raw.githubusercontent.com/nosoultool/novel-writer-system/main/install.ps1) }"
+iex "& { $(irm https://raw.githubusercontent.com/Kernlix/novel-writer-system/main/install.ps1) }"
 ```
 
 ### macOS / Linux
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/nosoultool/novel-writer-system/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/Kernlix/novel-writer-system/main/install.sh)
 ```
 
 ---
 
-## 📖 7 Ways to Use
+## 📖 How to Use (7 Ways)
 
-### 🥇 Reasonix (Recommended)
-
-```bash
-/novel-writer I want to write a cultivation novel
-/novel-writer /novel:world    Build a world
-/novel-writer /novel:write    Write the body
-```
-
-> See [REASONIX.md](REASONIX.md) for detailed usage.
-
-### 🥇 Claude Code (Full Feature, Recommended)
-
+### 🥇 Claude Code（完整功能，推荐）
 ```bash
 cd novel-writer-system
 claude
-# Enter /novel:start
+# 输入 /novel:start 即可进入创作向导
 ```
 
-### 🥈 Codex CLI · 🥉 Cursor IDE · 🏅 Windsurf · 📱 ChatGPT/Kimi · 📄 Manual Reading
-
-See platform-specific instructions for details.
-
----
-
-## 📜 Command Reference
-
+### 🥈 OpenCode CLI
+```bash
+cd novel-writer-system
+opencode
 ```
-🚀 Writing Flow          🌍 World Building       📋 Outline
-  /novel:start             /novel:world            /novel:outline
-  /novel:discuss           /novel:characters       /novel:snowflake
 
-✍️ Writing                🔍 Review               🎨 Polish
-  /novel:write             /novel:review           /novel:anti-ai
-  /novel:decoupled         /novel:check            /novel:booming
-                           /novel:quality          /novel:style-learn
-                           /novel:deslop
-                           /novel:plot-hole
+### 🥉 Cursor / Windsurf / VS Code
+将 `SKILL.md` 拖入 IDE 的 AI 对话窗口即可加载系统。
 
-📦 Web Novel Specialties   🛠️ Tools
-  /novel:hook              /novel:archive
-  /novel:shuang            /novel:knowledge
-  /novel:trend             /novel:memory
-  /novel:goldfinger        /novel:progress
-  /novel:submit
-```
+### 📱 Hermes Agent（当前在用）
+在 Hermes 桌面端加载 `CLAUDE.md`，自动激活灵境系统。
+
+### 📄 ChatGPT / Kimi / 其他LLM
+手动复制 `SKILL.md` 内容作为系统提示词。
+
+### 🔧 服务器集成
+通过 `/novel:search` 的 RAG 引擎提供跨会话知识检索。
+
+### 📚 纯文档查阅
+直接阅读 `SUMMARY.md`（命令速查）或 `knowledge/` 下的规则和模板。
+
+> ℹ️ 完整命令表见 `SUMMARY.md`（系统唯一权威来源）
 
 ---
 
@@ -91,6 +75,10 @@ See platform-specific instructions for details.
 This system is licensed under the **MIT License** — you are free to use, modify, and distribute it, including for commercial purposes.
 
 ### Design Inspiration
+## 致谢 / Acknowledgments
+
+> ⚠️ **许可证声明**：本系统从以下开源项目中汲取灵感，但所有代码/文件均为独立实现，未直接复制上述项目的代码。下表所列外部许可证仅适用于原项目，本系统使用 MIT 许可证发布。
+
 The design of this system was inspired by the following open-source projects:
 
 | Project | License | Contribution |
