@@ -6,7 +6,7 @@ description: 记录每次学习后对 agents/skills/hooks 的系统升级
 updated: 2026-06-25
 ---
 
-# 系统升级日志
+> ⚠️ 本文件记录早于 2026-07 目录重构（agents/ → company/）的升级记录，以下条目中的路径引用（如 `agents/writer-agent.md`）已过期。新记录使用 `company/` 路径结构。
 
 > 每次 `/novel:learn` 完成后，强制执行的系统升级记录。
 > 无此记录 = 学习流程未完成。

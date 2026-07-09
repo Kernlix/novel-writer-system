@@ -8,15 +8,40 @@ tags: [速查, 索引]
 
 ## 快速命令
 
+> 本表是灵境系统命令的**唯一权威来源**。其他文件（CLAUDE.md/SKILL.md/README.md）只保留高频入口+跳转链接到此。
+
+### 高频入口
+
 | 命令 | 用途 | 调用部门 |
 |:----|:-----|:---------|
 | `/novel:start` | 创作向导 | 负责人 |
 | `/novel:write` | 章节写作 | 写手 |
-| `/novel:review` | 章节审查 | 审查官 |
+| `/novel:review` | 章节审查（= `/novel:review:chapter`） | 审查官 |
 | `/novel:learn` | 学习作品 | 学习部门 |
 | `/novel:search` | RAG语义搜索 | 知识检索 |
 | `/novel:search:deep` | LCM+RAG深度查询 | 知识检索 |
-| `/novel:search:volume` | 跨卷LCM历史检索 | 知识检索 |
+| `/novel:evolve` | 手动触发本能进化 | 进化Agent |
+
+### 部门专项命令
+
+| 命令 | 用途 |
+|:----|:-----|
+| `/novel:review:chapter` | 全流程审查入口 |
+| `/novel:review:logic` | 逻辑/设定审查 |
+| `/novel:review:style` | 文风/去AI化审查 |
+| `/novel:review:character` | 角色审查 |
+| `/novel:review:plot` | 剧情节奏审查 |
+| `/novel:review:era` | 时代/技术合理性审查 |
+| `/novel:learn:study` | 外部学习(提取技法) |
+| `/novel:learn:analyze` | 内部分析(审查报告/反馈) |
+| `/novel:recruit:gap` | 差距分析(手动触发) |
+| `/novel:recruit:job` | 岗位设计 |
+| `/novel:recruit:skill` | 技能研发 |
+| `/novel:recruit:integrate` | Agent集成 |
+| `/novel:writing:world` | 世界观设定 |
+| `/novel:writing:short` | 短故事专项 |
+
+> ℹ️ 冒号命名空间（`/novel:<部门>:<操作>`）是完整命令格式；高频入口（`/novel:write`）是别名。完整列表见 `company/REGISTRY.md` 各部门调用方式字段。
 
 ## 核心流程
 
