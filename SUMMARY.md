@@ -68,7 +68,7 @@ tags: [速查, 索引]
 | `knowledge/instincts/REGISTRY.md` | 本能注册总表 |
 | `knowledge/instincts/global/` | 通用本能 |
 | `knowledge/instincts/project/` | 小说专项本能 |
-| `knowledge/learning/instinct-learning-system.md` | 本能系统设计文档 |
+| `knowledge/learned/instinct-learning-system.md` | 本能系统设计文档 |
 
 ## 知识库目录
 
@@ -77,7 +77,7 @@ tags: [速查, 索引]
 | `knowledge/theory/` | 写作理论（标点/技法/模板） |
 | `knowledge/writing/` | 写作技法（章节/场景/标题） |
 | `knowledge/review/` | 审查标准 |
-| `knowledge/learning/` | 学习成果 |
+| `knowledge/learned/` | 学习成果 |
 
 ## 喜剧写手 😂
 

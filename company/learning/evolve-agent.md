@@ -34,7 +34,7 @@ created: 2026-07-09
   → 保存到 knowledge/instincts/clusters/<domain>.md
 
 ② 生成草稿：从 cluster 中提取共性 → 生成正式 knowledge/ 文件草稿
-  → 保存到 knowledge/learning/<category>/<domain>.md（草稿状态）
+  → 保存到 knowledge/learned/<category>/<domain>.md（草稿状态）
 
 ③ 提交负责人确认：
   ├── ✅ 确认 → ④
@@ -54,7 +54,7 @@ created: 2026-07-09
 | 产出 | 路径 |
 |:-----|:------|
 | 聚类文件 | `knowledge/instincts/clusters/<domain>.md` |
-| 知识草稿 | `knowledge/learning/<category>/<domain>.md` |
+| 知识草稿 | `knowledge/learned/<category>/<domain>.md` |
 | 正式知识 | `knowledge/<category>/<domain>.md`（负责人确认后） |
 | 升级记录 | `.story-system/upgrade-log.md` |
 

@@ -6,7 +6,7 @@ emoji: 📚
 department: learning
 invocation: /novel:learn:study
 description: 学习优秀作品，提取可复用技法，强制升级系统
-knowledge-base: knowledge/learning/
+knowledge-base: knowledge/learned/
 created: 2026-06-25
 ---
 

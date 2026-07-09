@@ -14,6 +14,6 @@
 | 🌍 世界观 | `knowledge/world/` | 世界观一致性、力量体系、设定标准 |
 | ⚡ 短故事 | `knowledge/short-story/` | 短故事结构与平台适配 |
 | 🏛️ 时代背景 | `knowledge/era/` | 技术发展分级、穿越者知识可用性 |
-| 🧠 学习成果 | `knowledge/learning/` | 从优秀作品学习的各类技法 |
+| 🧠 学习成果 | `knowledge/learned/` | 从优秀作品学习的各类技法 |
 
 **索引文件：** `knowledge/REGISTRY.md`

@@ -57,7 +57,7 @@ updated: 2026-06-25
   │
   └─ 第5步：写入知识库 + 自我更新
       ├── 技法笔记 → knowledge/<agent>/learned/
-      ├── 通用技法提升 → knowledge/learning/<category>/
+      ├── 通用技法提升 → knowledge/learned/<category>/
       ├── 自我提升方案 → 标注在笔记中
       └── 记录到 skill-self-improvement.md
 ```
@@ -198,13 +198,13 @@ upgrade:                                        # 【必填】系统升级目标
 |:---------|:---------|
 | 多Agent识别同一技法 | 合并为一个笔记，标注多个分析视角 |
 | 相同技法不同角度 | 保留各角度优势，取精华整合 |
-| 与已有 knowledge/learning/ 内容重复 | 标记为"已有记录"，跳过 |
+| 与已有 knowledge/learned/ 内容重复 | 标记为"已有记录"，跳过 |
 
 ## 通用提升规则
 
 | 判断条件 | 操作 |
 |:---------|:-----|
-| 技法不绑定具体作品，可跨作品复用 | → 同时写入 `knowledge/learning/<category>/` |
+| 技法不绑定具体作品，可跨作品复用 | → 同时写入 `knowledge/learned/<category>/` |
 | 技法与某个 Agent 强绑定 | → 仅写入 `knowledge/<agent>/learned/` |
 | 不确定时 | → 问自己：换一本书，这个技法的分析逻辑还能用吗？ |
 

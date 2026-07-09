@@ -39,7 +39,7 @@
 | global（通用） | `knowledge/instincts/global/` | 换本小说还用得上 |
 | clusters（聚类） | `knowledge/instincts/clusters/` | 多本能归组后 |
 
-详见 `knowledge/learning/instinct-learning-system.md`
+详见 `knowledge/learned/instinct-learning-system.md`
 
 ## 外部学习强制协作流程
 

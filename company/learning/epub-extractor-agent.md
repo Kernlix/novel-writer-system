@@ -43,7 +43,7 @@ created: 2026-07-09
        # 保存为 extracted/第X章.txt
    ```
 
-3. **参考**: `knowledge/learning/epub-extraction-guide.md`
+3. **参考**: `knowledge/learned/epub-extraction-guide.md`
 
 ## 调用方式
 
