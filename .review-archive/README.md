@@ -1,5 +1,5 @@
 ---
-id: .store-system
+id: .review-archive
 name: 审查报告存档目录
 type: system-storage
 description: 此目录为审查报告存档的预留位置

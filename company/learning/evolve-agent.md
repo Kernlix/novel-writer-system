@@ -46,7 +46,7 @@ created: 2026-07-09
   └── 触发下游更新（agent/skill/hook）
 
 ⑤ 记录升级日志：
-  └── 追加到 .story-system/upgrade-log.md（标注来源本能+进化时间）
+  └── 追加到 .project-state/upgrade-log.md（标注来源本能+进化时间）
 ```
 
 ## 输出
@@ -56,7 +56,7 @@ created: 2026-07-09
 | 聚类文件 | `knowledge/instincts/clusters/<domain>.md` |
 | 知识草稿 | `knowledge/learned/<category>/<domain>.md` |
 | 正式知识 | `knowledge/<category>/<domain>.md`（负责人确认后） |
-| 升级记录 | `.story-system/upgrade-log.md` |
+| 升级记录 | `.project-state/upgrade-log.md` |
 
 ## 与下游的协作
 

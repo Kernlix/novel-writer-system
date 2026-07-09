@@ -94,4 +94,4 @@ tags: [速查, 索引]
 
 ## 升级日志
 
-每次系统升级后记录到 `.story-system/upgrade-log.md`
+每次系统升级后记录到 `.project-state/upgrade-log.md`

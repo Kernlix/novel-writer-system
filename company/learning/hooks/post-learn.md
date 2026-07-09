@@ -19,4 +19,4 @@ created: 2026-06-25
 - [ ] 每个学习笔记的 upgrade 字段已填写
 - [ ] 缺失 upgrade 字段的笔记已退回去补充
 - [ ] 升级已应用到目标 agents/skills/hooks 文件
-- [ ] 升级日志已写入 `.story-system/upgrade-log.md`
+- [ ] 升级日志已写入 `.project-state/upgrade-log.md`

@@ -19,7 +19,7 @@ created: 2026-06-25
 2. 每个Agent从专业视角完成：分析→提炼→自我提升→系统升级
 3. 收集6个Agent的学习成果，去重整合
 4. 强制执行系统升级（写入agents/skills/hooks）
-5. 记录升级日志到 `.story-system/upgrade-log.md`
+5. 记录升级日志到 `.project-state/upgrade-log.md`
 
 ## 工作流程
 - 参见 `company/learning/skills/multi-agent-learning.md`（详细流程）

@@ -87,7 +87,7 @@
   │   │    → 负责人确认后写入
   │   │    → 更新对应 agents/skills/hooks 文件
   │   └── 如果不足3条 → 暂存，等更多本能积累
-  └── 记录到 .story-system/upgrade-log.md
+  └── 记录到 .project-state/upgrade-log.md
 
 🏢 负责人汇总报告 → 提交用户
   ├── 📚 学习了什么作品

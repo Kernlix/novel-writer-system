@@ -24,8 +24,8 @@ created: 2026-06-25
 ## 输入数据
 - 用户反馈（对话记录）
 - 审核报告（`审查报告/`）
-- 创作进度（`.story-system/`）
-- 升级日志（`.story-system/upgrade-log.md`）
+- 创作进度（`.project-state/`）
+- 升级日志（`.project-state/upgrade-log.md`）
 
 ## 输出
 - 改进建议报告

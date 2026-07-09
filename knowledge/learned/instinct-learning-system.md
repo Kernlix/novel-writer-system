@@ -33,7 +33,7 @@ updatable: true
   │                                   │         skill升级
   │                                   │         agent升级
   │                                   ▼
-  │                             .story-system/upgrade-log.md
+  │                             .project-state/upgrade-log.md
 ```
 
 ---
@@ -136,7 +136,7 @@ obs_count: 3                   # 观察到该模式的次数
   → 聚类：多个相关本能归入同一 cluster 文件
   → 进化：cluster 内容成熟后，转为正式 knowledge/ 文件
   → 升级：同步更新对应 agent/skill/hook 文件
-  → 记录：.story-system/upgrade-log.md
+  → 记录：.project-state/upgrade-log.md
 ```
 
 ### 触发进化的条件

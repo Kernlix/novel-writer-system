@@ -15,7 +15,7 @@ description: 根据大纲和设定写作正文章节
 根据大纲和设定写作正文章节。
 
 ## 写作前准备
-1. 加载章纲：`.story-system/chapters/chapter_XXX.md`
+1. 加载章纲：`.project-state/chapters/chapter_XXX.md`
 2. 加载详细大纲：`大纲/第N卷《卷名》详细大纲.md` 对应章节
 3. 加载角色当前状态：`人物/` 对应角色档案
 4. **角色知识边界检查**：查阅当前小说项目的 `知识边界/character-knowledge-boundary.md`，确认本章涉及的角色在当前时间点知道什么、不知道什么。避免角色说出超出其知识范围的信息（如教会审判官不该知道"宿主"概念）

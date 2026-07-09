@@ -4,7 +4,7 @@ Post-write 一键处理脚本
 
 写入新章节后，运行此脚本自动完成后处理：
 
-    python .story-system/post-write-runner.py
+    python .project-state/post-write-runner.py
 
 功能：
   1. 字数验证 + 破折号审计
@@ -23,7 +23,7 @@ NOVEL_ROOT = Path(
 
 # 灵境系统路径
 LINGJING_ROOT = Path(__file__).resolve().parent.parent  # novel-writer-system/
-PROJECT_ROOT = LINGJING_ROOT / ".story-system"
+PROJECT_ROOT = LINGJING_ROOT / ".project-state"
 
 sys.path.insert(0, str(LINGJING_ROOT / ".rag"))
 from engine import NovelRAG
