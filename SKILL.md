@@ -11,80 +11,66 @@
 - 设定：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\设定集\`
 
 ### 快速启动
-在 Claude Code 中输入以下任一命令进入工作流：
 
 | 命令 | 功能 |
 |------|------|
-| `/novel:start` | 🚀 **启动创作向导** — 新建项目或继续已有作品 |
-| `/novel:help` | 📖 显示完整命令列表 |
+| `/novel:start` | 🚀 **启动创作向导** |
+| `/novel:write` | 章节写作 |
+| `/novel:review` | 章节审查 |
+| `/novel:learn` | 学习作品 |
+| `/novel:search` | RAG语义搜索 |
+| `/novel:search:deep` | LCM+RAG深度查询 |
 
 ## 🧠 智能体系统
 
-系统包含 10 个专业智能体，分工协作。完整注册表见 `company/REGISTRY.md`：
+系统包含 **26 个专业智能体**，分布在 5 个部门。完整注册表见 `company/REGISTRY.md`：
 
-| 智能体 | 类型 | emoji | 职责 | 调用方式 |
-|:-------|:-----|:------|:-----|:---------|
-| **负责人** | dispatcher | 🧠 | 任务分发、流程编排、质量把关 | 自动激活 |
-| **写手** | dispatcher | ✍️ | 正文写作、场景描写、对话 | Agent(prompt=...) |
-| **审查官** | dispatcher | 🔍 | 一致性检查、质量评估、逻辑校验 | Agent(prompt=...) |
-| **角色设计师** | dispatcher | 👤 | 角色创建、关系网、成长弧光 | Agent(prompt=...) |
-| **剧情架构师** | dispatcher | 📖 | 大纲规划、分卷、情节设计 | Agent(prompt=...) |
-| **润色师** | user | 🎨 | 去AI化、文风统一、语言优化 | `/novel:anti-ai` |
-| **短故事专项** | user | ⚡ | 中短篇快速创作→投稿全流程 | `/novel:short` |
-| **时代审查官** | user | 🏛️ | 技术/知识合理性审查 | `/novel:era` |
-| **创作设定** | user | 🏗️ | 世界观+角色+剧情一体化设定 | `/novel:world /novel:characters /novel:outline` |
-| **设定质检员** | user | 🔬 | 设定逻辑质检、矛盾发现、合理性验证 | `/novel:qa` |
+| 部门 | 数量 | 核心Agent |
+|:-----|:---:|:---------|
+| 负责人部门 | 2 | manager·知识检索 |
+| 写作部门 | 7 | 写手·角色·剧情·喜剧写手·技法检索·创作设定·短故事 |
+| 审核部门 | 8 | 审查官·润色师·设定质检·逻辑审核·文风审核·角色审核·剧情审核·时代审查 |
+| 学习部门 | 4 | 外部学习·内部分析·电子书提取·本能进化 |
+| 招募部门 | 5 | 差距分析·岗位设计·技能研发·集成·部署 |
 
 ## 📂 Skills 索引
 
-### 创作全流程
-- `company/process/chapter-creation.md` — 章节创作流程
-- `company/process/chapter-modify.md` — 章节修改流程
-- `SUMMARY.md` — 命令/流程/规则速查
-- `knowledge/theory/lcm-rag-prompt-templates.md` — 提示词模板（5模板+5功能）
+### 写作部门 Skills（18个）
 
-### 创作技巧
-- company/writing/skills/booming-plot.md — 剧情引爆
-- company/writing/skills/snowflake-method.md — 雪花法大纲
-- company/writing/skills/save-the-cat.md — Save the Cat 节拍表
-- company/writing/skills/decoupled-writing.md — 解耦写作法
-- company/learning/skills/style-learning.md — 风格学习
+| 类别 | Skill | 说明 |
+|:-----|:------|:------|
+| 喜剧 | `comedy-scene-design` | 反高潮+反差笑点四段式 |
+| 喜剧 | `comedic-dialogue` | 漫才对话+吐槽节奏 |
+| 喜剧 | `defect-comedy-engine` | 缺陷三条件+标签化设计 |
+| 喜剧 | `comedy-pattern-library` | 9种高级喜剧格式 |
+| 喜剧 | `system-comedy` | 体制/法庭/阶级喜剧 |
+| 剧情 | `plot-rhythm` | 反转/悬念/三重钩子/情感过山车 |
+| 情感 | `emotional-arc-design` | 防御性幽默/名字开关/情感弧线 |
+| 基础 | `chapter-writing` | 章节构建方法 |
+| 基础 | `booming-plot` | 剧情引爆 |
+| 基础 | `decoupled-writing` | 解耦写作法 |
+| 基础 | `save-the-cat` | Save the Cat 节拍表 |
+| 基础 | `snowflake-method` | 雪花法大纲 |
+| 基础 | `short-story-quick` | 短故事快速创作 |
+| 网文 | `webnovel-suspense` | 悬疑惊悚写作 |
+| 网文 | `webnovel-trend` | 扫榜/趋势分析 |
+| 网文 | `webnovel-goldfinger` | 金手指设计 |
+| 网文 | `webnovel-submit` | 投稿/平台适配 |
+| 发布 | `docx-publish` | DOCX生成与投稿 |
 
-### 网文专项
-- company/writing/skills/webnovel-suspense.md — 🔥 悬疑惊悚写作指南
-- company/writing/skills/webnovel-trend.md — 扫榜/趋势分析
-- company/writing/skills/webnovel-goldfinger.md — 金手指设计
-- company/writing/skills/webnovel-submit.md — 投稿/平台适配
+### 通用参考
 
-### 质量审查
-- company/review/skills/consistency-check.md — 一致性检查
-- company/review/skills/banned-words.md — 违禁词检查
-- company/review/skills/plot-hole-check.md — 漏洞检测
-- company/review/skills/setting-qa.md — 🔬 设定质检
-
-### 工具集成
-- company/manager/skills/knowledge-graph.md — 知识图谱管理
-- company/manager/skills/memory-system.md — 记忆系统
-- company/manager/skills/progress-track.md — 进度追踪
-- company/manager/skills/obsidian-sync.md — Obsidian 同步
-- company/writing/skills/docx-publish.md — 🔥 DOCX生成与投稿准备
+| 路径 | 说明 |
+|:-----|:------|
+| `SUMMARY.md` | 命令/流程/规则速查 |
+| `knowledge/theory/lcm-rag-prompt-templates.md` | 提示词模板（5模板+5功能） |
+| `knowledge/rules/REGISTRY.md` | 全部规则清单 |
 
 ## 🔄 通用工作流
 
-### 长篇连载模式
-1. /novel:discuss    → 讨论创意、确定方向
-2. /novel:world      → 搭建世界观
-3. /novel:characters → 设计角色
-4. /novel:outline    → 规划大纲
-5. /novel:qa         → 🔬 设定质检（检查设定合理性）
-6. /novel:write      → 逐章写作
-7. /novel:review     → 审查修改
-8. /novel:anti-ai    → 去AI化
-9. /novel:archive    → 更新知识库
-     ↻ 重复 6-9
+```
+负责人把握方向 → 写作部门(写手+角色+剧情+喜剧+技法检索)
+  → 审查官(打回循环，最多3轮) → 负责人汇总报告
+```
 
-### 短故事参赛模式
-1. /novel:short      → 启动短故事专项智能体
-2. 概念策划 → 大纲 → 写作（全篇）
-3. 审查润色 → DOCX打包 → 投稿发送
-     → 一次性完成，全篇完稿后再投稿
+详见 `company/process/chapter-creation.md`

@@ -2,65 +2,40 @@
 
 > 入口文件 — 加载此文件即启动灵境创作系统。
 
-## 📋 系统加载
-
-### 快速启动
-在 Claude Code 中输入以下任一命令进入工作流：
+## 📋 快速启动
 
 | 命令 | 功能 |
 |:--|:--|
-| `/novel:start` | 🚀 **启动创作向导** — 新建项目或继续已有作品 |
-| `/novel:help` | 📖 显示完整命令列表 |
+| `/novel:start` | 🚀 启动创作向导 |
+| `/novel:write` | 章节写作 |
+| `/novel:review` | 章节审查 |
+| `/novel:learn` | 学习作品 |
+| `/novel:search` | RAG语义搜索 |
 
 ## 🧠 智能体系统
 
-系统包含 7 个专业智能体，分工协作：
+系统包含 **26 个专业智能体**，分布在 5 个部门。完整注册表见 `company/REGISTRY.md`：
 
-| 智能体 | 职责 | 调用方式 |
-|:--|:--|:--|
-| **负责人** | 任务分发、流程编排、质量把关 | 自动激活 |
-| **世界观架构师** | 世界观设定、地理/势力/力量体系设计 | `/novel:world` |
-| **角色设计师** | 角色创建、关系网、成长弧光 | `/novel:characters` |
-| **剧情架构师** | 大纲规划、分卷、情节设计 | `/novel:outline` |
-| **写手** | 正文写作、场景描写、对话 | `/novel:write` |
-| **审查官** | 一致性检查、质量评估、逻辑校验 | `/novel:review` |
-| **润色师** | 去AI化、文风统一、语言优化 | `/novel:anti-ai` |
+| 部门 | 数量 | 核心Agent |
+|:-----|:---:|:---------|
+| 负责人部门 | 2 | 负责人·知识检索 |
+| 写作部门 | 7 | 写手·角色·剧情·喜剧写手·技法检索·设定·短故事 |
+| 审核部门 | 8 | 审查官·润色师·质检·逻辑·文风·角色审核·剧情审核·时代 |
+| 学习部门 | 4 | 外部学习·内部分析·电子书提取·本能进化 |
+| 招募部门 | 5 | 差距分析·岗位设计·研发·集成·部署 |
 
-## 📂 Skills 索引
+## 📂 参考索引
 
-### 创作全流程
-| 文件 | 说明 |
+| 路径 | 说明 |
 |:--|:--|
-| `SUMMARY.md` | 命令/流程/规则速查 |
+| `SUMMARY.md` | 命令/流程/规则统一速查 |
 | `company/process/chapter-creation.md` | 章节创作流程 |
 | `company/process/chapter-modify.md` | 章节修改流程 |
-| `knowledge/theory/lcm-rag-prompt-templates.md` | 提示词模板（5模板+5功能） |
+| `company/REGISTRY.md` | 完整公司架构注册表 |
+| `knowledge/rules/REGISTRY.md` | 全部规则清单 |
 
-### 检查清单
-| 文件 | 说明 |
-|:--|:--|
-| `knowledge/rules/common/dialogue-quality.md` | 对话质量检查 |
-| `knowledge/rules/common/scene-immersion.md` | 场景沉浸感检查 |
-| `knowledge/rules/common/power-relationship.md` | 权力关系检查 |
-| `knowledge/rules/common/self-check-quickref.md` | 写手自查速查 |
-| `knowledge/rules/novel/system-term-secrecy.md` | 系统术语保密规则 |
+## 🔄 工作流
 
-### 本能学习
-| 文件 | 说明 |
-|:--|:--|
-| `knowledge/learning/instinct-learning-system.md` | 本能学习系统设计 |
-| `knowledge/instincts/REGISTRY.md` | 本能注册总表 |
-
-## 🔄 通用工作流
-
-| 步骤 | 命令 | 操作 |
-|:--|:--|:--|
-| 1 | `/novel:discuss` | 讨论创意、确定方向 |
-| 2 | `/novel:world` | 搭建世界观 |
-| 3 | `/novel:characters` | 设计角色 |
-| 4 | `/novel:outline` | 规划大纲 |
-| 5 | `/novel:write` | 逐章写作 |
-| 6 | `/novel:review` | 审查修改 |
-| 7 | `/novel:anti-ai` | 去AI化 |
-| 8 | `/novel:archive` | 更新知识库 |
-|   | ↻ | 重复 5-8 |
+```
+负责人 → 写作部门 → 审查官(打回循环，最多3轮) → 负责人汇总报告
+```

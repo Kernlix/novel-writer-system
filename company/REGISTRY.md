@@ -64,7 +64,7 @@ updated: 2026-06-25
 | id | 名称 | emoji | 职责 | 调用方式 |
 |:---|:-----|:------|:-----|:---------|
 | external-study | 外部学习智能体 | 📚 | 学习优秀作品、提取技法 | `/novel:learn:study` |
-| internal-analysis | 内部分析智能体 | 📊 | 分析反馈、创作结果、审核报告 | `/novel:learn:analyze` |
+| internal-analysis | 内部分析智能体 | 📝 | 分析反馈、创作结果、审核报告 | `/novel:learn:analyze` |
 | epub-extractor | 电子书提取员 | 📦 | epub/mobi文本提取，按章分块 | Agent调用 |
 | evolve-agent | 本能进化Agent | 🧬 | 聚类≥3条同domain本能，进化为正式知识 | 自动触发 |
 
@@ -74,7 +74,7 @@ updated: 2026-06-25
 ### 招募部门 (Recruitment)
 | id | 名称 | emoji | 职责 | 调用方式 |
 |:---|:-----|:------|:-----|:---------|
-| gap-analysis | 差距分析智能体 | 🔎 | 分析工作流、Agent质量、系统瓶颈 | `/novel:recruit:gap` |
+| gap-analysis | 差距分析智能体 | 🔭 | 分析工作流、Agent质量、系统瓶颈 | `/novel:recruit:gap` |
 | job-designer | 岗位设计智能体 | 📋 | 定义新Agent/Skill/Hook需求 | `/novel:recruit:job` |
 | skill-engineer | 技能研发智能体 | 🔧 | 设计新Skill（用skill-template） | `/novel:recruit:skill` |
 | agent-integrator | 智能体集成智能体 | 🔗 | 配置权限、知识库访问、协作 | `/novel:recruit:integrate` |
