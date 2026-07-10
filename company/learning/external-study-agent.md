@@ -25,5 +25,13 @@ created: 2026-06-25
 - 参见 `company/learning/skills/multi-agent-learning.md`（详细流程）
 - 参见 `company/learning/skills/external-study.md`（本Agent专属流程）
 
+## 追踪（Langfuse）
+
+学习开始和结束时发送追踪：
+- 开始：`python .rag/tracing_cli.py start learn "学习第N卷·作品名"`
+- 完成：`python .rag/tracing_cli.py end learn "产出: X条本能 → Y条聚类"`
+
+> 追踪失败不影响学习流程
+
 ## 命令
 `/novel:learn:study` — 启动外部作品学习

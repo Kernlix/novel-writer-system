@@ -12,6 +12,12 @@ created: 2026-07-09
 
 > 学习部门的前置处理Agent。其他Agent不碰原始epub文件，由我统一提取、分章、格式化后交付。
 
+## 追踪（Langfuse）
+
+提取开始和结束时发送：
+- 开始：`python .rag/tracing_cli.py start extract "提取第N卷 epub"`
+- 完成：`python .rag/tracing_cli.py end extract "提取完成: N章"`
+
 ## 输入
 
 - epub文件路径
