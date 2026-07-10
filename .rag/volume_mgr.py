@@ -15,6 +15,9 @@ LCM Volume Manager — 灵境小说创作系统·分卷管理核心
   python volume_mgr.py lcm-rag "问题"     # LCM+RAG 协同查询
 """
 
+import time
+from .tracing import trace_lcm_query, flush as tracing_flush
+
 import argparse
 import io
 import json
@@ -275,10 +278,11 @@ def lcm_rag_coquery(question: str, n_results: int = 5, caller: str = "manager", 
         "question": question,
         "rag": [],
         "lcm": [],
-        "summary": "",
         "caller": caller,
-        "lcm_mode": lcm_mode,
+        "lcm_mode": lcm_mode
     }
+
+    _t0 = time.time()
 
     # 判断是否允许查LCM（写手部门不可见会话历史）
     allow_lcm = caller not in ("writer", "character-designer", "plot-architect")
@@ -338,6 +342,8 @@ def lcm_rag_coquery(question: str, n_results: int = 5, caller: str = "manager", 
     else:
         result["lcm"] = [{"info": "写手部门无权访问LCM会话历史"}]
 
+    result_len = sum(len(str(r)) for r in result.get("rag", [])) + sum(len(str(r)) for r in result.get("lcm", []))
+    trace_lcm_query(question, caller, result_len, (time.time() - _t0) * 1000)
     return result
 
 

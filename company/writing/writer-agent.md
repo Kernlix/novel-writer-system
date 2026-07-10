@@ -34,6 +34,14 @@ aliases: [第XX章]
 正文内容……
 ```
 
+## 追踪（Langfuse）
+
+写作开始和结束时，通过终端发送追踪数据：
+- 开始：`python .rag/tracing_cli.py start writer "第N章 章名"`
+- 完成：`python .rag/tracing_cli.py end writer "最终正文字数: XXXX字"`
+
+> 追踪失败不影响写作流程
+
 ## 写作流程
 
 1. **加载上下文**：读取卷大纲/总纲/前一章
