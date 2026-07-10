@@ -1,5 +1,5 @@
 ---
-id: external-study
+id: external-study-skill
 name: 外部学习 Skill
 department: learning
 command: /novel:learn:study
