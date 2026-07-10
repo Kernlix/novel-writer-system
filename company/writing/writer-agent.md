@@ -36,7 +36,7 @@ aliases: [第XX章]
 
 ## 追踪（Langfuse）
 
-写作开始和结束时，通过终端发送追踪数据：
+写作开始和结束时发送追踪：
 - 开始：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py start writer "第N章 章名"`
 - 完成：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py end writer "最终正文字数: XXXX字"`
 

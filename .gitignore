@@ -14,3 +14,4 @@ Thumbs.db
 # 小说项目专属数据（非系统代码）
 .story-system/chapters/
 .story-system/reviews/
+.rag/langfuse_config.json

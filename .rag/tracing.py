@@ -9,6 +9,19 @@ import functools
 def _get_client():
     """延迟初始化，只在有密钥时创建"""
     from langfuse import get_client
+    
+    # 如果环境变量缺失，从配置文件读取
+    if not os.environ.get('LANGFUSE_PUBLIC_KEY'):
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'langfuse_config.json')
+        if os.path.exists(config_path):
+            import json
+            with open(config_path) as f:
+                cfg = json.load(f)
+            for k, v in cfg.items():
+                env_key = f'LANGFUSE_{k.upper()}'
+                if not os.environ.get(env_key):
+                    os.environ[env_key] = v
+    
     return get_client()
 
 def trace_lcm_query(query: str, caller: str, result_len: int, duration_ms: float):
