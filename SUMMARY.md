@@ -75,10 +75,22 @@ tags: [速查, 索引]
 | 位置 | 内容 |
 |:-----|:------|
 | `knowledge/theory/` | 写作理论（标点/技法/模板） |
-| `knowledge/writing/` | 写作技法（章节/场景/标题） |
+| `knowledge/writing/` | 写作技法（章节/场景/标题/感情线/异世界文化反差） |
 | `knowledge/review/` | 审查标准 |
 | `knowledge/learned/` | 学习成果 |
+| `knowledge/instincts/` | 本能库（持续进化） |
 
+## 新招募（V5学习后）
+
+| 类型 | 名称 | 说明 |
+|:-----|:-----|:------|
+| Agent | 🤍 **romance-writer** | 恋爱写手——CP感情线四阶段管理 |
+| Skill | `romance-progression` | 感情线渐进四阶段模型 |
+| Skill | `romance-anti-climax` | 反高潮告白调度 |
+| Skill | `action-substitute-confession` | 行动替代告白技法 |
+| Skill | `isekai-culture-clash` | 异世界文化反差喜剧 |
+
+> 完整缺口分析见: `训练学习库/素晴小说/analysis/v5-gap-analysis-report.md`
 ## 喜剧写手 😂
 
 | 类型 | 文件 | 来源 |

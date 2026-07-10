@@ -39,6 +39,9 @@ created: 2026-07-09
 | 喜剧叙事声音 | `comedic-dialogue.md` §4 | V1 |
 | 高级喜剧格式库 | `comedy-pattern-library.md` | V2 |
 | 体制/阶级/法庭喜剧 | `system-comedy.md` | V3 |
+| 异世界文化反差喜剧 | `knowledge/writing/isekai-culture-clash.md` | V5 |
+| 绝境喜剧/尊严崩解弧线 | `defect-comedy-engine.md` §扩展 | V5 |
+| 性别翻转喜剧 | `comedy-scene-design.md` §扩展 | V5 |
 
 ## 使用流程
 

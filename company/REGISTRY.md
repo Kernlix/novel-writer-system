@@ -39,6 +39,7 @@ updated: 2026-06-25
 | character-designer | 角色设计师 | 👤 | 角色创建、关系网、成长弧光 | Agent(prompt=...) |
 | plot-architect | 剧情架构师 | 📖 | 大纲规划、分卷、情节设计 | Agent(prompt=...) |
 | humor-writer | 喜剧写手 | 😂 | 喜剧场景设计、吐槽节奏、缺陷引爆 | Agent(prompt=...) |
+| romance-writer | 恋爱写手 | 🤍 | 恋爱喜剧感情线渐进写作、反高潮告白、行动替代告白 | Agent(prompt=...) |
 | skill-matcher | 技法检索Agent | 🧩 | 按章节类型智能匹配技法，输出推荐表 | Agent调用 |
 | story-setup | 创作设定 | 🏗️ | 世界观、角色、剧情一体化设定 | `/novel:writing:world` |
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
