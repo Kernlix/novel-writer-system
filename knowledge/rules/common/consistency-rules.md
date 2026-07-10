@@ -38,6 +38,7 @@ after_change:
 | 不同层级不能用同名目录 | `knowledge/learned/` + `company/learning/` ✅ | `knowledge/learning/` + `company/learning/` ❌ |
 | 不同目录不能有混淆级名称 | `.review-archive/` + `.project-state/` ✅ | `.store-system/` + `.story-system/` ❌ |
 | Emoji 全局唯一 | 26 个 Agent 的 emoji 不重复 | 📊 被两个 Agent 共用 ❌ |
+| **验证脚本不得产生误报** | 路径解析基于仓库根目录，不是文件所在目录 | 200个假断链 ❌ |
 
 ## 历史教训
 
