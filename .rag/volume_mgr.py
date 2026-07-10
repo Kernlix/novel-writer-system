@@ -16,7 +16,13 @@ LCM Volume Manager — 灵境小说创作系统·分卷管理核心
 """
 
 import time
-from .tracing import trace_lcm_query, flush as tracing_flush
+try:
+    from .tracing import trace_lcm_query, flush as tracing_flush
+except ImportError:
+    # 脚本模式：从同级目录导入
+    import sys, os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from tracing import trace_lcm_query, flush as tracing_flush
 
 import argparse
 import io
