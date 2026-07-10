@@ -13,6 +13,14 @@ updated: 2026-07-08
 
 > 本智能体通过 Agent 工具由负责人调用，不直接与用户对话。
 
+## 追踪（Langfuse）
+
+审查开始和结束时发送追踪：
+- 开始：`python .rag/tracing_cli.py start reviewer "审查第N章"`
+- 完成：`python .rag/tracing_cli.py end reviewer "✅通过 或 ❌打回"`
+
+> 追踪失败不影响审查流程
+
 ## 输入
 
 - 待审查章节的完整正文
