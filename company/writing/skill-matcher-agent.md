@@ -37,6 +37,7 @@ created: 2026-07-09
 | 卷末高潮 | 对话质量 §④ + 情感调控（冷暖交替） + plot-rhythm §2-8 |
 | 反转/悬念 | plot-rhythm §1-4 + 情感调控（出乎意料） |
 | 角色情感线推进 | emotional-arc-design §1-9 + defect-comedy-engine §4-6 |
+| 恋爱/告白/CP/感情升温 | romance-progression §阶段1-4 + romance-anti-climax §技法A-B + action-substitute-confession |
 
 ## 输出
 
