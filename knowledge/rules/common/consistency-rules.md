@@ -51,3 +51,42 @@ after_change:
 - **EXTENDING.md 路径全过期**：架构重构后忘了更新扩展指南 → 重构时必须同步更新所有指南文件
 - **命令表四套并存**：SUMMARY.md / CLAUDE.md / SKILL.md / README 各有各的命令 → 只许一处维护
 - **SKILL.md 漏了 15 个 Agent**：加 Agent 后没更新入口文件 → 入口文件 = REGISTRY.md 的快照，必须同步
+
+## 2026-07-11 审计根因对策
+
+> 每条对策对一类根因，按提交前/后分两级。
+
+### 🅰️ 提交前阻断（改代码时强制做）
+
+| 根因 | 对策 | 怎么执行 |
+|:-----|:-----|:---------|
+| **子智能体工作不闭环**（创建→注册→计数只做第一环） | 子智能体 prompt 结尾加"交付前三问" | 写入 `gap-analysis-agent.md` 和 `skill-deployer-agent.md`——输出本能前必须确认：①文件物理创建了？②REGISTRY 登记了？③SKILL.md 计数更新了？ |
+| **单点修改不搜引用**（改了 agent 数量/技能数/措辞不全局同步） | 每次改动含数字/名称的字段后，跑 `grep -rn "旧值" --include="*.md" .` | 不依赖记忆——数字改了就是改了，"26→27"之后全局搜 "26 个" |
+| **路径迁移无联动**（移动文件不更新引用） | `mv` 之后立即 `grep -rn "旧路径" --include="*.md" .` | 两个命令绑定执行：移动+搜索，从不分开 |
+| **创建时缺自检**（写 import 不写 dep） | `.rag/` 下新增 .py 文件后，检查顶层 import 是否在 requirements.txt 有对应项 | 对照 `.rag/check_imports.py` 脚本一键检查 |
+| **REGISTRY 登记不核对分类** | 往 REGISTRY 加条目时，核对文件所在物理目录与当前 REGISTRY 段落标题是否一致 | 手放键盘默念：`common/` 路径归 `## 通用规则`，`novel/` 路径归 `## 小说专项` |
+
+### 🅱️ 提交后验证（可选，跑一遍确认刚改的没问题）
+
+```bash
+# ① Agent数量一致性
+FILES=$(find company -name "*-agent.md" | wc -l)
+DECLARED=$(grep -oP '\d+(?=\s*个专业智能体)' SKILL.md)
+[ "$FILES" = "$DECLARED" ] || echo "❌ Agent数: 文件$FILES vs 声明$DECLARED"
+
+# ② Skill注册完整性
+find company/*/skills -name "*.md" -exec basename {} .md \; | sort > /tmp/actual_skills.txt
+grep -oP '`\K[a-z-]+(?=`)' company/REGISTRY.md | sort > /tmp/reg_skills.txt
+diff /tmp/actual_skills.txt /tmp/reg_skills.txt | grep "^<" && echo "❌ 有Skill未注册"
+
+# ③ 断链检查（实际文件 vs REGISTRY声明的路径）
+grep -oP '`(knowledge|company)/[^`]+\.md`' company/REGISTRY.md knowledge/REGISTRY.md | tr -d '`' | while read f; do [ -f "$f" ] || echo "❌ 断链: $f"; done
+
+# ④ .rag/依赖完整性
+python3 .rag/check_imports.py 2>/dev/null || echo "⚠️ check_imports.py 未找到，运行: pip install ..."
+
+# ⑤ 6门禁/旧数字残留
+grep -rn "6门禁\|6道质量门禁" --include="*.md" . && echo "❌ 残留"
+```
+
+> 将以上脚本保存为 `scripts/audit-check.sh`，提交前跑一遍，0 报错再 push。
