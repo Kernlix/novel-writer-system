@@ -79,8 +79,8 @@ created: 2026-07-10
 
 | 类型 | 文件 | 来源 |
 |:-----|:------|:----:|
-| Skill | `knowledge/writing/romance-progression.md` | V5 |
-| Skill | `knowledge/writing/romance-anti-climax.md` | V5 |
-| Skill | `knowledge/writing/action-substitute-confession.md` | V5 |
+| Skill | `company/writing/skills/romance-progression.md` | V5 |
+| Skill | `company/writing/skills/romance-anti-climax.md` | V5 |
+| Skill | `company/writing/skills/action-substitute-confession.md` | V5 |
+| Skill | `company/writing/skills/isekai-culture-clash.md` | V5 |
 | 分析 | `训练学习库/素晴小说/analysis/v5-gap-analysis-report.md` | V5 |
-| 本能 | `训练学习库/素晴小说/analysis/konosuba_v5ch3_instinct.md` | V5 |
