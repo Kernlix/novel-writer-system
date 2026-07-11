@@ -44,12 +44,12 @@ updated: 2026-06-25
 | story-setup | 创作设定 | 🏗️ | 世界观、角色、剧情一体化设定 | `/novel:writing:world` |
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
 
-**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`
+**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `action-substitute-confession`, `isekai-culture-clash`, `romance-anti-climax`, `romance-progression`
 
 ### 审核部门 (Review)
 | id | 名称 | emoji | 职责 | 调用方式 |
 |:---|:-----|:------|:-----|:---------|
-| reviewer | 审查官 | 🔍 | 多维度质量审查（6门禁） | Agent(prompt=...) |
+| reviewer | 审查官 | 🔍 | 多维度质量审查（12项审查维度） | Agent(prompt=...) |
 | polish | 润色师 | 🎨 | 去AI化、文风统一、语言优化 | `/novel:review:style` |
 | setting-qa | 设定质检员 | 🔬 | 设定逻辑质检、矛盾发现 | `/novel:review:logic` |
 | era-consistency | 时代审查官 | 🏛️ | 技术/知识合理性审查 | `/novel:review:era` |

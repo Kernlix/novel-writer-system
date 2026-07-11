@@ -37,6 +37,9 @@ updated: 2026-06-25
 | `theory/rag-novel-config.md` | 长篇小说RAG配置指南（分块规则/检索参数/场景搭配/部署推荐） |
 
 ### ✍️ 写作技法 (writing/)
+
+> 恋爱/感情线写作技法见 `company/writing/skills/`（romance-writer Agent 配套 Skill）
+
 | 文件 | 说明 |
 |:-----|:------|
 | `writing/chapter-craft.md` | 章节构建、场景、对话技法 |

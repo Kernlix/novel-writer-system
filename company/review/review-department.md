@@ -6,7 +6,7 @@
 ## 下属Agent
 | Agent | 职责 |
 |:------|:------|
-| reviewer-agent | 多维质量审查（6门禁：基础/叙事/角色/情节/语言/一致性） |
+| reviewer-agent | 多维质量审查（12项审查维度：基础/叙事/角色/情节/语言/一致性） |
 | polish-agent | 去AI化、文风统一、语言优化 |
 | setting-qa-agent | 设定逻辑质检、矛盾发现、合理性验证 |
 | era-consistency-agent | 技术/知识合理性审查、时代背景一致性 |
@@ -17,7 +17,7 @@
 
 ## 审核流程
 ```
-写作完成 → 基础审查 (reviewer 6门禁)
+写作完成 → 基础审查 (reviewer 12项审查维度)
   → 专项审查 (按需调用 logic/style/character/plot)
   → 润色优化 (polish)
   → 设定质检 (setting-qa)
