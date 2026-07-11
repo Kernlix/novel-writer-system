@@ -7,7 +7,13 @@
 set -e
 
 TARGET_DIR="${1:-$HOME/novel-writer-system}"
-REPO_URL="https://github.com/nosoultool/novel-writer-system.git"
+
+read -p "📦 是否安装RAG引擎依赖(chromadb/torch等，体积较大)? [y/N] " install_rag
+if [[ "$install_rag" =~ ^[Yy]$ ]]; then
+    pip3 install -r .rag/requirements.txt
+fi
+
+REPO_URL="https://github.com/Kernlix/novel-writer-system.git"
 
 echo "=========================================="
 echo "  灵境 · 小说创作智能体系统 安装"

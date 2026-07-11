@@ -59,7 +59,7 @@ If you want to permanently integrate it into your Reasonix project:
 ```bash
 # Clone the repository into your Reasonix workspace
 cd your-reasonix-project
-git clone https://github.com/nosoultool/novel-writer-system.git skills/novel-writer
+git clone https://github.com/Kernlix/novel-writer-system.git skills/novel-writer
 
 # Reference it in AGENTS.md
 echo "- [novel-writer](skills/novel-writer/SKILL.md) — LingJing Novel Creation System" >> AGENTS.md

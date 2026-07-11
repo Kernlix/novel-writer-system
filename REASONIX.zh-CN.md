@@ -59,7 +59,7 @@ novel:world
 ```bash
 # 将仓库克隆到 Reasonix 工作区
 cd your-reasonix-project
-git clone https://github.com/nosoultool/novel-writer-system.git skills/novel-writer
+git clone https://github.com/Kernlix/novel-writer-system.git skills/novel-writer
 
 # 在 AGENTS.md 中引用
 echo "- [novel-writer](skills/novel-writer/SKILL.md) — 灵境小说创作系统" >> AGENTS.md

@@ -50,7 +50,7 @@ updated: <YYYY-MM-DD>
 ---
 
 > **扩展说明：**
-> - 新建 Agent 后，在 `agents/REGISTRY.md` 注册表中添加一行
+> - 新建 Agent 后，在 `company/REGISTRY.md` 注册表中添加一行
 > - 在 `knowledge/` 下创建对应的知识库目录和初始文件
 > - 在 CLAUDE.md 的智能体表格中补上行
 > - 如果 agent-type 是 user-invoked，还需在 skills/ 中创建对应的 Skill 文件

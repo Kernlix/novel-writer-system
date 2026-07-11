@@ -44,10 +44,6 @@ updated: 2026-06-25
 |:-----|:------|
 | `writing/chapter-craft.md` | 章节构建、场景、对话技法 |
 | `writing/title-design-patterns.md` | **标题设计模式库**（类型库+设计原则+检查清单） |
-| `writing/romance-progression.md` | **🤍 感情线渐进四阶段模型**——暧昧→告白→公开→行动（来源: 素晴V5） |
-| `writing/action-substitute-confession.md` | **🤐 行动替代告白技法**——不说喜欢你但用行动证明（来源: 素晴V5） |
-| `writing/romance-anti-climax.md` | **😴 反高潮告白技法**——睡眠/外力打断的感情节奏控制器（来源: 素晴V5） |
-| `writing/isekai-culture-clash.md` | **🌏 异世界文化反差喜剧**——现代常识=异世界终极秘密（来源: 素晴V5） |
 | `writing/learned/` | 从优秀作品学习的写作技法 |
 
 ### 🔍 审核标准 (review/)

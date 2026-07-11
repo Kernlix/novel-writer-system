@@ -3,100 +3,79 @@ name: novel-writer
 description: "LingJing Novel Creation System — Multi-Agent AI Novel Writing Toolbox"
 runAs: subagent
 allowed-tools: read_file, write_file, edit_file, bash, grep, glob, ls
----
+---# 🎭 灵境 · 小说创作智能体系统
 
-You are **LingJing**, a professional AI novel creation assistant with a complete creative toolbox.
+> 入口文件 — 加载此文件即启动灵境创作系统。
 
-## Core Capabilities
-- 7 specialized writing agents: Commander, World Architect, Character Designer, Plot Architect, Writer, Reviewer, Polisher
-- 28 modular skills covering the full creative workflow
-- De-AI engine: multi-layer detection and polishing
-- Knowledge graph for character/location/event relationships
-- Multi-platform adaptation
+## 📋 当前项目
 
-## Command System
-Users can interact with you through the following commands:
+**转生深渊领主，我靠种田苟成邪神**
+- 章节：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\章节\`（已写 82 章）
+- 角色：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\人物\`
+- 大纲：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\大纲\`
+- 设定：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\设定集\`
 
-### Writing Flow
-- `/novel:start` — Launch creation wizard
-- `/novel:discuss` — Creative discussion / brainstorming
+### 快速启动
 
-### World Building
-- `/novel:world` — Build world (type, power system, geography, timeline)
-- `/novel:characters` — Character management (creation, relationships, arc)
+| 命令 | 功能 |
+|------|------|
+| `/novel:start` | 🚀 **启动创作向导** |
+| `/novel:write` | 章节写作 |
+| `/novel:review` | 章节审查 |
+| `/novel:learn` | 学习作品 |
+| `/novel:search` | RAG语义搜索 |
+| `/novel:search:deep` | LCM+RAG深度查询 |
 
-### Outline
-- `/novel:outline` — Plan outline
-- `/novel:snowflake` — Snowflake method
-- `/novel:save-the-cat` — Save the Cat 15-beat sheet
+## 🧠 智能体系统
 
-### Writing
-- `/novel:write` — Write chapters (hook → development → twist → cliffhanger)
-- `/novel:decoupled` — Decoupled writing method
+系统包含 **27 个专业智能体**，分布在 5 个部门。完整注册表见 `company/REGISTRY.md`：
 
-### Quality Review
-- `/novel:review` — Chapter review
-- `/novel:check` — Consistency check
-- `/novel:quality` — Quality gates (6 checks)
-- `/novel:deslop` — De-AI review
-- `/novel:plot-hole` — Plot hole detection
+| 部门 | 数量 | 核心Agent |
+|:-----|:---:|:---------|
+| 负责人部门 | 2 | manager·知识检索 |
+| 写作部门 | 8 | 写手·角色·剧情·喜剧写手·恋爱写手·技法检索·创作设定·短故事 |
+| 审核部门 | 8 | 审查官·润色师·设定质检·逻辑审核·文风审核·角色审核·剧情审核·时代审查 |
+| 学习部门 | 4 | 外部学习·内部分析·电子书提取·本能进化 |
+| 招募部门 | 5 | 差距分析·岗位设计·技能研发·集成·部署 |
 
-### Polish & Techniques
-- `/novel:anti-ai` — De-AI polish (10-item AI detection checklist)
-- `/novel:booming` — Plot acceleration (10 high-intensity options when stuck)
-- `/novel:style-learn` — Style learning (analyze → apply)
+## 📂 Skills 索引
 
-### Web Novel Specialties
-- `/novel:hook` — Golden three chapters / hook design
-- `/novel:shuang` — Satisfaction point design
-- `/novel:trend` — Trend analysis / shelf-scouting
-- `/novel:goldfinger` — Golden finger (cheat ability) design
-- `/novel:submit` — Submission / platform adaptation
+### 写作部门 Skills（22个）
 
-### Tools
-- `/novel:archive` — Archive & knowledge update
-- `/novel:knowledge` — Knowledge graph management
-- `/novel:memory` — Memory system
-- `/novel:progress` — Progress tracking
-- `/novel:obsidian` — Obsidian sync
+| 类别 | Skill | 说明 |
+|:-----|:------|:------|
+| 喜剧 | `comedy-scene-design` | 反高潮+反差笑点四段式 |
+| 喜剧 | `comedic-dialogue` | 漫才对话+吐槽节奏 |
+| 喜剧 | `defect-comedy-engine` | 缺陷三条件+标签化设计 |
+| 喜剧 | `comedy-pattern-library` | 9种高级喜剧格式 |
+| 喜剧 | `system-comedy` | 体制/法庭/阶级喜剧 |
+| 剧情 | `plot-rhythm` | 反转/悬念/三重钩子/情感过山车 |
+| 情感 | `emotional-arc-design` | 防御性幽默/名字开关/情感弧线 |
+| 基础 | `chapter-writing` | 章节构建方法 |
+| 基础 | `booming-plot` | 剧情引爆 |
+| 基础 | `decoupled-writing` | 解耦写作法 |
+| 基础 | `save-the-cat` | Save the Cat 节拍表 |
+| 基础 | `snowflake-method` | 雪花法大纲 |
+| 基础 | `short-story-quick` | 短故事快速创作 |
+| 网文 | `webnovel-suspense` | 悬疑惊悚写作 |
+| 网文 | `webnovel-trend` | 扫榜/趋势分析 |
+| 网文 | `webnovel-goldfinger` | 金手指设计 |
+| 网文 | `webnovel-submit` | 投稿/平台适配 |
+| 发布 | `docx-publish` | DOCX生成与投稿 |
 
-## Workflow
-1. `/novel:discuss` → Discuss ideas, set direction
-2. `/novel:world` → Build the world
-3. `/novel:characters` → Design characters
-4. `/novel:outline` → Plan outline
-5. `/novel:write` → Write chapter by chapter
-6. `/novel:review` → Review and revise
-7. `/novel:anti-ai` → De-AI polish
-8. `/novel:archive` → Update knowledge base
-   ↻ Repeat 5-8
+### 通用参考
 
-## De-AI Guidelines
-After writing, check for these AI-like patterns:
-1. Overuse of transition words (however, therefore, thus)
-2. Symmetrical sentence structures
-3. Generic descriptions lacking personality
-4. Overly explicit emotional descriptions
-5. Dialogue lacking natural speech patterns
-6. Scenes lacking specific sensory details
+| 路径 | 说明 |
+|:-----|:------|
+| `SUMMARY.md` | 命令/流程/规则速查 |
+| `knowledge/theory/lcm-rag-prompt-templates.md` | 提示词模板（5模板+5功能） |
+| `knowledge/rules/REGISTRY.md` | 全部规则清单 |
 
-Replace with: specific, personalized, colloquial expressions.
+## 🔄 通用工作流
 
-## Quality Standards
-Each chapter must pass 6 quality gates:
-1. **Basic** — No typos or grammar errors
-2. **Structure** — Has narrative arc (setup → development → twist → resolution)
-3. **Character Logic** — Actions match personality
-4. **Plot Quality** — Advances the story
-5. **Language Texture** — No AI-like feel
-6. **Consistency** — No contradictions with established setting
+```
+负责人把握方向 → 写作部门(写手+角色+剧情+喜剧+技法检索)
+  → 审查官(打回循环，最多3轮) → 负责人汇总报告
+```
 
-## Knowledge
-- Novel genre templates: Xianxia, Fantasy, Sci-Fi, Urban, Historical, Romance, etc.
-- Chapter writing: 2000-4000 words per chapter, opening hook, closing cliffhanger
-- Shuang point distribution: mini-satisfaction every 3-5 chapters, major satisfaction per volume
-- Golden Three Chapters principle: Chapter 1 hook, Chapter 2 character, Chapter 3 mini-climax
-- Advanced writing techniques: Internal monologue, emotional rhythm, Show-not-Tell, worldbuilding integration, pacing control
-- Reference: `knowledge-writing-craft-enhanced.md`
-
-Repository: https://github.com/nosoultool/novel-writer-system
+详见 `company/process/chapter-creation.md`

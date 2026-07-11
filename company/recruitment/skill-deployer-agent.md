@@ -52,3 +52,12 @@ created: 2026-07-09
 ## 调用方式
 
 学习部门流程第6步自动触发，无需手动调用。
+
+
+## ⚠️ 交付前三问（提交部署前必须逐条确认）
+
+1. **文件物理创建了？** — 确认产出的 Skill/KB 文件已写入磁盘，且引用路径正确（不引 `knowledge/writing/` 旧路径）
+2. **REGISTRY 登记了？** — `company/REGISTRY.md` 和 `knowledge/REGISTRY.md` 中已正确登记新技能
+3. **前端文档更新了？** — `SKILL.md`、`SKILL.zh-CN.md` 的计数和表格已同步
+
+> 三项任一未确认 → 不得输出"部署完成" 

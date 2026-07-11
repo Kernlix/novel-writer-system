@@ -7,7 +7,7 @@ param(
     [string]$TargetDir = "$env:USERPROFILE\novel-writer-system"
 )
 
-$RepoUrl = "https://github.com/nosoultool/novel-writer-system.git"
+$RepoUrl = "https://github.com/Kernlix/novel-writer-system.git"
 
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "  灵境 · 小说创作智能体系统 安装" -ForegroundColor Cyan
@@ -52,3 +52,9 @@ Write-Host "  [方式四] 手动阅读"
 Write-Host "    Get-Content $TargetDir\SKILL.md"
 Write-Host ""
 Write-Host "📖 完整文档: $TargetDir\README.md" -ForegroundColor Cyan
+
+
+$install_rag = Read-Host "📦 是否安装RAG引擎依赖(chromadb/torch等，体积较大)? [y/N]"
+if ($install_rag -eq "y" -or $install_rag -eq "Y") {
+    pip3 install -r .rag/requirements.txt
+}

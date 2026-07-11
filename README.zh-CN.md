@@ -25,12 +25,12 @@
 
 ### Windows
 ```powershell
-iex "& { $(irm https://raw.githubusercontent.com/nosoultool/novel-writer-system/main/install.ps1) }"
+iex "& { $(irm https://raw.githubusercontent.com/Kernlix/novel-writer-system/main/install.ps1) }"
 ```
 
 ### macOS / Linux
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/nosoultool/novel-writer-system/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/Kernlix/novel-writer-system/main/install.sh)
 ```
 
 ---
