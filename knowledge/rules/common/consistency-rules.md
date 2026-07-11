@@ -38,7 +38,12 @@ after_change:
 | 不同层级不能用同名目录 | `knowledge/learned/` + `company/learning/` ✅ | `knowledge/learning/` + `company/learning/` ❌ |
 | 不同目录不能有混淆级名称 | `.review-archive/` + `.project-state/` ✅ | `.store-system/` + `.story-system/` ❌ |
 | Emoji 全局唯一 | 26 个 Agent 的 emoji 不重复 | 📊 被两个 Agent 共用 ❌ |
+| **type 字段完整** | 每个 agent 文件 frontmatter 含 `type:`（枚举值见 `templates/agent-template.md`） | epub-extractor 缺 `type` ❌ |
+| **新增 Agent 后立即更新3处** | `company/REGISTRY.md` + `SKILL.md`（计数+Agent表格）+ `SUMMARY.md` | romance-writer 只在1处注册 ❌ |
+| **新增 Skill 后验证注册** | 跑 `diff actual-skills registered-skills` 确认无遗漏 | 4个romance skills漏注册 ❌ |
 | **验证脚本不得产生误报** | 路径解析基于仓库根目录，不是文件所在目录 | 200个假断链 ❌ |
+| **知识库分类一致** | 登记表（REGISTRY）中的分类与文件物理位置一致 | common/ 文件被归入 novel/ ❌ |
+| **前端文档与后端实现同步** | 修改 agent 数量/维度后，SKILL.md 和 SKILL.zh-CN.md 同步更新 | 6门禁→12维，但文档未同步 ❌ |
 
 ## 历史教训
 

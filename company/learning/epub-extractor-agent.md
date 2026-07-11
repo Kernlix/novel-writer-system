@@ -1,6 +1,7 @@
 ---
 id: epub-extractor
 name: 电子书文本提取员 (eBook Extractor)
+type: worker
 emoji: 📦
 department: learning
 invocation: Agent(prompt=...)
