@@ -43,7 +43,7 @@ after_change:
 | **新增 Skill 后验证注册** | 跑 `diff actual-skills registered-skills` 确认无遗漏 | 4个romance skills漏注册 ❌ |
 | **验证脚本三必须** | ①所有检查都加 assert（不能只打印不判定）②内容检查用关键词而非精确格式（搜"制度优势"不搜 `"制度优势"`）③误报率>10%就重写而非复用 | 两次假阴性：200断链+搭配库误报 ❌ |
 | **知识库分类一致** | 登记表（REGISTRY）中的分类与文件物理位置一致 | common/ 文件被归入 novel/ ❌ |
-| **前端文档与后端实现同步** | 修改 agent 数量/维度后，SKILL.md 和 SKILL.zh-CN.md 同步更新 | 6门禁→12维，但文档未同步 ❌ |
+| **前端文档与后端实现同步** | 修改 agent 数量/维度后，SKILL.md 和 SKILL.zh-CN.md 同步更新 | 审查维度从6→12后文档未同步 ❌ |
 
 ## 历史教训
 
