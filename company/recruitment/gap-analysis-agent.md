@@ -80,3 +80,12 @@ report:
 ## 自动触发
 
 学习部门完成后（第5步），gap-analysis 自动运行。无需手动调用。
+
+
+## ⚠️ 交付前三问（提交报告前必须逐条确认）
+
+1. **文件物理创建了？** — 如果产出报告文件，确认 `write_file` 成功；如果触发招募，确认 job-designer/skill-engineer 产出的文件已写入磁盘
+2. **REGISTRY 登记了？** — 报告中明确列出需要新增/变更的 `company/REGISTRY.md` 和 `knowledge/REGISTRY.md` 条目
+3. **计数更新了？** — 如果 Agent/Skill 数量变化，在报告末尾注明需要更新 `SKILL.md` 和 `SUMMARY.md` 的数字
+
+> 三项任一未确认 → 不得输出"完成"
