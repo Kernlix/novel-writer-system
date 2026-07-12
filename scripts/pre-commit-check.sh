@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+# 灵境系统 · 提交前自动检查
+# 覆盖 6 次审计发现的 7 大类根因
+# 用法: bash scripts/pre-commit-check.sh
+set -e
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$REPO_ROOT"
+ERRORS=0
+
+red() { echo -e "\033[31m$1\033[0m"; ERRORS=$((ERRORS+1)); }
+green() { echo -e "\033[32m$1\033[0m"; }
+
+echo "════════════════════════════════"
+echo "🔍 灵境系统 · 提交前检查"
+echo "════════════════════════════════"
+
+# ═══ 1. 改了A不改B: Agent计数一致性 ═══
+echo -e "\n📋 1. Agent/Skill计数一致性"
+ACTUAL_AGENTS=$(find company -name "*-agent.md" 2>/dev/null | wc -l)
+DECLARED_AGENTS=$(grep -oP '\d+(?=\s*个专业智能体)' SKILL.md 2>/dev/null || echo "0")
+if [ "$ACTUAL_AGENTS" = "$DECLARED_AGENTS" ]; then
+    green "  ✅ Agent: $ACTUAL_AGENTS 个(一致)"
+else
+    red "  ❌ Agent: 实际$ACTUAL_AGENTS vs 声明$DECLARED_AGENTS"
+fi
+
+ACTUAL_SKILLS=$(find company/writing/skills -name "*.md" 2>/dev/null | wc -l)
+DECLARED_SKILLS=$(grep -oP "写作部门 Skills（\K\d+" SKILL.md 2>/dev/null || echo "0")
+if [ "$ACTUAL_SKILLS" = "$DECLARED_SKILLS" ]; then
+    green "  ✅ Skills: $ACTUAL_SKILLS 个(一致)"
+else
+    red "  ❌ Skills: 实际$ACTUAL_SKILLS vs 声明$DECLARED_SKILLS"
+fi
+
+# ═══ 2. 声明了但没实现: hooks引用检查 ═══
+echo -e "\n📋 2. Hooks是否被流程引用"
+for hook in $(find company -path "*/hooks/*.md" -exec basename {} .md \; 2>/dev/null); do
+    REFS=$(grep -rl "hooks/$hook" --include="*.md" company/ 2>/dev/null | grep -v "hooks/$hook.md$" | wc -l)
+    if [ "$REFS" -eq 0 ]; then
+        red "  ❌ $hook: 0处引用(孤立hook)"
+    fi
+done
+green "  ✅ hook引用检查完成"
+
+# ═══ 3. 批量脚本副作用: REGISTRY断链 ═══
+echo -e "\n📋 3. REGISTRY引用完整性(改前改后计数对比)"
+BROKEN=0
+while IFS= read -r ref; do
+    if [ ! -f "$ref" ]; then
+        red "  ❌ 断链: $ref"
+        BROKEN=$((BROKEN+1))
+    fi
+done < <(grep -oP '`(company|knowledge)/[^`]+\.md`' company/REGISTRY.md knowledge/REGISTRY.md 2>/dev/null | tr -d '`')
+[ "$BROKEN" -eq 0 ] && green "  ✅ 无断链"
+
+# ═══ 4. 个人环境泄露: 绝对路径/用户名 ═══
+echo -e "\n📋 4. 个人环境泄露检查"
+PATHS=$(grep -rl "D:\\\\allproject\|/home/\|Users/[^/]\+/" --include="*.md" --include="*.py" . 2>/dev/null | grep -v ".git/" | grep -v "learned/" | grep -v "practical-writing/" | grep -v "lingjing-v2-experience/")
+if [ -n "$PATHS" ]; then
+    red "  ❌ 发现绝对路径: $(echo "$PATHS" | wc -l) 文件"
+    echo "$PATHS" | head -5
+else
+    green "  ✅ 无个人路径泄露"
+fi
+
+# ═══ 5. 创建后不验证: 脚本可执行性 ═══
+echo -e "\n📋 5. 脚本可执行性"
+for script in scripts/*.sh .rag/check_imports.py; do
+    [ -f "$script" ] || continue
+    if [ -x "$script" ]; then
+        green "  ✅ $script (可执行)"
+    else
+        red "  ❌ $script (不可执行)"
+    fi
+done
+
+# ═══ 6. 三层不同步: 审查维度 vs 模板2检查项 ═══
+echo -e "\n📋 6. 审查维度 vs 模板2对齐"
+GATES_COUNT=$(grep -c '"[a-z_]*":' company/review/reviewer-agent.md 2>/dev/null | head -1 || echo "0")
+TEMPLATE_COUNT=$(grep -c '^[0-9]\+\.' knowledge/theory/lcm-rag-prompt-templates.md 2>/dev/null | awk '/模板2/,/模板3/' | tail -1 || echo "0")
+echo "  reviewer gates: $GATES_COUNT 字段, 模板2: 见文件"
+
+# ═══ 7. 子智能体闭环: agent frontmatter完整性 ═══
+echo -e "\n📋 7. Agent frontmatter完整性"
+for agent in company/*/*-agent.md; do
+    name=$(basename "$agent")
+    if ! head -1 "$agent" | grep -q "^---$"; then
+        red "  ❌ $name: 缺少YAML frontmatter"
+        continue
+    fi
+    for field in "id:" "name:" "emoji:"; do
+        if ! head -20 "$agent" | grep -q "$field"; then
+            red "  ❌ $name: 缺少 $field"
+        fi
+    done
+done
+green "  ✅ frontmatter检查完成"
+
+echo -e "\n════════════════════════════════"
+if [ "$ERRORS" -eq 0 ]; then
+    green "🎉 全部通过，可以提交"
+else
+    red "❌ $ERRORS 项未通过，修复后再提交"
+    exit 1
+fi
