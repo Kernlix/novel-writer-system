@@ -16,8 +16,8 @@ updated: 2026-07-08
 ## 追踪（Langfuse）
 
 审查开始和结束时发送追踪：
-- 开始：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py start reviewer "审查第N章"`
-- 完成：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py end reviewer "✅通过 或 ❌打回"`
+- 开始：`python python .rag/tracing_cli.py start reviewer "审查第N章"`
+- 完成：`python python .rag/tracing_cli.py end reviewer "✅通过 或 ❌打回"`
 
 > 追踪失败不影响审查流程
 

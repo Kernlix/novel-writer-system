@@ -99,19 +99,19 @@ lcm-rag "第27章·王城对峙" --caller writer
 ```
 # 方式1：直接调用 volume_mgr.py（推荐——一次调用同时查RAG+LCM）
 #   写手/角色/剧情调用（仅RAG）：
-PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题" --caller writer
+python3 .rag/volume_mgr.py lcm-rag "你的问题" --caller writer
 #   审查官调用（RAG+LCM摘要，默认summary模式，前300字）：
-PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题" --caller reviewer
+python3 .rag/volume_mgr.py lcm-rag "你的问题" --caller reviewer
 #   审查官需要完整会话时（需明确指定--lcm-mode full）：
-PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题" --caller reviewer --lcm-mode full
+python3 .rag/volume_mgr.py lcm-rag "你的问题" --caller reviewer --lcm-mode full
 #   负责人/默认（RAG+LCM摘要）：
-PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py lcm-rag "你的问题"
+python3 .rag/volume_mgr.py lcm-rag "你的问题"
 
 # 方式2：单独查RAG
-PYTHONPATH="" /c/Python314/python.exe .rag/query.py --novel "小说项目路径" --rerank "问题"
+python3 .rag/query.py --novel "小说项目路径" --rerank "问题"
 
 # 方式3：单独查LCM会话历史（仅审查官/负责人可用）
-PYTHONPATH="" /c/Python314/python.exe .rag/volume_mgr.py search "关键词"
+python3 .rag/volume_mgr.py search "关键词"
 ```
 
 ## 嵌入创作流程

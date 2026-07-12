@@ -16,8 +16,8 @@ created: 2026-07-09
 ## 追踪（Langfuse）
 
 提取开始和结束时发送：
-- 开始：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py start extract "提取第N卷 epub"`
-- 完成：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py end extract "提取完成: N章"`
+- 开始：`python python .rag/tracing_cli.py start extract "提取第N卷 epub"`
+- 完成：`python python .rag/tracing_cli.py end extract "提取完成: N章"`
 
 ## 输入
 

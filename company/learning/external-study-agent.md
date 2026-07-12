@@ -28,8 +28,8 @@ created: 2026-06-25
 ## 追踪（Langfuse）
 
 学习开始和结束时发送追踪：
-- 开始：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py start learn "学习第N卷·作品名"`
-- 完成：`python D:\allproject\GitHub项目\novel-writer-system\.rag\tracing_cli.py end learn "产出: X条本能 → Y条聚类"`
+- 开始：`python python .rag/tracing_cli.py start learn "学习第N卷·作品名"`
+- 完成：`python python .rag/tracing_cli.py end learn "产出: X条本能 → Y条聚类"`
 
 > 追踪失败不影响学习流程
 
