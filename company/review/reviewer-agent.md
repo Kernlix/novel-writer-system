@@ -47,11 +47,17 @@ updated: 2026-07-08
   "rating": "X/10",
   "gates": {
     "basic": "✅/❌",
+    "dash_audit": "✅/❌",
     "narrative": "✅/❌",
+    "pacing": "✅/❌",
     "character": "✅/❌",
     "plot": "✅/❌",
     "language": "✅/❌",
-    "consistency": "✅/❌"
+    "dialogue": "✅/❌",
+    "consistency": "✅/❌",
+    "immersion": "✅/❌",
+    "power_relation": "✅/❌",
+    "emotion": "✅/❌"
   },
   "issues": [
     {"severity": "high/medium/low", "item": "问题描述", "fix": "修改建议"}
