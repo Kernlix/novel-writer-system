@@ -5,12 +5,12 @@
 - **窄核心，宽边缘** — 核心子系统精简，能力通过 Skills、Hooks 扩展
 - **最小侵入递增** — 新功能优先走：修改 Skill → 新增 Hook → 新增 Agent
 - **写作上不设限** — 仅输出正文时关闭思考模式；字数不低于2000汉字无上限
-- **Windows 开发** — 路径使用 `D:\allproject\` 绝对路径（Windows 专属环境）
+- **跨平台** — 路径统一使用相对于仓库根目录的相对路径，兼容 Windows/Linux/macOS
 
 ## 项目架构
 
 ```
-D:\allproject\GitHub项目\novel-writer-system\     ← 灵境系统
+novel-writer-system/            ← 灵境系统（仓库根目录）
 ├── company/               ← 虚拟AI公司（5部门 + process流程层）
 │   ├── manager/           ← 负责人部门
 │   ├── writing/           ← 写作部门
@@ -27,7 +27,7 @@ D:\allproject\GitHub项目\novel-writer-system\     ← 灵境系统
 ├── .rag/                  ← RAG引擎/分卷管理
 └── company/REGISTRY.md     ← 完整部门列表
 
-D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\  ← 小说文件
+{项目目录}/                ← 小说项目文件（与本仓库分开存放，路径由用户在启动时指定）
 ```
 
 ## 核心流程

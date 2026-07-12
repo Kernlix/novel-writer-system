@@ -3,7 +3,9 @@ name: novel-writer
 description: "灵境小说创作智能体系统 — 多Agent协作+模块化Skills的AI小说创作工具箱"
 runAs: subagent
 allowed-tools: read_file, write_file, edit_file, bash, grep, glob, ls
----# 🎭 灵境 · 小说创作智能体系统
+---
+
+# 🎭 灵境 · 小说创作智能体系统
 
 > 入口文件 — 加载此文件即启动灵境创作系统。
 

@@ -3,17 +3,21 @@ name: novel-writer
 description: "LingJing Novel Creation System — Multi-Agent AI Novel Writing Toolbox"
 runAs: subagent
 allowed-tools: read_file, write_file, edit_file, bash, grep, glob, ls
----# 🎭 灵境 · 小说创作智能体系统
+---
+
+# 🎭 灵境 · 小说创作智能体系统
 
 > 入口文件 — 加载此文件即启动灵境创作系统。
 
 ## 📋 当前项目
 
-**转生深渊领主，我靠种田苟成邪神**
-- 章节：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\章节\`（已写 82 章）
-- 角色：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\人物\`
-- 大纲：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\大纲\`
-- 设定：`D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神\设定集\`
+启动后系统自动读取当前工作目录下的项目结构：
+- 章节：`{项目目录}\章节\`
+- 角色：`{项目目录}\人物\`
+- 大纲：`{项目目录}\大纲\`
+- 设定：`{项目目录}\设定集\`
+
+尚未初始化项目时，执行 `/novel:start` 启动创作向导完成初始化。
 
 ### 快速启动
 
@@ -51,6 +55,10 @@ allowed-tools: read_file, write_file, edit_file, bash, grep, glob, ls
 | 喜剧 | `system-comedy` | 体制/法庭/阶级喜剧 |
 | 剧情 | `plot-rhythm` | 反转/悬念/三重钩子/情感过山车 |
 | 情感 | `emotional-arc-design` | 防御性幽默/名字开关/情感弧线 |
+| 恋爱 | `romance-progression` | 感情线渐进四阶段模型 |
+| 恋爱 | `action-substitute-confession` | 行动替代告白技法 |
+| 恋爱 | `romance-anti-climax` | 反高潮告白节奏控制 |
+| 恋爱 | `isekai-culture-clash` | 异世界文化反差 |
 | 基础 | `chapter-writing` | 章节构建方法 |
 | 基础 | `booming-plot` | 剧情引爆 |
 | 基础 | `decoupled-writing` | 解耦写作法 |
