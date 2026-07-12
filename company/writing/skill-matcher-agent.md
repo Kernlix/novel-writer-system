@@ -3,7 +3,7 @@ id: skill-matcher
 name: 技法检索Agent (Skill Matcher)
 type: orchestrator-dispatched
 emoji: 🧩
-invocation: 写手调用（写作流程步骤1.5）
+invocation: 写手调用（写作流程步骤3）
 description: 按章节类型智能检索知识库/本能库中最相关的技法，输出推荐表给写手
 created: 2026-07-09
 ---

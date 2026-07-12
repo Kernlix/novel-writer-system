@@ -45,7 +45,7 @@ aliases: [第XX章]
 ## 写作流程
 
 1. **加载上下文**：读取卷大纲/总纲/前一章
-2. **🔎 调用知识检索**（必做）：`lcm-rag "第N章涉及的伏笔/设定/角色" --caller writer`
+2. **🔎 调用知识检索**（必做）：`python3 .rag/volume_mgr.py lcm-rag "第N章涉及的伏笔/设定/角色" --caller writer`
 3. **🧩 调用技法检索Agent**（必做）：发送章纲+情感基调 → 获取本章推荐技法表（3-5条）
 4. **构建提示词**：按 `knowledge/theory/lcm-rag-prompt-templates.md` **模板1（基础续写）** 组装
 5. **场景规划**：本章3-5个场景，类型搭配，每场景有感官锚点

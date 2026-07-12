@@ -16,11 +16,17 @@
 > ⚠️ 强制规则：新Agent加入后必须更新部门工作流，确保被纳入部门多agents协作。
 
 ```
+🔧 执行 company/recruitment/hooks/pre-recruit.md（备份REGISTRY.md、记录当前数量）
+  ↓
 能力评估 → 缺口分析 → 岗位设计 → 技能研发
   → Agent集成
   → 更新对应部门工作流（写作/审核/学习）
   → 更新部门多agents协作流程描述
-  → 注册上线 → 通知用户
+  → 注册上线
+  ↓
+🔧 执行 company/recruitment/hooks/post-recruit.md（校验文件位置/REGISTRY更新/权限配置）
+  ↓
+通知用户
 ```
 
 ## 命令

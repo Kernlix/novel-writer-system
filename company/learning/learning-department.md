@@ -51,6 +51,7 @@
   └── 📦 epub提取员：提取文本 → 按章分块 → 格式化输出
 
 第1步：🏢 负责人把握大方向
+  ├── 🔧 执行 `company/learning/hooks/pre-learn.md`（确认学习源文件、加载各Agent能力基线）
   ├── 用户提供学习材料
   └── 确认学习目标 + 派发任务
 
@@ -80,6 +81,7 @@
   └── 注册到 instincts/REGISTRY.md
 
 ⚠️ 强制系统升级（必做，不可跳过）
+  ├── 🔧 执行 `company/learning/hooks/post-learn.md`（强制检查清单：upgrade字段/系统文件更新/升级日志）
   ├── 本能进化路径：
   │   ├── 如果有 ≥3 条同 domain 本能且 confidence ≥ 0.7
   │   │    → 进化Agent自动聚类
