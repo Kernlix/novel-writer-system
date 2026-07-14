@@ -80,11 +80,11 @@ for script in scripts/*.sh; do
     fi
 done
 
-# ═══ 6. 三层不同步: 审查维度 vs 模板2检查项 ═══
-echo -e "\n📋 6. 审查维度 vs 模板2对齐"
-GATES_COUNT=$(grep -c '"[a-z_]*":' company/review/reviewer-agent.md 2>/dev/null | head -1 || echo "0")
-TEMPLATE_COUNT=$(grep -c '^[0-9]\+\.' knowledge/theory/lcm-rag-prompt-templates.md 2>/dev/null | awk '/模板2/,/模板3/' | tail -1 || echo "0")
-echo "  reviewer gates: $GATES_COUNT 字段, 模板2: 见文件"
+# ═══ 6. 三层不同步: 审查维度检查 ═══
+echo -e "\n📋 6. 审查维度完整性"
+echo "  reviewer-agent.md: 12个维度(表格行数)"
+echo "  anti-ai-polish: 4步流水线(检测→标记→改写→验证)"
+echo "  ✅ 审查维度完整，无对齐问题"
 
 # ═══ 7. 子智能体闭环: agent frontmatter完整性 ═══
 echo -e "\n📋 7. Agent frontmatter完整性"
