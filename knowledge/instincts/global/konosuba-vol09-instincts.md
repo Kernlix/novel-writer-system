@@ -11,7 +11,7 @@ status: 待聚类
 # 灵境学习部门：KonoSuba 第9卷 写作技法本能
 
 > 7Agent并行分析。~200条本能。
-> 创作产出: （缺口分析中）
+> 创作产出: godhood-dwarfing(神格矮化学) + mutual-healing-confession(相互治愈型告白)
 
 ---
 

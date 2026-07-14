@@ -84,3 +84,18 @@ created: 2026-07-10
 | Skill | `company/writing/skills/action-substitute-confession.md` | V5 |
 | Skill | `company/writing/skills/isekai-culture-clash.md` | V5 |
 | 分析 | `训练学习库/素晴小说/analysis/v5-gap-analysis-report.md` | V5 |
+
+## Sub-skill: 相互治愈型告白
+
+> 来源：KonoSuba第9卷缺口分析。双方暴露最深的黑历史→互相比烂→共同治愈的新型告白模式。
+
+### 技法
+1. **不完美清单**：用"缺点清单"代替"告白词"——惠惠列自己缺点的方式反而更真诚
+2. **三重情感转向**：紧张→搞笑打断→吐槽→再认真
+3. **行动式收尾**：告白不靠"我喜欢你"台词，而是"决定留长发"这种行动承诺
+
+### 协作
+| 关系 | 说明 |
+|:-----|:------|
+| humor-writer | 喜剧打断的timing |
+| love-triangle-romance | 告白后对其他CP线的影响 |
