@@ -204,3 +204,128 @@ knowledge/
 ```
 
 每个本能文件需在 `knowledge/instincts/REGISTRY.md` 中注册。
+
+---
+
+## 六、分析维度框架（9维度）
+
+> 本能分析覆盖9个维度。新建本能时，需指定其所属维度（domain字段），并使用对应的维度前缀作为本能ID的一部分。
+
+### 维度总览
+
+| # | 维度 | 英文 | domain 值 | ID 前缀 |
+|:-:|:----|:----|:----------|:--------|
+| 1 | ✍️ 文体与叙事 | Style & Narrative | narrative | `narrative:` |
+| 2 | 📖 主题与意义 | Theme & Meaning | theme | `theme:` |
+| 3 | 👤 角色与心理 | Character & Psychology | character | `character:` |
+| 4 | 🏗️ 结构与节奏 | Structure & Pacing | structure | `structure:` |
+| 5 | 🎨 表现与修辞 | Expression & Rhetoric | expression | `expression:` |
+| 6 | 🔬 细节与逻辑 | Details & Logic | detail | `detail:` |
+| 7 | 🏠 场景构建描写 | Scene Construction & Description | scene-desc | `scene-desc:` |
+| 8 | 🏠 场景构建 | Scene Construction | scene | `scene:` |
+| 9 | ✒️ 文风语言 | Style & Language | style | `style:` |
+
+### 维度8：🏠 场景构建（Scene Construction）
+
+| 分析要点 | 说明 |
+|:---------|:-----|
+| **空间布局与地理逻辑** | 场景是否有空间感？角色位置关系是否清晰？室内/室外/地下等空间属性是否一致？ |
+| **感官锚点** | 视觉/听觉/嗅觉/触觉描写是否合理搭配？是否有主导感官锚点形成记忆点？ |
+| **时间标记与环境变化** | 时间流逝是否可感知？季节/天气/昼夜是否一致且服务于叙事？ |
+| **空间功能性** | 战斗/对话/情感场景是否有分区设计？空间是否驱动情节（而非仅作为背景）？ |
+
+### 维度9：✒️ 文风语言（Style & Language）
+
+| 分析要点 | 说明 |
+|:---------|:-----|
+| **句式多样性** | 长短句交替是否自然？是否避免完美对称句式？ |
+| **角色差异化对话** | 每个角色的说话方式（句长、语气词、惯用语）是否有明显区别？ |
+| **去AI化写作** | 是否做到口语化、不完美表达、省略与打断？是否包含AI高频词或套路化结构？ |
+| **叙事节奏** | 描写/对话/行动的比例是否合理？节奏是否符合场景情绪需求？ |
+
+### 本能ID命名规则
+
+本能ID使用 `domain:identifier` 格式，domain 取上表中的 ID 前缀（去掉冒号）。已注册的 domain 值：
+
+| domain | 适用场景 | 示例 ID |
+|:-------|:---------|:--------|
+| `dialogue` | 对话技法 | `dialogue:ironhammer-short-speech` |
+| `practical-writing` | 实用写作 | `practical-writing:cold-structured-persuasive` |
+| `konosuba` | 素晴系列专题 | `konosuba:v6ch1-SN01` |
+| `scene` | 场景构建 | `scene:spatial-functional-combat` |
+| `style` | 文风语言 | `style:sentence-variety-avoid-symmetry` |
+| `narrative` | 文体与叙事 | `narrative:pov-switch-technique` |
+| `theme` | 主题与意义 | `theme:self-sacrifice-pattern` |
+| `character` | 角色与心理 | `character:role-voice-signature` |
+| `structure` | 结构与节奏 | `structure:three-act-pacing` |
+| `expression` | 表现与修辞 | `expression:show-dont-tell` |
+| `detail` | 细节与逻辑 | `detail:foreshadowing-recall` |
+| `scene-desc` | 场景构建描写（旧维度） | `scene-desc:immersion-anchor` |
+
+新建本能时，domain 从以上列表中选择。如属于新领域，先更新本表再创建。
+
+### 本能输出模板示例
+
+以下是 scene 和 style 两个维度的本能模板示例，供本能生成时参考：
+
+**scene 维度示例：**
+```markdown
+---
+id: scene:spatial-functional-combat
+trigger: "设计战斗场景的空间布局时"
+action: "先确定功能区（对抗区/掩体区/陷阱区），再分配角色站位，最后补充物理细节锚点"
+confidence: 0.7
+domain: "scene"
+scope: "global"
+source: "场景构建分析参考手册"
+created: 2026-07-14
+obs_count: 1
+---
+
+## 本能说明
+
+战斗场景的空间感不来自「描写了多少细节」，而来自「角色在空间中的行为和移动」。
+- ❌ 「这是一个宽敞的大厅，柱子林立，地面铺着大理石」
+- ✅ 和真躲在柱子后 → 惠惠绕到左侧 → 达克尼斯从正面冲锋
+
+## 相关本能
+
+- scene:sensory-anchor-distribution（感官锚点分配比例）
+- scene:time-marker-consistency（时间标记一致性）
+
+## 进化状态
+
+- [ ] 已聚类
+- [ ] 已升级
+```
+
+**style 维度示例：**
+```markdown
+---
+id: style:sentence-variety-avoid-symmetry
+trigger: "检查段落节奏时"
+action: "打破'不仅…而且…'等对称句式，改为短句+破折号或口语化表达"
+confidence: 0.7
+domain: "style"
+scope: "global"
+source: "去AI化写作实践总结"
+created: 2026-07-14
+obs_count: 1
+---
+
+## 本能说明
+
+对称句式（不仅…而且…/既…又…/虽然…但是…）是AI写作的典型特征，应替换为更自然的表达。
+- ❌ 「他不仅没有生气，反而露出了欣慰的笑容」
+- ✅ 「他没生气——还笑了，笑得挺不是滋味」
+
+## 相关本能
+
+- style:dialogue-differentiation（角色对话差异化）
+- style:narrative-pacing-ratio（叙事节奏比例控制）
+
+## 进化状态
+
+- [ ] 已聚类
+- [ ] 已升级
+```

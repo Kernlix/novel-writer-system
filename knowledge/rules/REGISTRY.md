@@ -18,6 +18,8 @@ updated: 2026-07-11
 | `common/recruitment-threshold.md` | 招募触发阈值规则（何时加Agent/何时扩Skill） |
 | `common/emotion-palette.md` | 情感调控系统（四维坐标+刀子投放+硬性规则） |
 | `common/consistency-rules.md` | 系统一致性维护规则（防止整改问题复现） |
+| `common/scene-construction.md` | 场景构建分析维度参考清单（学习部门用） |
+| `common/style-language-deai.md` | 文风语言+去AI化分析维度参考清单（学习部门用） |
 
 ## 小说专项（novel/）
 
