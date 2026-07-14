@@ -66,3 +66,11 @@ tags: [流程, 章节创作]
   ├── ⚠️ 待办事项/风险提醒
   └── 📨 提交用户审阅
 ```
+
+## 卷完结归档
+
+当一卷的所有章节完成创作和审查后，进行卷完结归档：
+
+1. 执行 `company/manager/hooks/pre-archive.md` — 归档前检查文件完整性
+2. 执行归档操作
+3. 执行 `company/manager/hooks/post-archive.md` — 归档后清理

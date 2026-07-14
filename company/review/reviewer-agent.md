@@ -28,6 +28,7 @@ updated: 2026-07-08
 
 ## 审查前准备
 
+0. **执行审查前Hook**：执行 `company/review/hooks/pre-review.md` — 加载参考数据
 1. **RAG检索**：`python3 .rag/volume_mgr.py lcm-rag "本章涉及的设定/角色/伏笔原文" --caller reviewer`
 2. **LCM回溯**（审查官可访问）：`volume_mgr.py search "关键词"`
 3. 使用检索结果作为审查维度的事实依据
