@@ -10,7 +10,7 @@ status: 待细化
 
 # 灵境学习部门：KonoSuba 第3卷 写作技法本能
 
-> 7Agent并行分析。~167条本能。
+> 7维度本能并行分析。~167条本能。
 > 创作产出: system-comedy + plot-rhythm + emotional-arc-design
 
 ---

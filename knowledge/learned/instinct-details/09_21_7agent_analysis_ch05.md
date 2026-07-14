@@ -1,9 +1,9 @@
-# KonoSuba 第9卷 第5章（终章）· 7Agent 本能维度分析
+# KonoSuba 第9卷 第5章（终章）· 七维本能维度分析
 
 **作品**: KonoSuba — 为美好的世界献上祝福！  
 **卷章**: 第9卷 第5章（终章）  
 **源文件**: `20_chapter05.txt`  
-**分析框架**: 7Agent 本能维度  
+**分析框架**: 七维本能维度  
 **分析日期**: 2026-07-14
 
 ---
@@ -279,4 +279,4 @@ KonoSuba的独到之处在于**在情感高潮中嵌入笑点**:
 
 ---
 
-*分析完毕 | 7Agent Framework | KonoSuba Vol.9 Ch.5 (End) *
+*分析完毕 | 7维度本能分析 Framework | KonoSuba Vol.9 Ch.5 (End) *
