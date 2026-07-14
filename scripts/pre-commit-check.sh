@@ -136,6 +136,30 @@ for f in $REFERENCED; do
 done
 [ "$SKILL_MISMATCH" -eq 0 ] && green "  ✅ 所有技能文件均已注册，引用均有效"
 
+# ═══ 8b. Debug进化阈值检测 ═══
+echo -e "\\n📋 8b. Debug进化阈值检测 (entries_since_baseline ≥ 3)"
+if [ -f "knowledge/errors/root-causes.json" ]; then
+    EVOLVABLE=$(python3 -c "
+import json
+d=json.load(open('knowledge/errors/root-causes.json','r',encoding='utf-8'))
+ready=[]
+for cid, cat in d.get('categories',{}).items():
+    if cat.get('entries_since_baseline',0) >= 3:
+        ready.append(f\"{cid}({cat['entries_since_baseline']}条)\")
+if ready:
+    print(' > '.join(ready))
+else:
+    print('')
+" 2>/dev/null)
+    if [ -n "$EVOLVABLE" ]; then
+        red "  ⚠️  可进化类别: $EVOLVABLE (运行 company/debug/debug-evolve-agent.md 触发进化)"
+    else
+        green "  ✅ 无类别达到进化阈值"
+    fi
+else
+    green "  ⏭️  无 root-causes.json，跳过"
+fi
+
 # ═══ 9. 错误库一致性 ═══
 echo -e "\\n📋 9. 错误知识库自检"
 ENTRY_FILES=$(find knowledge/errors/entries -name "*.md" | wc -l)

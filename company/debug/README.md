@@ -8,6 +8,7 @@
 |:------|:------|
 | 🔧 debug-agent | 修错智能体：收到错误信号→查库→分析→修复→入库 |
 | 📝 error-logger-agent | 错误记录智能体：日常维护错误知识库完整性 |
+| 🧬 debug-evolve-agent | 错误进化智能体：扫描 entries_since_baseline 达阈值后自动进化 |
 
 ## 值班主任制
 默认由 debug-agent 值班。

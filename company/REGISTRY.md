@@ -73,6 +73,17 @@ updated: 2026-06-25
 **Skills:** `multi-agent-learning`, `style-learning`, `skill-self-improvement`, `external-study`, `internal-analysis`, `epub-to-text`, `story-deconstruction`
 **Hooks:** `pre-learn`, `post-learn`
 
+### 修错部门 (Debug)
+
+| id | 名称 | emoji | 职责 | 调用方式 |
+|:---|:-----|:------|:-----|:---------|
+| debug-agent | 修错智能体 | 🔧 | 根因分析、修复执行、知识库入库 | 自动激活（pre-commit报错时）/ 用户指派 |
+| error-logger-agent | 错误记录智能体 | 📝 | 错误知识库维护、计数同步、条目归档 | 定期（pre-commit时）/ 手动 |
+| debug-evolve-agent | 错误进化智能体 | 🧬 | 定期扫描 entries_since_baseline，达到阈值(≥3)后自动进化 | pre-commit时自动扫描 / 手动触发 |
+
+**Skills:** `root-cause-analysis`, `error-entry-standard`
+**Hooks:** `pre-debug`, `post-debug`
+
 ### 招募部门 (Recruitment)
 | id | 名称 | emoji | 职责 | 调用方式 |
 |:---|:-----|:------|:-----|:---------|
