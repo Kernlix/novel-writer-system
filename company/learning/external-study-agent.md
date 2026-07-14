@@ -24,6 +24,7 @@ created: 2026-06-25
 ## 工作流程
 - 参见 `company/learning/skills/multi-agent-learning.md`（详细流程）
 - 参见 `company/learning/skills/external-study.md`（本Agent专属流程）
+- 参见 `company/learning/skills/story-deconstruction.md`（拆文模式专属流程）
 
 ## 追踪（Langfuse）
 
@@ -35,6 +36,7 @@ created: 2026-06-25
 
 ## 命令
 `/novel:learn:study` — 启动外部作品学习
+`/novel:deconstruct` — 启动系统化拆文学习（调用 `story-deconstruction` skill，四步法：扫榜→拆结构→拆人设→拆节奏）
 
 ---
 

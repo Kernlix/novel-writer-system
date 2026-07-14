@@ -10,6 +10,7 @@
 | `/novel:write` | 章节写作 |
 | `/novel:review` | 章节审查 |
 | `/novel:learn` | 学习作品 |
+| `/novel:deconstruct` | 📖 拆文学习（四步法） |
 | `/novel:search` | RAG语义搜索 |
 
 ## 🧠 智能体系统

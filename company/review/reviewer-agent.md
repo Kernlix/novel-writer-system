@@ -67,6 +67,18 @@ updated: 2026-07-08
 }
 ```
 
+## 对抗审查（第二Agent独立复核）
+
+章节通过首次审查后，**自动触发** `company/review/hooks/adversarial-review.md` 执行对抗审查：
+
+1. 拉起第二个独立的审查Agent（对抗审查官）
+2. 使用**不同的审查顺序/维度权重**重新审读
+3. 输出对抗审查报告到 `审查报告/chapter_XXX.adversarial.json`
+4. 两轮结果比对：交集 → 高可信度 / 对抗独有 → 中可信度 / 结论相反 → 人工仲裁
+5. 合并输出最终审查结论
+
+> 对抗审查通过 Skill `adversarial-review` 配置，见 `company/review/skills/adversarial-review.md`
+
 ## 审查维度
 
 审查时对照以下规则进行检查（详细清单见对应文件）：

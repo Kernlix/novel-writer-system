@@ -44,6 +44,7 @@ aliases: [第XX章]
 
 ## 写作流程
 
+0. **执行 guard-runtime-write hook**：确认写操作不涉及受保护文件（设定集/大纲/角色档案，见 `company/writing/hooks/guard-runtime-write.md`）
 0. **执行 pre-write hook**：加载角色档案、大纲、伏笔追踪、设定集（见 `company/writing/hooks/pre-write.md`）
 1. **加载上下文**：读取卷大纲/总纲/前一章
 2. **🔎 调用知识检索**（必做）：`python3 .rag/volume_mgr.py lcm-rag "第N章涉及的伏笔/设定/角色" --caller writer`

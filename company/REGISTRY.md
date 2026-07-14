@@ -30,7 +30,7 @@ updated: 2026-06-25
 | knowledge-retrieval | 知识检索智能体 | 🔎 | 统一LCM+RAG检索，写作前/审查时提供上下文 | Agent调用 |
 
 **Skills:** `novel-setup`, `novel-discuss`, `archive`, `knowledge-graph`, `memory-system`, `progress-track`, `rag-search`, `knowledge-retrieval`, `obsidian-sync`
-**Hooks:** `session-init`, `pre-archive`, `post-archive`, `pre-discuss`
+**Hooks:** `session-init`, `session-end`, `pre-archive`, `post-archive`, `pre-discuss`
 
 ### 写作部门 (Writing)
 | id | 名称 | emoji | 职责 | 调用方式 |
@@ -45,13 +45,13 @@ updated: 2026-06-25
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
 
 **Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `action-substitute-confession`, `isekai-culture-clash`, `romance-anti-climax`, `romance-progression`, `masochistic-sacrificial-character`, `demon-contract-reversal`, `love-triangle-romance`, `anthropomorphic-object-character`, `godhood-dwarfing`
-**Hooks:** `pre-write`, `post-write`
+**Hooks:** `guard-runtime-write`, `pre-write`, `post-write`
 
 ### 审核部门 (Review)
 | id | 名称 | emoji | 职责 | 调用方式 |
 |:---|:-----|:------|:-----|:---------|
 | reviewer | 审查官 | 🔍 | 多维度质量审查（12项审查维度） | Agent(prompt=...) |
-| polish | 润色师 | 🎨 | 去AI化、文风统一、语言优化 | `/novel:review:style` |
+| polish | 润色师 | 🎨 | 去AI化（四步流水线：检测→标记→改写→验证）、文风统一、语言优化 | `/novel:review:style` |
 | setting-qa | 设定质检员 | 🔬 | 设定逻辑质检、矛盾发现 | `/novel:review:logic` |
 | era-consistency | 时代审查官 | 🏛️ | 技术/知识合理性审查 | `/novel:review:era` |
 | logic-review | 逻辑审核员 | ⚖️ | 设定矛盾、时间线、因果链 | `/novel:review:logic` |
@@ -59,8 +59,8 @@ updated: 2026-06-25
 | character-review | 角色审核员 | 🎭 | 人设崩坏、行为合理性 | `/novel:review:character` |
 | plot-review | 剧情审核员 | 📊 | 节奏、爽点密度、情绪起伏 | `/novel:review:plot` |
 
-**Skills:** `chapter-review`, `anti-ai-polish`, `consistency-check`, `era-consistency`, `plot-hole-check`, `banned-words`, `setting-qa`, `logic-review`, `style-review`, `character-review`, `plot-review`
-**Hooks:** `pre-review`, `post-review`
+**Skills:** `chapter-review`, `anti-ai-polish`, `consistency-check`, `era-consistency`, `plot-hole-check`, `banned-words`, `setting-qa`, `logic-review`, `style-review`, `character-review`, `plot-review`, `adversarial-review`
+**Hooks:** `pre-review`, `post-review`, `adversarial-review`
 
 ### 学习部门 (Learning)
 | id | 名称 | emoji | 职责 | 调用方式 |
@@ -70,7 +70,7 @@ updated: 2026-06-25
 | epub-extractor | 电子书提取员 | 📦 | epub/mobi文本提取，按章分块 | Agent调用 |
 | evolve-agent | 本能进化Agent | 🧬 | 聚类≥3条同domain本能，进化为正式知识 | 自动触发 |
 
-**Skills:** `multi-agent-learning`, `style-learning`, `skill-self-improvement`, `external-study`, `internal-analysis`, `epub-to-text`
+**Skills:** `multi-agent-learning`, `style-learning`, `skill-self-improvement`, `external-study`, `internal-analysis`, `epub-to-text`, `story-deconstruction`
 **Hooks:** `pre-learn`, `post-learn`
 
 ### 招募部门 (Recruitment)

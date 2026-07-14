@@ -18,6 +18,7 @@ tags: [速查, 索引]
 | `/novel:write` | 章节写作 | 写手 |
 | `/novel:review` | 章节审查（= `/novel:review:chapter`） | 审查官 |
 | `/novel:learn` | 学习作品 | 学习部门 |
+| `/novel:deconstruct` | 📖 拆文学习（四步法） | 学习部门 |
 | `/novel:search` | RAG语义搜索 | 知识检索 |
 | `/novel:search:deep` | LCM+RAG深度查询 | 知识检索 |
 | `/novel:evolve` | 手动触发本能进化 | 进化Agent |
@@ -34,6 +35,7 @@ tags: [速查, 索引]
 | `/novel:review:era` | 时代/技术合理性审查 |
 | `/novel:learn:study` | 外部学习(提取技法) |
 | `/novel:learn:analyze` | 内部分析(审查报告/反馈) |
+| `/novel:deconstruct` | 📖 系统化拆文学习(四步法) |
 | `/novel:recruit:gap` | 差距分析(手动触发) |
 | `/novel:recruit:job` | 岗位设计 |
 | `/novel:recruit:skill` | 技能研发 |
