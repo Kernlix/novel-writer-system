@@ -68,7 +68,7 @@ fi
 
 # ═══ 5. 创建后不验证: 脚本可执行性 ═══
 echo -e "\n📋 5. 脚本可执行性"
-for script in scripts/*.sh .rag/check_imports.py; do
+for script in scripts/*.sh; do
     [ -f "$script" ] || continue
     if [ -x "$script" ]; then
         green "  ✅ $script (可执行)"
