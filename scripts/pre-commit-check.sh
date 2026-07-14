@@ -99,8 +99,45 @@ for agent in company/*/*-agent.md; do
 done
 green "  ✅ frontmatter检查完成"
 
-# ═══ 8. 错误库一致性 ═══
-echo -e "\n📋 8. 错误知识库自检"
+# ═══ 8. 学习产出闭环: 写手技能引用完整性 ═══
+echo -e "\\n📋 8. 写手技能引用完整性（技能文件 vs writer-agent.md 注册）"
+
+# 从 writer-agent.md 的「可用技能」章节提取技能名（`kebab-case-name` — 格式）
+REFERENCED=$(sed -n '/^### 可用技能/,/^##\|^###/p' company/writing/writer-agent.md \
+  | grep -oP '`[a-z][a-z0-9-]*[a-z]` —' \
+  | grep -oP '[a-z][a-z0-9-]*[a-z]' \
+  | sort -u)
+# 从 company/writing/skills/ 下提取实际技能文件
+EXISTING=$(find company/writing/skills -name "*.md" -exec basename {} .md \; | sort -u)
+
+SKILL_MISMATCH=0
+# 排除列表：纯系统/发布类技能，不需要在写手Agent中注册
+EXCLUDE_SKILLS="docx-publish webnovel-submit"
+# Files in EXISTING but not in REFERENCED
+for f in $EXISTING; do
+    # 跳过排除列表中的技能
+    skip=0
+    for ex in $EXCLUDE_SKILLS; do
+        [ "$f" = "$ex" ] && skip=1
+    done
+    [ "$skip" -eq 1 ] && continue
+    if ! echo "$REFERENCED" | grep -qx "$f"; then
+        red "  ❌ 技能文件存在但未在 writer-agent.md 注册: $f (参考: company/writing/skills/$f.md)"
+        SKILL_MISMATCH=$((SKILL_MISMATCH+1))
+    fi
+done
+# References in REFERENCED that don't exist ANYWHERE in the project
+for f in $REFERENCED; do
+    FOUND=$(find . -path "*/skills/$f.md" 2>/dev/null | head -1)
+    if [ -z "$FOUND" ]; then
+        red "  ❌ writer-agent.md 引用了 $f 但技能文件不存在（搜索 company/*/skills/$f.md 无结果）"
+        SKILL_MISMATCH=$((SKILL_MISMATCH+1))
+    fi
+done
+[ "$SKILL_MISMATCH" -eq 0 ] && green "  ✅ 所有技能文件均已注册，引用均有效"
+
+# ═══ 9. 错误库一致性 ═══
+echo -e "\\n📋 9. 错误知识库自检"
 ENTRY_FILES=$(find knowledge/errors/entries -name "*.md" | wc -l)
 JSON_COUNT=$(python3 -c "import json; d=json.load(open('knowledge/errors/root-causes.json','r',encoding='utf-8')); print(sum(c['count'] for c in d['categories'].values()))" 2>/dev/null || echo "0")
 echo "  entries/ 文件数: $ENTRY_FILES, root-causes.json 累计计数: $JSON_COUNT"

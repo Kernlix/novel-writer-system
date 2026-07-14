@@ -38,7 +38,7 @@
 
 ## 📂 Skills 索引
 
-### 写作部门 Skills（30个）
+### 写作部门 Skills（31个）
 
 | 类别 | Skill | 说明 |
 |:-----|:------|:------|
@@ -57,6 +57,7 @@
 | 恶魔 | `demon-contract-reversal` | 恶魔契约反转叙事 | 契约欺诈/主仆反转 |
 | 角色 | `anthropomorphic-object-character` | 神器拟人化角色写作 | 阿吉斯型有机无机物 |
 | 结构 | `identity-suspense` | 身份悬疑写作技法 | 秘密身份+多重误认 |
+| 悬疑 | `memory-erasure-recovery` | 记忆消除/恢复型身份悬疑 | 碎片记忆逐步揭露 |
 | 恋爱 | `love-triangle-romance` | 多角感情线并行 | 惠惠/达克尼斯/克里斯三角 |
 | 神格 | `godhood-dwarfing` | 神格矮化学 | 沃尔巴克型神性解构 |
 | 基础 | `chapter-writing` | 章节构建方法 |

@@ -42,12 +42,15 @@ created: 2026-06-25
 
 ## 学习产出激活检查（强制）
 
+> ⚠️ 本检查由 **post-learn hook** 自动执行。检查不通过 = 本次学习无效，产生的Skill视为"花瓶"（未激活），不得计入学习产出。
+
 学习完成后，新增的每个Skill必须通过以下激活检查，**少一项 = 学习未完成**：
 
 - [ ] 文件物理存在——Skill文件已写入 `company/<department>/skills/` 或 `knowledge/learned/<category>/`
 - [ ] REGISTRY.md 已注册——对应部门的 `REGISTRY.md` 的 Skills 清单已包含该Skill
 - [ ] SKILL.md/SKILL.zh-CN.md 计数已更新——Skill数量统计已刷新
-- [ ] 归属Agent文档已引用该Skill——对应Agent的 Agent 文档（如 `writer-agent.md`）的 Skills 部分已列出该Skill
+- [ ] **写手部门Skill已接入writer-agent.md**——写作类Skill必须在 `company/writing/writer-agent.md` 的「写作中参考 → 可用技能」清单中添加引用，非写作类Skill（recruitment、error-logger等）跳过此项
+- [ ] 归属Agent文档已引用该Skill——对应Agent的 Agent 文档的 Skills 部分已列出该Skill（如非写手部门的Skill，则在对应部门Agent文档中注册）
 - [ ] 跑 pre-commit-check.sh 验证无断链——库内交叉引用无断裂
 
 > ⚠️ 检查不通过 = 本次学习无效，产生的Skill视为"花瓶"（未激活），不得计入学习产出。

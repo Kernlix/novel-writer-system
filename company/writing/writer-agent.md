@@ -59,6 +59,53 @@ aliases: [第XX章]
 ## 写作中参考
 
 按技法检索Agent返回的推荐表加载对应技法（只加载推荐表中的3-5条，不加载全部Skill）。
+
+### 可用技能（按需调用）
+
+写作技能（按领域分类）：
+
+**基础技法**
+- `chapter-writing` — 章节构建方法
+- `plot-rhythm` — 情节节奏
+- `emotional-arc-design` — 情感弧线设计
+- `story-deconstruction` — 拆文学习（结构分析）
+- `snowflake-method` — 雪花写作法（从一句话扩写到章节）
+- `save-the-cat` — 节拍表法（15节拍商业故事结构）
+- `booming-plot` — 爆点剧情设计
+- `decoupled-writing` — 解耦写作（场景独立性）
+- `short-story-quick` — 短篇快速写作法
+- `webnovel-suspense` — 网文悬念钩子设计
+- `webnovel-goldfinger` — 网文金手指设定与展开
+- `webnovel-trend` — 网文趋势与热门题材
+
+**喜剧技法**
+- `comedy-scene-design` — 喜剧场景设计
+- `comedic-dialogue` — 喜剧对话节奏
+- `defect-comedy-engine` — 缺陷驱动喜剧
+- `comedy-pattern-library` — 喜剧模式库
+- `system-comedy` — 系统喜剧
+
+**感情线技法**
+- `romance-progression` — 感情线推进
+- `romance-anti-climax` — 反高潮告白
+- `action-substitute-confession` — 行动式告白（替代语言告白）
+- `love-triangle-romance` — 多角感情线并行
+
+**角色与设定技法**
+- `isekai-culture-clash` — 异世界文化碰撞
+- `masochistic-sacrificial-character` — 受虐牺牲型角色（达克尼斯型）
+- `demon-contract-reversal` — 恶魔契约反转叙事
+- `anthropomorphic-object-character` — 神器拟人化角色
+- `godhood-dwarfing` — 神格矮化学
+
+**悬疑与身份技法**
+- `identity-suspense` — 身份悬疑写作技法
+- `memory-erasure-recovery` — 记忆消除/恢复型身份悬疑
+
+**审查与打磨**
+- `anti-ai-polish` — 去AI味流水线
+- `adversarial-review` — 对抗审查
+
 如有必要，参考以下文件：
 - `knowledge/theory/punctuation-guide.md`（标点规范）
 - `knowledge/rules/novel/system-term-secrecy.md`（系统术语保密）
