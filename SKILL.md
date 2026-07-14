@@ -37,7 +37,7 @@
 
 ## 📂 Skills 索引
 
-### 写作部门 Skills（22个）
+### 写作部门 Skills（24个）
 
 | 类别 | Skill | 说明 |
 |:-----|:------|:------|
@@ -52,6 +52,8 @@
 | 恋爱 | `action-substitute-confession` | 行动替代告白技法 |
 | 恋爱 | `romance-anti-climax` | 反高潮告白节奏控制 |
 | 恋爱 | `isekai-culture-clash` | 异世界文化反差 |
+| 角色 | `masochistic-sacrificial-character` | 受虐牺牲型角色心理 | 达克尼斯型角色底层驱动 |
+| 恶魔 | `demon-contract-reversal` | 恶魔契约反转叙事 | 契约欺诈/主仆反转 |
 | 基础 | `chapter-writing` | 章节构建方法 |
 | 基础 | `booming-plot` | 剧情引爆 |
 | 基础 | `decoupled-writing` | 解耦写作法 |
