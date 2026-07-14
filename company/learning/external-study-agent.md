@@ -35,3 +35,17 @@ created: 2026-06-25
 
 ## 命令
 `/novel:learn:study` — 启动外部作品学习
+
+---
+
+## 学习产出激活检查（强制）
+
+学习完成后，新增的每个Skill必须通过以下激活检查，**少一项 = 学习未完成**：
+
+- [ ] 文件物理存在——Skill文件已写入 `company/<department>/skills/` 或 `knowledge/learned/<category>/`
+- [ ] REGISTRY.md 已注册——对应部门的 `REGISTRY.md` 的 Skills 清单已包含该Skill
+- [ ] SKILL.md/SKILL.zh-CN.md 计数已更新——Skill数量统计已刷新
+- [ ] 归属Agent文档已引用该Skill——对应Agent的 Agent 文档（如 `writer-agent.md`）的 Skills 部分已列出该Skill
+- [ ] 跑 pre-commit-check.sh 验证无断链——库内交叉引用无断裂
+
+> ⚠️ 检查不通过 = 本次学习无效，产生的Skill视为"花瓶"（未激活），不得计入学习产出。

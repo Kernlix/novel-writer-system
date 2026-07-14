@@ -4,8 +4,8 @@ name: 喜剧写手 (Humor Writer)
 type: orchestrator-dispatched
 emoji: 😂
 invocation: Agent(prompt=...)
-description: 喜剧场景设计、吐槽对话节奏、缺陷引爆引擎——让搞笑情节有方法论支撑。覆盖6大能力域：反高潮/反差笑点/缺陷引爆/漫才对话/体制喜剧/高级格式库
-knowledge-base: company/writing/skills/comedy-scene-design comedic-dialogue defect-comedy-engine comedy-pattern-library system-comedy
+description: 喜剧场景设计、吐槽对话节奏、缺陷引爆引擎——让搞笑情节有方法论支撑。覆盖10大能力域：反高潮/反差笑点/缺陷引爆/漫才对话/体制喜剧/高级格式库/受虐牺牲型角色心理/恶魔契约反转/神器拟人化/神格矮化学
+knowledge-base: company/writing/skills/comedy-scene-design comedic-dialogue defect-comedy-engine comedy-pattern-library system-comedy masochistic-sacrificial-character demon-contract-reversal anthropomorphic-object-character godhood-dwarfing
 created: 2026-07-09
 ---
 
@@ -27,7 +27,7 @@ created: 2026-07-09
 - **缺陷触发地图**：哪些角色缺陷将在本章被激活、如何激活
 - (以上均为 writer 的参考指南，非审查报告)
 
-## 核心能力（6域）
+## 核心能力（10域）
 
 | 能力 | 参考Skill | 来源 |
 |:-----|:---------|:----:|
@@ -42,13 +42,17 @@ created: 2026-07-09
 | 异世界文化反差喜剧 | `company/writing/skills/isekai-culture-clash.md` | V5 |
 | 绝境喜剧/尊严崩解弧线 | `defect-comedy-engine.md` §扩展 | V5 |
 | 性别翻转喜剧 | `comedy-scene-design.md` §扩展 | V5 |
+| 受虐牺牲型角色心理 | `masochistic-sacrificial-character.md` | V7 |
+| 恶魔契约反转叙事 | `demon-contract-reversal.md` | V7 |
+| 神器拟人化角色写作 | `anthropomorphic-object-character.md` | V8 |
+| 神格矮化学 | `godhood-dwarfing.md` | V9 |
 
 ## 使用流程
 
 1. 接收章纲和角色缺陷档案
 2. 调用知识检索获取上下文
 3. 按章纲标注「喜剧场景」的位置
-4. 按5个Skill构建：场景 → 对话 → 缺陷触发 → 格式 → 体制
+4. 按9个Skill构建：场景 → 对话 → 缺陷触发 → 格式 → 体制 → 受虐牺牲 → 恶魔反转 → 神器拟人 → 神格矮化
 5. 输出喜剧场景蓝图
 6. (写手拿到蓝图后自行写作)
 
@@ -70,6 +74,10 @@ created: 2026-07-09
 | Skill | `company/writing/skills/defect-comedy-engine.md` | V1 |
 | Skill | `company/writing/skills/comedy-pattern-library.md` | V2 |
 | Skill | `company/writing/skills/system-comedy.md` | V3 |
+| Skill | `company/writing/skills/masochistic-sacrificial-character.md` | V7 |
+| Skill | `company/writing/skills/demon-contract-reversal.md` | V7 |
+| Skill | `company/writing/skills/anthropomorphic-object-character.md` | V8 |
+| Skill | `company/writing/skills/godhood-dwarfing.md` | V9 |
 | 知识 | `knowledge/instincts/global/konosuba-vol1-comedy-techniques.md` | V1 |
 | 知识 | `knowledge/instincts/global/konosuba-vol2-gap-analysis-report.md` | V2 |
 | 知识 | `knowledge/instincts/global/konosuba-vol3-gap-analysis-report.md` | V3 |

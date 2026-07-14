@@ -106,3 +106,17 @@ upgrade:                                        # [必填] 系统升级目标
 |:-----|:------|
 | `instinct-details/` | 各卷逐章本能分析文件（95个） |
 | `konosuba-v?-gap-analysis-report.md` | V5-V9缺口分析报告（5份） |
+
+---
+
+## 学习产出激活规则
+
+每次外部学习（`external-study-agent`）产生的Skill/知识产出，**必须经过激活检查**才能视为有效学习成果：
+
+1. **文件物理存在** — Skill文件必须实际写入对应目录（`company/<dept>/skills/` 或 `knowledge/learned/`）
+2. **注册确认** — 对应 `REGISTRY.md` 已添加该Skill的注册条目
+3. **计数更新** — 如果有 `SKILL.md`/`SKILL.zh-CN.md` 计数统计，必须刷新
+4. **归属引用** — 该Skill归属的Agent文档已列出该Skill
+5. **断链检查** — 运行 `pre-commit-check.sh` 验证无交叉引用断裂
+
+> 激活检查由 `external-study-agent` 在产出后自动执行。不通过的Skill视为"花瓶"——文件不会被删除，但 `REGISTRY.md` 中以 `⚠️ 未激活` 标记，不计入系统能力。下一次学习时优先激活这些花瓶Skill。

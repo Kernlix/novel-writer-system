@@ -103,6 +103,10 @@ tags: [速查, 索引]
 | Skill | `system-comedy.md` | V3 体制/法庭喜剧 |
 | Skill | `plot-rhythm.md` | V1-3 剧情跌宕/反转/悬念 |
 | Skill | `emotional-arc-design.md` | V1-3 人物情感弧线 |
+| Skill | `masochistic-sacrificial-character.md` | V7 受虐牺牲型角色心理 |
+| Skill | `demon-contract-reversal.md` | V7 恶魔契约反转叙事 |
+| Skill | `anthropomorphic-object-character.md` | V8 神器拟人化角色写作 |
+| Skill | `godhood-dwarfing.md` | V9 神格矮化学 |
 
 ## 升级日志
 

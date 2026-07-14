@@ -44,6 +44,7 @@ aliases: [第XX章]
 
 ## 写作流程
 
+0. **执行 pre-write hook**：加载角色档案、大纲、伏笔追踪、设定集（见 `company/writing/hooks/pre-write.md`）
 1. **加载上下文**：读取卷大纲/总纲/前一章
 2. **🔎 调用知识检索**（必做）：`python3 .rag/volume_mgr.py lcm-rag "第N章涉及的伏笔/设定/角色" --caller writer`
 3. **🧩 调用技法检索Agent**（必做）：发送章纲+情感基调 → 获取本章推荐技法表（3-5条）
@@ -52,6 +53,7 @@ aliases: [第XX章]
 6. **情感检查**：对照 `knowledge/rules/common/emotion-palette.md` 确认本章情感与前后章形成合理变化
 7. **执行写作**（模板1结构送入模型）
 8. **字数验证**：不低于2000汉字（仅中文）
+9. **执行 post-write hook**：自动基础质检（字数达标、无元引用、无破折号超标，见 `company/writing/hooks/post-write.md`）
 
 ## 写作中参考
 

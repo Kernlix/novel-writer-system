@@ -13,7 +13,7 @@ A unified creative toolbox built from the best open-source novel-writing project
 | Feature | Description |
 |---------|-------------|
 | 🧠 **Multi-Agent Collaboration** | 7 specialized agents working together |
-| 🧩 **Modular Skills** | 30+ independent skills covering the full creative workflow |
+| 🧩 **Modular Skills** | 35+ independent skills covering the full creative workflow |
 | 📖 **Dual-Mode Support** | Long-form novel pipeline + short story rapid creation |
 | 🎭 **De-AI Engine** | Multi-layer detection and polish for natural, human-like output |
 | 📊 **Knowledge Graph** | Persistent relationships between characters, locations, and events |

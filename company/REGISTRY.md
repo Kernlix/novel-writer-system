@@ -44,7 +44,8 @@ updated: 2026-06-25
 | story-setup | 创作设定 | 🏗️ | 世界观、角色、剧情一体化设定 | `/novel:writing:world` |
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
 
-**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `action-substitute-confession`, `isekai-culture-clash`, `romance-anti-climax`, `romance-progression`
+**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `action-substitute-confession`, `isekai-culture-clash`, `romance-anti-climax`, `romance-progression`, `masochistic-sacrificial-character`, `demon-contract-reversal`, `love-triangle-romance`, `anthropomorphic-object-character`, `godhood-dwarfing`
+**Hooks:** `pre-write`, `post-write`
 
 ### 审核部门 (Review)
 | id | 名称 | emoji | 职责 | 调用方式 |

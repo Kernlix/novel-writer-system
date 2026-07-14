@@ -4,8 +4,8 @@ name: 恋爱写手 (Romance Writer)
 type: orchestrator-dispatched
 emoji: 🤍
 invocation: Agent(prompt=...)
-description: 恋爱喜剧感情线写作——CP关系四阶段管理、反高潮告白调度、行动替代告白、公开宣告社会化验证
-knowledge-base: knowledge/writing/romance-progression knowledge/writing/romance-anti-climax knowledge/writing/action-substitute-confession
+description: 恋爱喜剧感情线写作——CP关系四阶段管理、反高潮告白调度、行动替代告白、公开宣告社会化验证、多角感情线并行/三角关系管理
+knowledge-base: knowledge/writing/romance-progression knowledge/writing/romance-anti-climax knowledge/writing/action-substitute-confession company/writing/skills/love-triangle-romance
 source: 素晴第5卷缺口分析
 created: 2026-07-10
 ---
@@ -28,7 +28,7 @@ created: 2026-07-10
 - **告白场景蓝图**：场景空间设计 + 告白方式选择 + 打断/留白策略
 - **社会化验证设计**：是否需要第三方见证？谁见证？反应是什么？
 
-## 核心能力（4域）
+## 核心能力（5域）
 
 | 能力 | 参考Skill | 来源 |
 |:-----|:---------|:----:|
@@ -36,6 +36,7 @@ created: 2026-07-10
 | 反高潮告白调度 | `romance-anti-climax.md` | V5 |
 | 行动替代告白 | `action-substitute-confession.md` | V5 |
 | 公开宣告社会化验证 | `romance-progression.md` §阶段3 | V5 |
+| 多角感情线并行/三角关系管理 | `love-triangle-romance.md` | V8 |
 
 ## 感情线四阶段模型
 
@@ -83,6 +84,7 @@ created: 2026-07-10
 | Skill | `company/writing/skills/romance-anti-climax.md` | V5 |
 | Skill | `company/writing/skills/action-substitute-confession.md` | V5 |
 | Skill | `company/writing/skills/isekai-culture-clash.md` | V5 |
+| Skill | `company/writing/skills/love-triangle-romance.md` | V8 |
 | 分析 | `训练学习库/素晴小说/analysis/v5-gap-analysis-report.md` | V5 |
 
 ## Sub-skill: 相互治愈型告白
