@@ -25,7 +25,7 @@
 
 ## 🧠 智能体系统
 
-系统包含 **27 个专业智能体**，分布在 6 个部门。完整注册表见 `company/REGISTRY.md`：
+系统包含 **31 个专业智能体**，分布在 6 个部门。完整注册表见 `company/REGISTRY.md`：
 
 | 部门 | 数量 | 核心Agent |
 |:-----|:---:|:---------|
@@ -54,6 +54,10 @@
 | 恋爱 | `isekai-culture-clash` | 异世界文化反差 |
 | 角色 | `masochistic-sacrificial-character` | 受虐牺牲型角色心理 | 达克尼斯型角色底层驱动 |
 | 恶魔 | `demon-contract-reversal` | 恶魔契约反转叙事 | 契约欺诈/主仆反转 |
+| 角色 | `anthropomorphic-object-character` | 神器拟人化角色写作 | 阿吉斯型有机无机物 |
+| 结构 | `identity-suspense` | 身份悬疑写作技法 | 秘密身份+多重误认 |
+| 恋爱 | `love-triangle-romance` | 多角感情线并行 | 惠惠/达克尼斯/克里斯三角 |
+| 神格 | `godhood-dwarfing` | 神格矮化学 | 沃尔巴克型神性解构 |
 | 基础 | `chapter-writing` | 章节构建方法 |
 | 基础 | `booming-plot` | 剧情引爆 |
 | 基础 | `decoupled-writing` | 解耦写作法 |
