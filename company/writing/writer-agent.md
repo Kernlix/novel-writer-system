@@ -110,6 +110,9 @@ aliases: [第XX章]
 - `anthropomorphic-object-character` — 神器拟人化角色
 - `godhood-dwarfing` — 神格矮化学
 
+**存在论与悬疑技法**
+- `existential-alliance` — 存在论同盟叙事（永生者羁绊）
+
 **悬疑与身份技法**
 - `pseudo-family` — 疑似家族写作（非恋爱疑似家庭关系）
 - `identity-suspense` — 身份悬疑写作技法
