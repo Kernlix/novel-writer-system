@@ -1,7 +1,7 @@
 ---
 tags: [本能注册表]
 type: registry
-updated: 2026-07-06
+updated: 2026-07-14
 ---
 
 # 本能注册表
@@ -21,8 +21,17 @@ updated: 2026-07-06
 |:---|:---------|:-----:|:----|
 | dialogue:merge-redundant-qa | 角色之间的信息确认型对话 | 0.7 | 已注册 |
 | practical-writing:cold-structured-persuasive | 需要写正式投诉/举报/建议/申诉等说服型文书时 | 0.7 | 已注册 |
-| konosuba-vol1-comedy-techniques | 《为美好的世界献上祝福！》第1卷喜剧写作技法学习包（含31条本能，6部门分析） | — | 待聚类拆分 |
-| konosuba-charfile-megumin | KonoSuba第1卷·惠惠角色档案分析（含23条本能，6维度角色档案技法） | — | 待聚类拆分 |
+| konosuba-vol1-comedy-techniques | 第1卷喜剧写作技法（31条本能） | — | 待聚类拆分 |
+| konosuba-charfile-megumin | 第1卷·惠惠角色档案（23条本能） | — | 待聚类拆分 |
+| konosuba-vol02 | 第2卷全本能包（~180条本能） | — | 待聚类拆分 |
+| konosuba-vol03 | 第3卷全本能包（~167条本能） | — | 待聚类拆分 |
+| konosuba-vol04 | 第4卷全本能包（~190条本能） | — | 待聚类拆分 |
+| konosuba-vol05 | 第5卷全本能包（~160条本能） | — | 待聚类拆分 |
+| konosuba-vol06 | 第6卷全本能包（~195条本能） | — | 待聚类拆分 |
+| konosuba-vol07 | 第7卷全本能包（~239条本能） | — | 待聚类拆分 |
+| konosuba-vol08 | 第8卷全本能包（~255条本能） | — | 待聚类拆分 |
+| konosuba-vol09 | 第9卷全本能包（~200条本能） | — | 待聚类拆分 |
+
 
 ## 聚类（clusters/）
 
