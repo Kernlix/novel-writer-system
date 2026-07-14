@@ -19,9 +19,9 @@ updated: 2026-07-14
 
 | ID | 触发条件 | 置信度 | 状态 |
 |:---|:---------|:-----:|:----|
-| dialogue:merge-redundant-qa | 角色之间的信息确认型对话 | 0.7 | 已注册 |
-| practical-writing:cold-structured-persuasive | 需要写正式投诉/举报/建议/申诉等说服型文书时 | 0.7 | 已注册 |
-| konosuba-vol1-comedy-techniques | 第1卷喜剧写作技法（31条本能） | — | 待聚类拆分 |
+| dialogue:merge-redundant-qa | 角色之间的信息确认型对话 | 0.8 | 已注册 |
+| practical-writing:cold-structured-persuasive | 需要写正式投诉/举报/建议/申诉等说服型文书时 | 0.8 | 已注册 |
+| konosuba-vol1-comedy-techniques | 第1卷喜剧写作技法（31条本能） | 0.8 | 已聚类 |
 | konosuba-charfile-megumin | 第1卷·惠惠角色档案（23条本能） | — | 待聚类拆分 |
 | konosuba-vol02 | 第2卷全本能包（~180条本能） | — | 待聚类拆分 |
 | konosuba-vol03 | 第3卷全本能包（~167条本能） | — | 待聚类拆分 |
@@ -31,6 +31,7 @@ updated: 2026-07-14
 | konosuba-vol07 | 第7卷全本能包（~239条本能） | — | 待聚类拆分 |
 | konosuba-vol08 | 第8卷全本能包（~255条本能） | — | 待聚类拆分 |
 | konosuba-vol09 | 第9卷全本能包（~200条本能） | — | 待聚类拆分 |
+| konosuba-vol10-12 | 第10-12卷全本能包（~840条本能） | — | 待聚类拆分 |
 
 
 ## 聚类（clusters/）

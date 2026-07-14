@@ -2,7 +2,7 @@
 id: "dialogue:merge-redundant-qa"
 trigger: "角色之间的信息确认型对话"
 action: "将多轮一问一答合并为一轮，减少机械式问答节奏"
-confidence: 0.7
+confidence: 0.8
 domain: "dialogue"
 scope: "global"
 source: "第61章修复经验"

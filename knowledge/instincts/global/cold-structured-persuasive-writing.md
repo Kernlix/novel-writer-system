@@ -2,7 +2,7 @@
 id: "practical-writing:cold-structured-persuasive"
 trigger: "需要写正式投诉/举报/建议/申诉等说服型文书时"
 action: "用冷结构四段式：事实→问题→证据→诉求，全篇去情绪化，诉求具体量化"
-confidence: 0.7
+confidence: 0.8
 domain: "practical-writing"
 scope: "global"
 source: "举报信写作指南学习沉淀"

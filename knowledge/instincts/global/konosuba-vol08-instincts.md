@@ -5,7 +5,7 @@ source: "《为美好的世界献上祝福！》第8卷"
 date: 2026-07-14
 agents: [写手Agent, 剧情Agent, 角色Agent, 世界观Agent, 润色Agent, 质检Agent]
 scope: global
-status: 待聚类
+status: 待细化
 ---
 
 # 灵境学习部门：KonoSuba 第8卷 写作技法本能
