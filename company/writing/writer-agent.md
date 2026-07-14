@@ -113,6 +113,7 @@ aliases: [第XX章]
 **存在论与悬疑技法**
 - `existential-alliance` — 存在论同盟叙事（永生者羁绊）
 - `infiltrator-villain-narrative` — 嵌入型反派叙事（完美异常者）
+- `unsentimental-finale` — 不煽情完结哲学（笑着温柔地说再见）
 
 **悬疑与身份技法**
 - `pseudo-family` — 疑似家族写作（非恋爱疑似家庭关系）
