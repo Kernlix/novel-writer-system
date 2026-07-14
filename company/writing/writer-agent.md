@@ -113,6 +113,8 @@ aliases: [第XX章]
 **存在论与悬疑技法**
 - `existential-alliance` — 存在论同盟叙事（永生者羁绊）
 - `infiltrator-villain-narrative` — 嵌入型反派叙事（完美异常者）
+- `afterlife-tripartite-narrative` — 死后世界三段式叙事
+- `ultimate-underdog-showdown` — 最弱vs最强终极对决
 - `comedy-suspension-earned-payoff` — 笑剧暂停·情感回馈
 - `theological-depravity-comedy` — 贞洁神学·制度化性骚扰
 - `unsentimental-finale` — 不煽情完结哲学（笑着温柔地说再见）
