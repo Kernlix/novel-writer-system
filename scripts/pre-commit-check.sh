@@ -24,13 +24,16 @@ if [ "$ACTUAL_AGENTS" = "$DECLARED_AGENTS" ]; then
 else
     red "  ❌ Agent: 实际$ACTUAL_AGENTS vs 声明$DECLARED_AGENTS"
 fi
-
-ACTUAL_SKILLS=$(find company/writing/skills company/debug/skills -name "*.md" 2>/dev/null | wc -l)
+ACTUAL_SKILLS=$(find company/writing/skills -maxdepth 1 -name "*.md" | wc -l)
+# Add debug department skills
+DEBUG_SKILLS=$(find company/debug/skills -maxdepth 1 -name "*.md" 2>/dev/null | wc -l)
 DECLARED_SKILLS=$(grep -oP "写作部门 Skills（\K\d+" SKILL.md 2>/dev/null || echo "0")
-if [ "$ACTUAL_SKILLS" = "$DECLARED_SKILLS" ]; then
-    green "  ✅ Skills: $ACTUAL_SKILLS 个(一致)"
+TOTAL_DECLARED=$((DECLARED_SKILLS + DEBUG_SKILLS))
+
+if [ "$ACTUAL_SKILLS" -eq "$DECLARED_SKILLS" ] 2>/dev/null; then
+  green "  ✅ Skills: $ACTUAL_SKILLS 个(一致)"
 else
-    red "  ❌ Skills: 实际$ACTUAL_SKILLS vs 声明$DECLARED_SKILLS"
+  red "  ❌ Skills: 实际$ACTUAL_SKILLS vs 声明$DECLARED_SKILLS（不含debug部门+$DEBUG_SKILLS=$TOTAL_DECLARED）"
 fi
 
 # ═══ 2. 声明了但没实现: hooks引用检查 ═══

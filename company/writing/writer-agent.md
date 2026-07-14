@@ -99,6 +99,7 @@ aliases: [第XX章]
 - `godhood-dwarfing` — 神格矮化学
 
 **悬疑与身份技法**
+- `pseudo-family` — 疑似家族写作（非恋爱疑似家庭关系）
 - `identity-suspense` — 身份悬疑写作技法
 - `memory-erasure-recovery` — 记忆消除/恢复型身份悬疑
 
