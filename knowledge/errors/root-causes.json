@@ -15,16 +15,18 @@
       "entries_since_baseline": 0
     },
     "02-声明没实现": {
-      "count": 6,
+      "count": 7,
       "description": "说做了但实际没做",
       "typical_scenarios": [
         "新增hook但不创建文件",
-        "注册agent但不写prompt"
+        "注册agent但不写prompt",
+        "创建hook不添加调用点"
       ],
       "entries": [
-        "2026-07-11_romance-activator"
+        "2026-07-11_romance-activator",
+        "2026-07-14_orphan-hooks"
       ],
-      "entries_since_baseline": 0
+      "entries_since_baseline": 1
     },
     "03-脚本静默失败": {
       "count": 4,
@@ -42,7 +44,7 @@
       "count": 4,
       "description": "提交了绝对路径/用户名",
       "typical_scenarios": [
-        "D:\\\\allproject硬编码",
+        "D:\\allproject硬编码",
         "用户名14798"
       ],
       "entries": [

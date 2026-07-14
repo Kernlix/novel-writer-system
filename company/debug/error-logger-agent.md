@@ -15,8 +15,11 @@ description: 错误知识库维护、计数同步、条目归档、错误进化
 ## 职责
 
 1. **一致性维护**: 定期检查 entries/ 文件数与 root-causes.json 是否一致
-2. **创建条目**: 为新错误创建规范格式的 entry 文件
-3. **更新计数**: 修改对应类别在 root-causes.json 中的 count
+2. **创建条目**: 按以下规则判定是否需要新建 entry：
+   - **同根因+同场景**（与已有 entry 完全一致）→ **跳过**，不重复入库
+   - **同根因+不同场景**（原因一样但表现形式/发生位置不同）→ **新建 entry**，补充新案例
+   - **全新根因**（不属于现有7类）→ **新建 entry**，并考虑新增 category
+3. **更新计数**: 新建 entry 后，修改对应类别在 root-causes.json 中的 count
 4. **错误进化**: 扫描 root-causes.json 中新增计数器(`entries_since_baseline`)，
    同类别累计≥3条新 entry 后触发进化流程：
    ① 汇总 entries/ 案例 + categories/ 自动检查草稿
