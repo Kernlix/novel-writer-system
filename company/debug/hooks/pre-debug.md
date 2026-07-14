@@ -3,6 +3,11 @@ id: pre-debug
 name: 修错前自查 hook
 hook: pre-debug
 department: debug
+stage: before-fix
+phase: preparation
+runs-on: debug-agent
+created: 2026-07-14
+updated: 2026-07-14
 description: 修错开始前——查同类+确认可复现
 ---
 

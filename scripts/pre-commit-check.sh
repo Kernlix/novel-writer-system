@@ -47,11 +47,13 @@ green "  ✅ hook引用检查完成"
 echo -e "\n📋 3. REGISTRY引用完整性(改前改后计数对比)"
 BROKEN=0
 while IFS= read -r ref; do
-    if [ ! -f "$ref" ]; then
-        red "  ❌ 断链: $ref"
+    # 去掉grep的"文件名:"前缀（来自多文件输入）
+    REF_CLEAN="${ref#*:}"
+    if [ ! -f "$REF_CLEAN" ]; then
+        red "  ❌ 断链: $REF_CLEAN"
         BROKEN=$((BROKEN+1))
     fi
-done < <(grep -oP '`(company|knowledge)/[^`]+\.md`' company/REGISTRY.md knowledge/REGISTRY.md 2>/dev/null | tr -d '`')
+done < <(grep -oPn '`(company|knowledge)/[^`]+\.md`' company/REGISTRY.md knowledge/REGISTRY.md 2>/dev/null | tr -d '`')
 [ "$BROKEN" -eq 0 ] && green "  ✅ 无断链"
 
 # ═══ 4. 个人环境泄露: 绝对路径/用户名 ═══

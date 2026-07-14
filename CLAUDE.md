@@ -11,7 +11,7 @@
 
 ```
 novel-writer-system/            ← 灵境系统（仓库根目录）
-├── company/               ← 虚拟AI公司（5部门 + process流程层）
+├── company/               ← 虚拟AI公司（6部门 + process流程层）
 │   ├── manager/           ← 负责人部门
 │   ├── writing/           ← 写作部门
 │   ├── review/            ← 审核部门

@@ -3,6 +3,10 @@ id: debug-agent
 name: 修错智能体
 emoji: 🔧
 department: debug
+type: task-executor
+invocation: 自动激活（pre-commit报错时）/ 用户指派
+created: 2026-07-14
+updated: 2026-07-14
 description: 根因分析、修复执行、知识库入库
 ---
 

@@ -11,7 +11,8 @@
       ],
       "entries": [
         "2026-07-08_path-migration"
-      ]
+      ],
+      "entries_since_baseline": 0
     },
     "02-声明没实现": {
       "count": 6,
@@ -22,7 +23,8 @@
       ],
       "entries": [
         "2026-07-11_romance-activator"
-      ]
+      ],
+      "entries_since_baseline": 0
     },
     "03-脚本静默失败": {
       "count": 4,
@@ -33,7 +35,8 @@
       ],
       "entries": [
         "2026-07-11_batch-silent"
-      ]
+      ],
+      "entries_since_baseline": 0
     },
     "04-路径泄露": {
       "count": 4,
@@ -44,7 +47,8 @@
       ],
       "entries": [
         "2026-07-08_tracing-abs-path"
-      ]
+      ],
+      "entries_since_baseline": 0
     },
     "05-创建不验证": {
       "count": 3,
@@ -53,7 +57,8 @@
         "新脚本不执行验证",
         "新hook不测试触发"
       ],
-      "entries": []
+      "entries": [],
+      "entries_since_baseline": 0
     },
     "06-三层不同步": {
       "count": 2,
@@ -64,7 +69,8 @@
       ],
       "entries": [
         "2026-07-11_prompt-upgrade"
-      ]
+      ],
+      "entries_since_baseline": 0
     },
     "07-子智能体不闭环": {
       "count": 2,
@@ -75,7 +81,8 @@
       ],
       "entries": [
         "2026-07-12_v5-patches"
-      ]
+      ],
+      "entries_since_baseline": 0
     }
   }
 }

@@ -113,3 +113,16 @@ updated: 2026-06-25
 | `rules/REGISTRY.md` | 规则索引总表 |
 | `rules/common/` | 通用规则（对话/场景/权力关系/自查） |
 | `rules/novel/` | 小说专项规则（系统术语保密） |
+
+## 🔧 错误知识库 (errors/)
+
+> 由 `company/debug/` 修错部门管理。
+
+| 路径 | 说明 |
+|:-----|:------|
+| `errors/README.md` | 库门面+7类根因速查 |
+| `errors/root-causes.json` | 结构化根因数据 |
+| `errors/entries/` | 每次错误的完整记录（6次历史+持续新增） |
+| `errors/categories/` | 7类根因定义与对策模板 |
+| `errors/pre-checks/` | 预防脚本（自动进化产出） |
+| `errors/learned/` | 固化认知（跨实例提炼的规律） |

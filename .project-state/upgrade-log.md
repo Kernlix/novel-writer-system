@@ -59,3 +59,24 @@ updated: 2026-06-25
 | `agents/knowledge/setting-qa/logic-consistency.md` | checklist-add ×5 | 喜剧逻辑有效性检查项 |
 | `agents/knowledge/setting-qa/power-balance.md` | checklist-add ×5 | 限制效能检查项 |
 | `agents/knowledge/setting-qa/resource-economy.md` | checklist-add ×5 | 资源循环叙事效能检查项 |
+
+## 2026-07-14 — 新增修错部门 + 错误知识库 + 自我进化机制
+
+### 变更类型
+新增部门 · 新增知识库 · 系统升级
+
+### 涉及文件
+- `company/debug/` 全目录（2 agents + 2 skills + 2 hooks + README）
+- `knowledge/errors/` 全目录（含 categories/ / entries/ / pre-checks/ / learned/）
+- `company/REGISTRY.md` — 架构图+部门总览
+- `knowledge/REGISTRY.md` — errors/索引
+- `SKILL.md` / `SKILL.zh-CN.md` — Agent 27→31, Skills 27→29
+- `CLAUDE.md` — 架构图 5→6部门
+- `scripts/pre-commit-check.sh` — 修复检查项3+升级检查项8+新增pre-checks执行
+- `manager-agent.md` — 部门委派表新增修错部门
+- `.project-state/upgrade-log.md` — 本记录
+
+### 效果
+- 修错部门正式接入系统（"声明了没实现"→补完注册）
+- 错误知识库具备自我进化能力（entries→threshold 3→pre-checks脚本+learned认知）
+- pre-commit-check.sh 真实可信（修复grep误报bug）
