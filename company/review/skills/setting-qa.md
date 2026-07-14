@@ -57,5 +57,5 @@ updated: 2026-06-25
 
 ## 参考路径
 
-- `agents/setting-qa-agent.md` — 质检智能体完整 prompt
+- `company/setting-qa-agent.md` — 质检智能体完整 prompt
 - `knowledge/setting-qa/` — 质检知识库

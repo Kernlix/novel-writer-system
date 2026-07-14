@@ -173,7 +173,7 @@ learned-date: 2026-06-25
 improves: chapter-craft.md                     # 改进的是哪个核心知识文件
 improvement-type: technique-add                 # technique-add | technique-refine | perspective-new
 upgrade:                                        # 【必填】系统升级目标
-  - target: agents/writer-agent.md              # 要升级的系统文件
+  - target: company/writer-agent.md              # 要升级的系统文件
     type: rule-add                              # rule-add | checklist-add | technique-add | workflow-step | field-add | dimension-add
     location: "质量控制"                         # 在目标文件中的插入位置
     content: "新增规则描述或检查项内容"             # 要插入的具体内容

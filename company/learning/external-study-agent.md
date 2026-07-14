@@ -19,7 +19,7 @@ created: 2026-06-25
 2. 每个Agent从专业视角完成：分析→提炼→自我提升→系统升级
 3. 新增"去AI化写作"分析维度，学习作品如何写得像人写的
 4. 收集6个Agent的学习成果，去重整合
-5. 强制执行系统升级（写入agents/skills/hooks）
+5. 强制执行系统升级（写入company/skills/hooks）
 6. 记录升级日志到 `.project-state/upgrade-log.md`
 
 ## 工作流程

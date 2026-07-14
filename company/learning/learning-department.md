@@ -115,7 +115,7 @@ updated: 2026-07-14
   │   │    → 进化Agent自动聚类
   │   │    → 生成正式 knowledge/ 文件草稿
   │   │    → 负责人确认后写入
-  │   │    → 更新对应 agents/skills/hooks 文件
+  │   │    → 更新对应 company/skills/hooks 文件
   │   └── 如果不足3条 → 暂存，等更多本能积累
   └── 记录到 .project-state/upgrade-log.md
 
