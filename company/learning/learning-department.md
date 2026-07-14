@@ -1,3 +1,13 @@
+---
+id: learning-department
+name: 学习部门概览
+type: department-readme
+department: learning
+emoji: 📚
+created: 2026-06-25
+updated: 2026-07-14
+---
+
 # 📚 学习部门 (Learning Department)
 
 ## 部门使命
@@ -28,6 +38,23 @@
 | external-study-agent | 外部学习：从优秀作品中提取技法，先沉淀为本能再进化 |
 | internal-analysis-agent | 内部分析：从用户反馈、创作结果、审查报告中提取本能 |
 | evolve-agent | **本能进化**：将置信度≥0.7的本能聚类、进化为正式知识 |
+| epub-extractor-agent | epub文本提取 |
+
+### 下属Skill
+
+| Skill | 用途 |
+|:------|:------|
+| `multi-agent-learning` | 6Agent并行学习流程 |
+| `external-study` | 外部作品学习 |
+| `story-deconstruction` | 拆文四步法（扫榜→拆结构→拆人设→拆节奏） |
+| `epub-to-text` | epub文本提取 |
+| `style-learning` | 风格学习 |
+
+### 激活检查
+
+> 所有学习产出必须通过「学习产出激活检查」：文件存在→REGISTRY注册→SKILL.md更新→归属Agent引用→writer-agent引用（写作类）→pre-commit验证。**少一项=学习未完成**。
+
+详见 `external-study-agent.md` 的「学习产出激活检查（强制）」章节。
 
 ## 本能注册
 
