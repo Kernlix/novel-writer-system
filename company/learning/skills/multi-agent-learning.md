@@ -5,7 +5,7 @@ category: 01-创作技巧
 command: /novel:learn
 description: 对完整作品进行部门多agents并行分析、提炼、自我提升
 created: 2026-06-25
-updated: 2026-06-25
+updated: 2026-07-14
 ---
 
 # 🧠 部门多agents协作学习 Skill
@@ -22,12 +22,25 @@ updated: 2026-06-25
 
 | Agent | 分析维度 | 自我提升方向 | 输出目录 |
 |:------|:---------|:------------|:---------|
-| 写手 (writer) | 场景构建、对话、描写、叙事 | 改进自己的写作手法 | `knowledge/writer/learned/` |
+| 写手 (writer) | 场景构建、对话、描写、叙事、文风、去AI化写作——该作品如何写得像人写的 | 改进自己的写作手法 | `knowledge/writer/learned/` |
 | 剧情架构师 (plot-architect) | 情节结构、节奏、伏笔、反转 | 优化伏笔管理、节奏控制策略 | `knowledge/plot-architect/learned/` |
 | 角色设计师 (character-designer) | 角色原型、弧光、关系 | 完善角色设计方法论 | `knowledge/character-designer/learned/` |
 | 世界观架构师 (worldbuilding-architect) | 世界规则、力量体系、地理 | 丰富世界观构建模板 | `knowledge/worldbuilding-architect/learned/` |
 | 润色师 (polish) | 文风、语言、去AI化 | 扩充去AI化策略库 | `knowledge/polish/learned/` |
 | 设定质检员 (setting-qa) | 设定逻辑、一致性 | 升级检查维度 | `knowledge/setting-qa/learned/` |
+
+## 分析维度说明
+
+每个Agent的分析维度定义了学习时关注的方面，涵盖创作中所有关键环节。各维度说明如下：
+
+| 维度 | 说明 |
+|:-----|:-----|
+| **场景构建** | 场景切入方式、氛围营造、过渡衔接、环境与角色互动 |
+| **对话设计** | 对话节奏、个性化、潜台词、打断/抢话/省略技法 |
+| **描写技法** | 感官描写、细节选择、视角控制、动静态描写搭配 |
+| **叙事技巧** | 视角切换、时间线处理、信息释放、悬念设置 |
+| **文风** | 句式长短搭配、修辞手法、语气色彩、文字密度 |
+| **去AI化写作** | 分析该作品的语言为什么感觉"像人写的"而不是AI写的——口语化程度、句式多样性、不完美但真实的表达、角色差异化对话等 |
 
 ## 工作流程
 
@@ -83,7 +96,7 @@ updated: 2026-06-25
 
 第1轮 — 分析：
 从写手视角识别 3-5 个值得学习的技法。
-分析维度：场景构建、对话设计、描写技法、叙事技巧、语言风格
+分析维度：场景构建、对话设计、描写技法、叙事技巧、语言风格、去AI化写作
 对每个技法，摘录原文片段并分析为什么有效。
 
 第2轮 — 提炼：
@@ -111,7 +124,7 @@ updated: 2026-06-25
 ---
 source: 《作品名》(作者)
 learner-agent: writer
-category: scene-construction | dialogue | description | narrative | language
+category: scene-construction | dialogue | description | narrative | language | style | anti-ai-writing
 tags: [标签1, 标签2]
 learned-date: 2026-06-25
 improves: chapter-craft.md
@@ -139,6 +152,7 @@ improvement-type: technique-add | technique-refine | perspective-new
 
 | Agent | 分析维度 | 参考的现有知识库 | 自我提升方向 |
 |:------|:---------|:----------------|:------------|
+| writer | 场景/对话/描写/叙事/文风/去AI化写作 | chapter-craft.md + anti-ai-polish.md | 去AI化写作技法扩充 |
 | plot-architect | 情节结构、节奏、伏笔、反转 | `arc-management.md` | 伏笔管理策略优化 |
 | character-designer | 角色原型、弧光、关系 | `character-evolution.md` | 角色设计方法论完善 |
 | worldbuilding-architect | 世界规则、力量体系、地理 | `world-rules.md` | 世界观构建模板丰富 |
