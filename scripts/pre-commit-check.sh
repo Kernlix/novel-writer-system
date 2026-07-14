@@ -97,6 +97,28 @@ for agent in company/*/*-agent.md; do
 done
 green "  ✅ frontmatter检查完成"
 
+# ═══ 8. 错误库一致性 ═══
+echo -e "\n📋 8. 错误知识库自检"
+ENTRY_FILES=$(find knowledge/errors/entries -name "*.md" | wc -l)
+JSON_COUNT=$(python3 -c "import json; d=json.load(open('knowledge/errors/root-causes.json','r',encoding='utf-8')); print(sum(c['count'] for c in d['categories'].values()))" 2>/dev/null || echo "0")
+echo "  entries/ 文件数: $ENTRY_FILES, root-causes.json 累计计数: $JSON_COUNT"
+# 检查 entry 文件是否有对应的 JSON 记录（逆向：json entries 列表中的文件存在不）
+BROKEN_JSON=0
+for entry in $(python3 -c "
+import json
+d=json.load(open('knowledge/errors/root-causes.json','r',encoding='utf-8'))
+for cat in d['categories'].values():
+    for e in cat['entries']:
+        print(e.strip())
+" 2>/dev/null); do
+    ENTRY_FILE=$(echo "$entry" | tr -d '\r')
+    if [ ! -f "knowledge/errors/entries/$ENTRY_FILE.md" ]; then
+        red "  ❌ root-causes.json 引用了 entries/$entry.md 但文件不存在"
+        BROKEN_JSON=$((BROKEN_JSON+1))
+    fi
+done
+[ "$BROKEN_JSON" -eq 0 ] && green "  ✅ JSON条目引用全部有效"
+
 echo -e "\n════════════════════════════════"
 if [ "$ERRORS" -eq 0 ]; then
     green "🎉 全部通过，可以提交"

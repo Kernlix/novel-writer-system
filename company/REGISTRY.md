@@ -86,3 +86,15 @@ updated: 2026-06-25
 
 ### 知识图书馆 (Knowledge Library)
 见 `knowledge/REGISTRY.md`
+
+
+## 错误知识库
+
+> 系统自省能力——记录每一次错误，防止同类问题。
+
+| 路径 | 用途 |
+|:-----|:------|
+| `knowledge/errors/entries/` | 每次错误的完整记录 |
+| `knowledge/errors/categories/` | 7类根因定义与对策模板 |
+| `knowledge/errors/root-causes.json` | 结构化根因数据 |
+| `knowledge/errors/README.md` | 库门面+快速索引 |

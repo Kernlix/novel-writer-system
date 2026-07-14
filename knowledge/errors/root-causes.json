@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "last_updated": "2026-07-14",
+  "categories": {
+    "01-改了A不改B": {
+      "count": 8,
+      "description": "修改一处不影响关联处",
+      "typical_scenarios": [
+        "改Agent数不更新REGISTRY",
+        "改名字不搜引用"
+      ],
+      "entries": [
+        "2026-07-08_path-migration"
+      ]
+    },
+    "02-声明没实现": {
+      "count": 6,
+      "description": "说做了但实际没做",
+      "typical_scenarios": [
+        "新增hook但不创建文件",
+        "注册agent但不写prompt"
+      ],
+      "entries": [
+        "2026-07-11_romance-activator"
+      ]
+    },
+    "03-脚本静默失败": {
+      "count": 4,
+      "description": "批量操作没检查返回值",
+      "typical_scenarios": [
+        "cp/mv没验证",
+        "批量替换没计数对比"
+      ],
+      "entries": [
+        "2026-07-11_batch-silent"
+      ]
+    },
+    "04-路径泄露": {
+      "count": 4,
+      "description": "提交了绝对路径/用户名",
+      "typical_scenarios": [
+        "D:\\\\allproject硬编码",
+        "用户名14798"
+      ],
+      "entries": [
+        "2026-07-08_tracing-abs-path"
+      ]
+    },
+    "05-创建不验证": {
+      "count": 3,
+      "description": "建完新文件不跑",
+      "typical_scenarios": [
+        "新脚本不执行验证",
+        "新hook不测试触发"
+      ],
+      "entries": []
+    },
+    "06-三层不同步": {
+      "count": 2,
+      "description": "改审查维度不改prompt模板",
+      "typical_scenarios": [
+        "审查12项vs模板2不匹配",
+        "gates字段名不一致"
+      ],
+      "entries": [
+        "2026-07-11_prompt-upgrade"
+      ]
+    },
+    "07-子智能体不闭环": {
+      "count": 2,
+      "description": "Agent交付缺文件/注册/计数",
+      "typical_scenarios": [
+        "创建文件没注册",
+        "注册了没更新计数"
+      ],
+      "entries": [
+        "2026-07-12_v5-patches"
+      ]
+    }
+  }
+}
