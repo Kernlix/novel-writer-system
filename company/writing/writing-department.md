@@ -1,4 +1,15 @@
-# 📖 写作部门 (Writing Department)
+---
+id: writing-department
+name: 写作部门概览
+type: department-readme
+emoji: ✍️
+department: writing
+description: 灵境系统写作部门——10个写手Agent、30个Skill、3个Hook
+created: 2026-06-21
+updated: 2026-07-14
+---
+
+# ✍️ 写作部门 (Writing Department)
 
 ## 部门使命
 负责小说创作的所有内容生产环节。

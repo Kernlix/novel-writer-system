@@ -3,6 +3,7 @@ id: epub-to-text
 name: epub转文本技能
 type: skill
 department: learning
+description: 将epub电子书转为基础文本，按章分块，供学习部门分析
 ---
 
 # epub转文本技能

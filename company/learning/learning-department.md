@@ -4,6 +4,7 @@ name: 学习部门概览
 type: department-readme
 department: learning
 emoji: 📚
+description: 灵境系统学习部门——4个Agent、4个Skill、2个Hook。本能积累→聚类→进化三级管道
 created: 2026-06-25
 updated: 2026-07-14
 ---
