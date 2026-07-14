@@ -44,8 +44,8 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="repla
 # 路径配置
 # =====================================================================
 
-NOVEL_ROOT = Path(r"D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神")
-SYSTEM_ROOT = Path(r"D:\allproject\GitHub项目\novel-writer-system")
+NOVEL_ROOT = Path(__file__).resolve().parent.parent.parent.parent / "小说项目" / "转生深渊领主，我靠种田苟成邪神"
+SYSTEM_ROOT = Path(__file__).resolve().parent.parent
 CHAPTER_DIR = NOVEL_ROOT / "章节"
 OUTLINE_DIR = NOVEL_ROOT / "大纲"
 LCM_DIR = NOVEL_ROOT / ".lcm"

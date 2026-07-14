@@ -16,13 +16,11 @@ import re
 import sys
 from pathlib import Path
 
-# 小说项目路径
-NOVEL_ROOT = Path(
-    r"D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神"
-)
-
 # 灵境系统路径
 LINGJING_ROOT = Path(__file__).resolve().parent.parent  # novel-writer-system/
+
+# 小说项目路径
+NOVEL_ROOT = LINGJING_ROOT.parent.parent / "小说项目" / "转生深渊领主，我靠种田苟成邪神"
 PROJECT_ROOT = LINGJING_ROOT / ".project-state"
 
 sys.path.insert(0, str(LINGJING_ROOT / ".rag"))

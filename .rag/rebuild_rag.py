@@ -10,7 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import engine as rag_engine
 
-NOVEL_ROOT = r"D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神"
+NOVEL_ROOT = Path(__file__).resolve().parent.parent.parent.parent / "小说项目" / "转生深渊领主，我靠种田苟成邪神"
 
 def main():
     print("=" * 60)

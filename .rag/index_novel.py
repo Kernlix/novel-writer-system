@@ -21,7 +21,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Index novel content into RAG")
     ap.add_argument(
         "--novel",
-        default=r"D:\allproject\小说项目\转生深渊领主，我靠种田苟成邪神",
+        default=str(Path(__file__).resolve().parent.parent.parent.parent / "小说项目" / "转生深渊领主，我靠种田苟成邪神"),
         help="Path to novel project root",
     )
     ap.add_argument(

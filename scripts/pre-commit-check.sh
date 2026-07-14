@@ -25,7 +25,7 @@ else
     red "  ❌ Agent: 实际$ACTUAL_AGENTS vs 声明$DECLARED_AGENTS"
 fi
 
-ACTUAL_SKILLS=$(find company/writing/skills -name "*.md" 2>/dev/null | wc -l)
+ACTUAL_SKILLS=$(find company/writing/skills company/debug/skills -name "*.md" 2>/dev/null | wc -l)
 DECLARED_SKILLS=$(grep -oP "写作部门 Skills（\K\d+" SKILL.md 2>/dev/null || echo "0")
 if [ "$ACTUAL_SKILLS" = "$DECLARED_SKILLS" ]; then
     green "  ✅ Skills: $ACTUAL_SKILLS 个(一致)"
@@ -53,12 +53,12 @@ while IFS= read -r ref; do
         red "  ❌ 断链: $REF_CLEAN"
         BROKEN=$((BROKEN+1))
     fi
-done < <(grep -oPn '`(company|knowledge)/[^`]+\.md`' company/REGISTRY.md knowledge/REGISTRY.md 2>/dev/null | tr -d '`')
+done < <(grep -oPh '\`(company|knowledge)/[^`]+\.md\`' company/REGISTRY.md knowledge/REGISTRY.md 2>/dev/null | tr -d '\`')
 [ "$BROKEN" -eq 0 ] && green "  ✅ 无断链"
 
 # ═══ 4. 个人环境泄露: 绝对路径/用户名 ═══
 echo -e "\n📋 4. 个人环境泄露检查"
-PATHS=$(grep -rl "D:\\\\allproject\|/home/\|Users/[^/]\+/" --include="*.md" --include="*.py" . 2>/dev/null | grep -v ".git/" | grep -v "learned/" | grep -v "practical-writing/" | grep -v "lingjing-v2-experience/")
+PATHS=$(grep -rl "D:\\\\allproject\|/home/\|Users/[^/]\+/" --include="*.md" --include="*.py" . 2>/dev/null | grep -v ".git/" | grep -v "learned/" | grep -v "practical-writing/" | grep -v "lingjing-v2-experience/" || true)
 if [ -n "$PATHS" ]; then
     red "  ❌ 发现绝对路径: $(echo "$PATHS" | wc -l) 文件"
     echo "$PATHS" | head -5
