@@ -106,6 +106,8 @@ upgrade:                                        # [必填] 系统升级目标
 |:-----|:------|
 | `instinct-details/` | 各卷逐章本能分析文件（95个） |
 | `konosuba-v?-gap-analysis-report.md` | V5-V9缺口分析报告（5份） |
+| `灯系列本能分析/` | 灯系列（达斯特外传）V1-V7本能分析文件（13份） |
+| `灯系列本能分析/konosuba-deng-series-summary.md` | 灯系列全卷缺口分析报告 |
 
 ---
 
