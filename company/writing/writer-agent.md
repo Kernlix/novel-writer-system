@@ -72,61 +72,65 @@ aliases: [第XX章]
 
 按技法检索Agent返回的推荐表加载对应技法（只加载推荐表中的3-5条，不加载全部Skill）。
 
-### 可用技能（按需调用）
+### 可用技能（按需调用，路径相对于仓库根目录）
 
-写作技能（按领域分类）：
+写作技能按领域分类，按技法检索Agent推荐表加载（只加载推荐表中的3-5条，不加载全部Skill）：
 
 **基础技法**
-- `chapter-writing` — 章节构建方法
-- `plot-rhythm` — 情节节奏
-- `emotional-arc-design` — 情感弧线设计
-- `story-deconstruction` — 拆文学习（结构分析）
-- `snowflake-method` — 雪花写作法（从一句话扩写到章节）
-- `save-the-cat` — 节拍表法（15节拍商业故事结构）
-- `booming-plot` — 爆点剧情设计
-- `decoupled-writing` — 解耦写作（场景独立性）
-- `short-story-quick` — 短篇快速写作法
-- `webnovel-suspense` — 网文悬念钩子设计
-- `webnovel-goldfinger` — 网文金手指设定与展开
-- `webnovel-trend` — 网文趋势与热门题材
+- `company/writing/skills/chapter-writing.md` — 章节构建方法
+- `company/writing/skills/plot-rhythm.md` — 情节节奏
+- `company/writing/skills/emotional-arc-design.md` — 情感弧线设计
+- `company/writing/skills/snowflake-method.md` — 雪花写作法（从一句话扩写到章节）
+- `company/writing/skills/save-the-cat.md` — 节拍表法（15节拍商业故事结构）
+- `company/writing/skills/booming-plot.md` — 爆点剧情设计
+- `company/writing/skills/decoupled-writing.md` — 解耦写作（场景独立性）
+- `company/writing/skills/short-story-quick.md` — 短篇快速写作法
+- `company/writing/skills/docx-publish.md` — DOCX导出发布
+- `company/writing/skills/webnovel-goldfinger.md` — 网文金手指设定与展开
+- `company/writing/skills/webnovel-submit.md` — 网文投稿发布
+- `company/writing/skills/webnovel-trend.md` — 网文趋势与热门题材
+- `company/writing/skills/webnovel-suspense.md` — 网文悬念钩子设计
 
 **喜剧技法**
-- `comedy-scene-design` — 喜剧场景设计
-- `comedic-dialogue` — 喜剧对话节奏
-- `defect-comedy-engine` — 缺陷驱动喜剧
-- `comedy-pattern-library` — 喜剧模式库
-- `system-comedy` — 系统喜剧
+- `company/writing/skills/comedy-scene-design.md` — 喜剧场景设计
+- `company/writing/skills/comedic-dialogue.md` — 喜剧对话节奏
+- `company/writing/skills/defect-comedy-engine.md` — 缺陷驱动喜剧
+- `company/writing/skills/comedy-pattern-library.md` — 喜剧模式库
+- `company/writing/skills/comedy-suspension-earned-payoff.md` — 笑剧暂停·情感回馈
+- `company/writing/skills/system-comedy.md` — 系统喜剧
 
 **感情线技法**
-- `romance-progression` — 感情线推进
-- `romance-anti-climax` — 反高潮告白
-- `action-substitute-confession` — 行动式告白（替代语言告白）
-- `love-triangle-romance` — 多角感情线并行
+- `company/writing/skills/romance-progression.md` — 感情线推进
+- `company/writing/skills/romance-anti-climax.md` — 反高潮告白
+- `company/writing/skills/action-substitute-confession.md` — 行动式告白（替代语言告白）
+- `company/writing/skills/love-triangle-romance.md` — 多角感情线并行
 
 **角色与设定技法**
-- `isekai-culture-clash` — 异世界文化碰撞
-- `masochistic-sacrificial-character` — 受虐牺牲型角色（达克尼斯型）
-- `demon-contract-reversal` — 恶魔契约反转叙事
-- `anthropomorphic-object-character` — 神器拟人化角色
-- `godhood-dwarfing` — 神格矮化学
+- `company/writing/skills/isekai-culture-clash.md` — 异世界文化碰撞
+- `company/writing/skills/masochistic-sacrificial-character.md` — 受虐牺牲型角色（达克尼斯型）
+- `company/writing/skills/demon-contract-reversal.md` — 恶魔契约反转叙事
+- `company/writing/skills/anthropomorphic-object-character.md` — 神器拟人化角色
+- `company/writing/skills/godhood-dwarfing.md` — 神格矮化学
 
 **存在论与悬疑技法**
-- `existential-alliance` — 存在论同盟叙事（永生者羁绊）
-- `infiltrator-villain-narrative` — 嵌入型反派叙事（完美异常者）
-- `afterlife-tripartite-narrative` — 死后世界三段式叙事
-- `ultimate-underdog-showdown` — 最弱vs最强终极对决
-- `comedy-suspension-earned-payoff` — 笑剧暂停·情感回馈
-- `theological-depravity-comedy` — 贞洁神学·制度化性骚扰
-- `unsentimental-finale` — 不煽情完结哲学（笑着温柔地说再见）
+- `company/writing/skills/existential-alliance.md` — 存在论同盟叙事（永生者羁绊）
+- `company/writing/skills/infiltrator-villain-narrative.md` — 嵌入型反派叙事（完美异常者）
+- `company/writing/skills/afterlife-tripartite-narrative.md` — 死后世界三段式叙事
+- `company/writing/skills/ultimate-underdog-showdown.md` — 最弱vs最强终极对决
+- `company/writing/skills/theological-depravity-comedy.md` — 贞洁神学·制度化性骚扰
+- `company/writing/skills/unsentimental-finale.md` — 不煽情完结哲学（笑着温柔地说再见）
 
 **悬疑与身份技法**
-- `pseudo-family` — 疑似家族写作（非恋爱疑似家庭关系）
-- `identity-suspense` — 身份悬疑写作技法
-- `memory-erasure-recovery` — 记忆消除/恢复型身份悬疑
+- `company/writing/skills/pseudo-family.md` — 疑似家族写作（非恋爱疑似家庭关系）
+- `company/writing/skills/identity-suspense.md` — 身份悬疑写作技法
+- `company/writing/skills/memory-erasure-recovery.md` — 记忆消除/恢复型身份悬疑
 
-**审查与打磨**
-- `anti-ai-polish` — 去AI味流水线
-- `adversarial-review` — 对抗审查
+**审查与打磨（跨部门引用）**
+- `company/review/skills/anti-ai-polish.md` — 去AI味流水线
+- `company/review/skills/adversarial-review.md` — 对抗审查
+
+**学习参考（跨部门引用）**
+- `company/learning/skills/story-deconstruction.md` — 拆文学习（结构分析）
 
 如有必要，参考以下文件：
 - `knowledge/theory/punctuation-guide.md`（标点规范）

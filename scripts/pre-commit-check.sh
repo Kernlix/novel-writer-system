@@ -105,17 +105,17 @@ green "  ✅ frontmatter检查完成"
 # ═══ 8. 学习产出闭环: 写手技能引用完整性 ═══
 echo -e "\\n📋 8. 写手技能引用完整性（技能文件 vs writer-agent.md 注册）"
 
-# 从 writer-agent.md 的「可用技能」章节提取技能名（`kebab-case-name` — 格式）
+# 从 writer-agent.md 的「可用技能」章节提取技能名（支持裸名和完整路径两种格式）
 REFERENCED=$(sed -n '/^### 可用技能/,/^##\|^###/p' company/writing/writer-agent.md \
-  | grep -oP '`[a-z][a-z0-9-]*[a-z]` —' \
-  | grep -oP '[a-z][a-z0-9-]*[a-z]' \
+  | grep -oP '`[^`]+` —' \
+  | sed 's/.*\///;s/`.*//;s/\.md$//' \
   | sort -u)
 # 从 company/writing/skills/ 下提取实际技能文件
 EXISTING=$(find company/writing/skills -name "*.md" -exec basename {} .md \; | sort -u)
 
 SKILL_MISMATCH=0
 # 排除列表：纯系统/发布类技能，不需要在写手Agent中注册
-EXCLUDE_SKILLS="docx-publish webnovel-submit"
+EXCLUDE_SKILLS=""
 # Files in EXISTING but not in REFERENCED
 for f in $EXISTING; do
     # 跳过排除列表中的技能

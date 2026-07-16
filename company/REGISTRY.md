@@ -45,8 +45,9 @@ updated: 2026-06-25
 | skill-matcher | 技法检索Agent | 🧩 | 按章节类型智能匹配技法，输出推荐表 | Agent调用 |
 | story-setup | 创作设定 | 🏗️ | 世界观、角色、剧情一体化设定 | `/novel:writing:world` |
 | short-story | 短故事专项 | ⚡ | 中短篇快速创作→投稿 | `/novel:writing:short` |
+| outline-guardian | 大纲守护者 | 🧭 | 监控章节与大纲一致性，防止偏离主线 | Agent(prompt=...) |
 
-**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `system-comedy`, `plot-rhythm`, `emotional-arc-design`, `short-story-quick`, `booming-plot`, `decoupled-writing`, `save-the-cat`, `snowflake-method`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `docx-publish`, `action-substitute-confession`, `isekai-culture-clash`, `romance-anti-climax`, `romance-progression`, `masochistic-sacrificial-character`, `demon-contract-reversal`, `love-triangle-romance`, `anthropomorphic-object-character`, `godhood-dwarfing`, `identity-suspense`, `memory-erasure-recovery`, `pseudo-family`
+**Skills:** `worldbuilding`, `character-design`, `plot-outline`, `chapter-writing`, `plot-rhythm`, `emotional-arc-design`, `save-the-cat`, `snowflake-method`, `booming-plot`, `decoupled-writing`, `short-story-quick`, `docx-publish`, `webnovel-goldfinger`, `webnovel-submit`, `webnovel-trend`, `webnovel-suspense`, `comedy-scene-design`, `comedic-dialogue`, `defect-comedy-engine`, `comedy-pattern-library`, `comedy-suspension-earned-payoff`, `system-comedy`, `romance-progression`, `romance-anti-climax`, `action-substitute-confession`, `love-triangle-romance`, `isekai-culture-clash`, `masochistic-sacrificial-character`, `demon-contract-reversal`, `anthropomorphic-object-character`, `godhood-dwarfing`, `existential-alliance`, `infiltrator-villain-narrative`, `afterlife-tripartite-narrative`, `ultimate-underdog-showdown`, `theological-depravity-comedy`, `unsentimental-finale`, `pseudo-family`, `identity-suspense`, `memory-erasure-recovery`
 **Hooks:** `guard-runtime-write`, `pre-write`, `post-write`
 
 ### 审核部门 (Review)
