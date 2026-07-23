@@ -1,6 +1,7 @@
 ---
 id: short-story
 name: 短故事专项智能体 (Short Story Agent)
+department: writing
 type: user-invoked
 emoji: ⚡
 invocation: /novel:short

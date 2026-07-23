@@ -1,6 +1,7 @@
 ---
 id: identity-suspense-writer
 name: 身份悬疑写手 (Identity Suspense Writer)
+department: writing
 type: orchestrator-dispatched
 emoji: 🎭
 invocation: Agent(prompt=...)

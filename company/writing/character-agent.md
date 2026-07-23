@@ -1,6 +1,7 @@
 ---
 id: character-designer
 name: 角色设计师智能体 (Character Designer)
+department: writing
 type: orchestrator-dispatched
 emoji: 👤
 invocation: Agent(prompt=...)

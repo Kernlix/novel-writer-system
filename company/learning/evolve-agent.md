@@ -6,6 +6,7 @@ emoji: 🧬
 department: learning
 invocation: 学习部门审查完成后自动触发 / `/novel:evolve` 手动触发
 description: 将置信度≥0.7且同domain≥3条的本能聚类、进化为正式知识，写入 knowledge/ 并触发系统升级
+skills: style-learning
 created: 2026-07-09
 ---
 

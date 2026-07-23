@@ -1,9 +1,12 @@
 ---
 id: outline-guardian-agent
 name: 大纲守护者
+type: orchestrator-dispatched
 emoji: 🧭
 department: writing
 role: 监控章节与作品大纲的一致性，防止偏离主线
+invocation: Agent(prompt=...)
+description: 监控章节与大纲一致性，防止偏离主线
 model: default
 tools: [read_file, search_files, terminal]
 ---

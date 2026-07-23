@@ -1,3 +1,14 @@
+---
+id: review-department
+name: 审核部门概览
+type: department-readme
+emoji: 🔍
+department: review
+description: 灵境系统审核部门——8个Agent、6个Skill、3个Hook
+created: 2026-07-17
+updated: 2026-07-17
+---
+
 # 🔍 审核部门 (Review Department)
 
 ## 部门使命

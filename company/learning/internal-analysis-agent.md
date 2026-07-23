@@ -6,6 +6,7 @@ emoji: 📊
 department: learning
 invocation: /novel:learn:analyze
 description: 分析用户反馈、创作结果、审核报告，生成系统改进建议
+skills: internal-analysis, story-deconstruction
 knowledge-base: knowledge/
 created: 2026-06-25
 ---

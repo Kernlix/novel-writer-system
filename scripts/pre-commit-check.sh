@@ -10,6 +10,7 @@ ERRORS=0
 
 red() { echo -e "\033[31m$1\033[0m"; ERRORS=$((ERRORS+1)); }
 green() { echo -e "\033[32m$1\033[0m"; }
+yellow() { echo -e "\033[33m$1\033[0m"; }
 
 echo "════════════════════════════════"
 echo "🔍 灵境系统 · 提交前检查"
@@ -155,13 +156,54 @@ else:
     print('')
 " 2>/dev/null)
     if [ -n "$EVOLVABLE" ]; then
-        red "  ⚠️  可进化类别: $EVOLVABLE (运行 company/debug/debug-evolve-agent.md 触发进化)"
+        yellow "  ⚠️  可进化类别: $EVOLVABLE (运行 company/debug/debug-evolve-agent.md 触发进化)"
     else
         green "  ✅ 无类别达到进化阈值"
     fi
 else
     green "  ⏭️  无 root-causes.json，跳过"
 fi
+
+# ═══ 8c. 部门概览文件完整性 ═══
+echo -e "\n📋 8c. 部门概览文件完整性（部门.md 是否列出所有Agent）"
+DEPT_MISMATCH=0
+for dept_md in company/*/; do
+    dept_name=$(basename "$dept_md")
+    # 跳过 process 和非部门目录
+    [ "$dept_name" = "process" ] && continue
+    [ ! -f "$dept_md/${dept_name}-department.md" ] && continue
+    OVERVIEW="$dept_md/${dept_name}-department.md"
+    # 统计该部门下实际Agent数量
+    ACTUAL_DEPT_AGENTS=$(find "$dept_md" -maxdepth 1 -name "*-agent.md" 2>/dev/null | wc -l)
+    # 统计概览文件中提到的Agent数量（匹配 `xxx-agent.md` 或 xxx-agent.md）
+    MENTIONED_AGENTS=$(grep -oP '[`]*\w+-agent\.md[`]*' "$OVERVIEW" 2>/dev/null | tr -d '`' | sort -u | wc -l)
+    if [ "$ACTUAL_DEPT_AGENTS" -gt 0 ] && [ "$MENTIONED_AGENTS" -gt 0 ] && [ "$ACTUAL_DEPT_AGENTS" -ne "$MENTIONED_AGENTS" ]; then
+        red "  ❌ $OVERVIEW: 实际${ACTUAL_DEPT_AGENTS}个Agent vs 概览列出${MENTIONED_AGENTS}个"
+        DEPT_MISMATCH=$((DEPT_MISMATCH+1))
+    fi
+done
+[ "$DEPT_MISMATCH" -eq 0 ] && green "  ✅ 部门概览文件Agent列表一致"
+
+# ═══ 8d. REGISTRY中Skill的agent字段有效性 ═══
+echo -e "\n📋 8d. REGISTRY中Skill的agent字段有效性"
+AGENT_FIELD_BROKEN=0
+for registry in company/REGISTRY.md knowledge/REGISTRY.md; do
+    [ -f "$registry" ] || continue
+    # 提取 agent: xxx-agent 格式的字段
+    while IFS= read -r line; do
+        agent_name=$(echo "$line" | grep -oP 'agent:\s*\K[\w-]+(?=-agent)' || true)
+        [ -z "$agent_name" ] && continue
+        agent_file=$(echo "$line" | grep -oP 'agent:\s*\K[\w-]+-agent' || true)
+        [ -z "$agent_file" ] && continue
+        # 在整个company目录下搜索该agent文件
+        FOUND=$(find company -name "${agent_file}.md" 2>/dev/null | head -1)
+        if [ -z "$FOUND" ]; then
+            red "  ❌ $registry: agent字段指向 $agent_file 但文件不存在"
+            AGENT_FIELD_BROKEN=$((AGENT_FIELD_BROKEN+1))
+        fi
+    done < <(grep -i 'agent:' "$registry" 2>/dev/null)
+done
+[ "$AGENT_FIELD_BROKEN" -eq 0 ] && green "  ✅ REGISTRY agent字段引用全部有效"
 
 # ═══ 9. 错误库一致性 ═══
 echo -e "\\n📋 9. 错误知识库自检"

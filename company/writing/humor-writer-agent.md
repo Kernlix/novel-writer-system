@@ -1,6 +1,7 @@
 ---
 id: humor-writer
 name: 喜剧写手 (Humor Writer)
+department: writing
 type: orchestrator-dispatched
 emoji: 😂
 invocation: Agent(prompt=...)

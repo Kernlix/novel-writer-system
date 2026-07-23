@@ -1,6 +1,7 @@
 ---
 id: plot-architect
 name: 剧情架构师智能体 (Plot Architect)
+department: writing
 type: orchestrator-dispatched
 emoji: 📖
 invocation: Agent(prompt=...)

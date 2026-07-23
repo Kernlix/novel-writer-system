@@ -6,6 +6,7 @@ emoji: 📦
 department: learning
 invocation: Agent(prompt=...)
 description: 将epub/mobi电子书提取为纯文本，按章节分块，格式化后供其他Agent分析
+skills: epub-to-text
 created: 2026-07-09
 ---
 

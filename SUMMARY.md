@@ -35,6 +35,8 @@ tags: [速查, 索引]
 | `/novel:review:era` | 时代/技术合理性审查 |
 | `/novel:learn:study` | 外部学习(提取技法) |
 | `/novel:learn:analyze` | 内部分析(审查报告/反馈) |
+| `/novel:learn:dimension` | 📐 维度分析框架确定(学习开始时自动触发) |
+| `/novel:learn:pipeline` | 🔗 知识管线(分析→Skill→注册) |
 | `/novel:deconstruct` | 📖 系统化拆文学习(四步法) |
 | `/novel:recruit:gap` | 差距分析(手动触发) |
 | `/novel:recruit:job` | 岗位设计 |

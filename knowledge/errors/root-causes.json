@@ -1,21 +1,22 @@
 {
   "version": 1,
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-17",
   "categories": {
     "01-改了A不改B": {
-      "count": 8,
+      "count": 10,
       "description": "修改一处不影响关联处",
       "typical_scenarios": [
         "改Agent数不更新REGISTRY",
         "改名字不搜引用"
       ],
       "entries": [
-        "2026-07-08_path-migration"
+        "2026-07-08_path-migration",
+        "2026-07-17_audit-9issues"
       ],
-      "entries_since_baseline": 0
+      "entries_since_baseline": 2
     },
     "02-声明没实现": {
-      "count": 7,
+      "count": 12,
       "description": "说做了但实际没做",
       "typical_scenarios": [
         "新增hook但不创建文件",
@@ -24,9 +25,10 @@
       ],
       "entries": [
         "2026-07-11_romance-activator",
-        "2026-07-14_orphan-hooks"
+        "2026-07-14_orphan-hooks",
+        "2026-07-17_audit-9issues"
       ],
-      "entries_since_baseline": 1
+      "entries_since_baseline": 6
     },
     "03-脚本静默失败": {
       "count": 4,
@@ -44,7 +46,7 @@
       "count": 4,
       "description": "提交了绝对路径/用户名",
       "typical_scenarios": [
-        "D:\\allproject硬编码",
+        "D:\\\\allproject硬编码",
         "用户名14798"
       ],
       "entries": [
@@ -75,16 +77,18 @@
       "entries_since_baseline": 0
     },
     "07-子智能体不闭环": {
-      "count": 2,
+      "count": 7,
       "description": "Agent交付缺文件/注册/计数",
       "typical_scenarios": [
         "创建文件没注册",
-        "注册了没更新计数"
+        "注册了没更新计数",
+        "部门概览文件不更新"
       ],
       "entries": [
-        "2026-07-12_v5-patches"
+        "2026-07-12_v5-patches",
+        "2026-07-17_audit-9issues"
       ],
-      "entries_since_baseline": 0
+      "entries_since_baseline": 5
     }
   }
 }

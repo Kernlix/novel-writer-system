@@ -1,6 +1,7 @@
 ---
 id: setting-qa
 name: 设定质检员智能体 (Setting QA Agent)
+department: review
 type: user-invoked
 emoji: 🔬
 invocation: /novel:qa

@@ -41,6 +41,7 @@ description: 根因分析、修复执行、知识库入库
 - **每次修错必须走完 1-7 全流程**，少一步算未完成
 - **不存在"修完就行"**——不录 entry = 没修
 - **不依赖用户提醒**——这是 debug 部门的职责，不是用户的
+- **子代理修复后必须确认三件事：**①entry已录入 `knowledge/errors/entries/` ②`root-causes.json` 已更新（count +1, entries_since_baseline +1）③`README.md` 速查表计数已同步。缺任何一项=未完成
 
 ## 引用的Skill/Hook
 

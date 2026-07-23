@@ -1,6 +1,7 @@
 ---
 id: story-setup
 name: 创作设定智能体 (Story Setup Agent)
+department: writing
 type: user-invoked
 emoji: 🏗️
 invocation: /novel:characters /novel:outline /novel:world

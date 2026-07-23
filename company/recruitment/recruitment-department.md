@@ -1,3 +1,14 @@
+---
+id: recruitment-department
+name: 招募部门概览
+type: department-readme
+emoji: 🔎
+department: recruitment
+description: 灵境系统招募部门——5个Agent、1个Skill、2个Hook
+created: 2026-07-17
+updated: 2026-07-17
+---
+
 # 🔎 招募部门 (Recruitment Department)
 
 ## 部门使命
@@ -10,6 +21,7 @@
 | job-designer-agent | 岗位设计：定义新Agent/Skill/Hook需求规范 |
 | skill-engineer-agent | 技能研发：使用模板设计新Skill |
 | agent-integrator-agent | Agent集成：配置权限、知识库访问、协作流程 |
+| skill-deployer-agent | 技能部署：学习后自动部署新Skill到写作/审核部门 |
 
 ## 招募流程
 

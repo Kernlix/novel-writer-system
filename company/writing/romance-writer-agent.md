@@ -1,6 +1,7 @@
 ---
 id: romance-writer
 name: 恋爱写手 (Romance Writer)
+department: writing
 type: orchestrator-dispatched
 emoji: 🤍
 invocation: Agent(prompt=...)

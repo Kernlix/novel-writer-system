@@ -14,8 +14,21 @@ novel-writer-system/            ← 灵境系统（仓库根目录）
 ├── company/               ← 虚拟AI公司（6部门 + process流程层）
 │   ├── manager/           ← 负责人部门
 │   ├── writing/           ← 写作部门
+│   │   └── skills/        ← 技法库（246个，11分类）
+│   │       ├── battle/    ← ⚔️ 战斗/对抗（16个）
+│   │       ├── plot/      ← 📖 剧情/结构（39个）
+│   │       ├── dialogue/  ← 💬 对话技法（10个）
+│   │       ├── horror/    ← 👻 恐怖/悬疑（16个）
+│   │       ├── emotion/   ← 💕 情感/恋爱（15个）
+│   │       ├── game/      ← ♟️ 博弈/推理（42个）
+│   │       ├── character/ ← 👤 角色设计（16个）
+│   │       ├── world/     ← 🌍 世界观/超自然（31个）
+│   │       ├── comedy/    ← 😂 喜剧技法（10个）
+│   │       ├── reversal/  ← 🔄 反转/揭示（24个）
+│   │       └── meta/      ← 🔧 工具/技术（29个）
 │   ├── review/            ← 审核部门
 │   ├── learning/          ← 学习部门
+│   ├── debug/             ← 修错部门
 │   ├── recruitment/       ← 招募部门
 │   ├── process/           ← 章节创作/修改流程
 │   └── REGISTRY.md
@@ -23,20 +36,20 @@ novel-writer-system/            ← 灵境系统（仓库根目录）
 │   ├── rules/common/      ← 通用规则清单
 │   ├── rules/novel/       ← 本小说专项规则
 │   ├── theory/            ← 写作理论
-│   └── instincts/         ← 本能库
+│   ├── instincts/         ← 本能库
+│   ├── errors/            ← 错误知识库
+│   └── learned/           ← 学习产出（逐章分析+综合分析）
 ├── .rag/                  ← RAG引擎/分卷管理
 └── company/REGISTRY.md     ← 完整部门列表
-
-{项目目录}/                ← 小说项目文件（与本仓库分开存放，路径由用户在启动时指定）
 ```
 
 ## 核心流程
 
 ```
-负责人把握方向 → 写作部门(写手+角色+剧情) → 审查官(打回循环) → 负责人汇总报告
+负责人把握方向 → 维度分析框架确定 → 写作部门(6Agent并行) → 审查官 → 缺口分析 → 部署
 ```
 
-详见 `company/process/chapter-creation.md`（待拆分）
+详见 `company/learning/learning-department.md`（学习部门6步流程）
 
 ## 关键命令
 
@@ -59,3 +72,5 @@ novel-writer-system/            ← 灵境系统（仓库根目录）
 | 本能学习 | `knowledge/learned/instinct-learning-system.md` |
 | 提示词模板 | `knowledge/theory/lcm-rag-prompt-templates.md` |
 | RAG配置 | `knowledge/theory/rag-novel-config.md` |
+| 技法检索 | `company/writing/skill-matcher-agent.md` |
+| 技法分类 | `company/writing/skills/`（11个子目录） |

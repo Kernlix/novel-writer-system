@@ -1,6 +1,7 @@
 ---
 id: pseudo-family-writer
 name: 疑似家族写手 (Pseudo-Family Writer)
+department: writing
 type: orchestrator-dispatched
 emoji: 👨‍👧
 invocation: Agent(prompt=...)

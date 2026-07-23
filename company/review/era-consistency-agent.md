@@ -1,6 +1,7 @@
 ---
 id: era-consistency
 name: 时代背景审查官智能体 (Era Consistency Agent)
+department: review
 type: user-invoked
 emoji: 🏛️
 invocation: /novel:era
