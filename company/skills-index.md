@@ -2,7 +2,7 @@
 
 > **用途**：快速判断新技法是新建/升级/跳过。扫描「核心机制」列即可判定重叠度。
 > **生成时间**：2026-07-24
-> **覆盖**：293个技能 · 11个分类 · 12个Agent
+> **覆盖**：295个技能 · 11个分类 · 12个Agent
 
 ---
 
@@ -42,7 +42,7 @@
 | ultimate-underdog-showdown | 日常积累的歪门邪道战胜最终Boss | writer |
 | violent-rescue-narrative | 物理破解规则的暴力救援+团队协作美学 | writer |
 
-### 👤 character（角色设计） — 23个
+### 👤 character（角色设计） — 24个
 
 | ID | 核心机制（一针见血·≤20字） | agent |
 |:---|:-----------------------------|:------|
@@ -54,21 +54,22 @@
 || child-narrative-filter | 儿童视角叙述创伤，有限认知×多层剪刀差 | writer |
 || created-being-existential-narrative | 造物存在主义危机与真假同一性拷问 | writer |
 || echo-refuser-narrative | 拒绝超自然力量，以凡人之躯对抗神明 | writer |
-| everyday-contrast-narrative | 日常温馨中引爆叙事炸弹，反差制造冲击 | writer |
-| everyday-cover-secret | 日常行为制造秘密沟通的合理借口 | writer |
-| evil-evolution-path-narrative | 小恶→大恶渐进堕落，恶的传染与因果报应 | writer |
-| hero-declaration | 配角宣告叙事主权，同一句话三境递增 | writer |
-| identity-suspicion-narrative | 冒充双关+身份概念重构制造身份怀疑 | writer |
-| infiltrator-villain-narrative | 秩序外表+混沌本质的完美潜入型反派 | writer |
-| label-reversal-explosion | 极端事件爆破颠覆角色社会标签 | writer |
-| letter-character-narrative | 亲笔书信的口气措词直接展示角色本质 | writer |
-| mask-impersonation-conspiracy | 身份伪造+内部叛徒的双重张力结构 | writer |
-| reverse-character-design | 角色与应有样子的反差快速建立辨识度 | writer |
-| rough-wisdom-character | 粗鲁面具下精细博弈计算的角色反差 | writer |
-| save-the-cat | 使用节拍表规划故事结构 | writer |
-| self-reflexive-identity-declaration | 主动揭示身份创造哲学压迫感 | writer |
-| weakness-to-strength | 恐惧即传感器，弱点转化为博弈工具 | writer |
-| white-sketch-character | 纯客观事实叙述，让读者自行评价角色 | writer |
+|| everyday-contrast-narrative | 日常温馨中引爆叙事炸弹，反差制造冲击 | writer |
+|| everyday-cover-secret | 日常行为制造秘密沟通的合理借口 | writer |
+|| evil-evolution-path-narrative | 小恶→大恶渐进堕落，恶的传染与因果报应 | writer |
+|| hero-declaration | 配角宣告叙事主权，同一句话三境递增 | writer |
+|| identity-suspicion-narrative | 冒充双关+身份概念重构制造身份怀疑 | writer |
+|| infiltrator-villain-narrative | 秩序外表+混沌本质的完美潜入型反派 | writer |
+|| label-reversal-explosion | 极端事件爆破颠覆角色社会标签 | writer |
+|| letter-character-narrative | 亲笔书信的口气措词直接展示角色本质 | writer |
+|| mask-impersonation-conspiracy | 身份伪造+内部叛徒的双重张力结构 | writer |
+|| reverse-character-design | 角色与应有样子的反差快速建立辨识度 | writer |
+|| rough-wisdom-character | 粗鲁面具下精细博弈计算的角色反差 | writer |
+|| save-the-cat | 使用节拍表规划故事结构 | writer |
+|| self-reflexive-identity-declaration | 主动揭示身份创造哲学压迫感 | writer |
+|| silent-bond-relationship | 静默陪伴构建角色深度联结，无言即信任 | writer |
+|| weakness-to-strength | 恐惧即传感器，弱点转化为博弈工具 | writer |
+|| white-sketch-character | 纯客观事实叙述，让读者自行评价角色 | writer |
 
 ### 😂 comedy（喜剧技法） — 10个
 
@@ -243,7 +244,7 @@
 | webnovel-suspense | 悬疑惊悚题材专项写作指南 | writer |
 | webnovel-trend | 分析各平台热门趋势的市场研究 | writer |
 
-### 📖 plot（剧情/结构） — 50个
+### 📖 plot（剧情/结构） — 51个
 
 | ID | 核心机制（一针见血·≤20字） | agent |
 |:---|:-----------------------------|:------|
@@ -263,6 +264,7 @@
 | dual-layer-reversal | 视觉反转+认知反转双层嵌套同章呈现 | writer |
 | environmental-narrative-info-layer | 物理环境异常变化传递未确认叙事真相 | writer |
 | environmental-state-chain | 前序攻击残留成为后续攻击的放大器 | writer |
+| fairy-tale-framework-mapping | 童话/神话作为角色命运预测框架和驱动力 | writer |
 | foreshadow-tragedy | 先告知悲剧结局再讲述平凡人生 | writer |
 | foreshadowing-judgment-narrative | 领袖实时预判制造悬念，双关叙事 | writer |
 | four-word-revelation | 极少文字在关键节点颠覆全部认知 | writer |
